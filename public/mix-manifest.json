@@ -1,5 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
     "/images/pop.png": "/images/pop.png",
     "/images/stuff.jpg": "/images/stuff.jpg",
     "/images/stuff.webp": "/images/stuff.webp",
@@ -17,7 +18,5 @@
     "/fonts/Roboto-Light.woff": "/fonts/Roboto-Light.woff",
     "/fonts/Roboto-Light.woff2": "/fonts/Roboto-Light.woff2",
     "/fonts/Roboto-Regular.woff": "/fonts/Roboto-Regular.woff",
-    "/fonts/Roboto-Regular.woff2": "/fonts/Roboto-Regular.woff2",
-    "/images/icons/spritemap.svg": "/images/icons/spritemap.svg",
-    "/css/app.css": "/css/app.css"
+    "/fonts/Roboto-Regular.woff2": "/fonts/Roboto-Regular.woff2"
 }
