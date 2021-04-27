@@ -1,0 +1,153 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 435px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 0 5px;
+  @include adaptive-value(padding-top, 20, 10);
+  @include adaptive-value(padding-left, 20, 10);
+  @include adaptive-value(padding-right, 20, 10);
+  border: 1px solid #f1f1f1;
+  position: relative;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  &__wrap {
+    position: relative;
+    margin-bottom: 12px;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 394px;
+    max-height: 394px;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+
+  &__gift {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+      cursor: pointer;
+
+      transition: fill 0.3s;
+
+      &:not(:last-child) {
+        @include adaptive-value(margin-bottom, 17, 10);
+      }
+
+      &:hover {
+        fill: $primary;
+      }
+    }
+  }
+
+  &__title {
+    display: block;
+    margin-bottom: 8px;
+
+    @include family("Montserrat");
+    line-height: 20px;
+    color: #000;
+    text-decoration: none;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &__top {
+    margin-bottom: 10px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    position: relative;
+  }
+
+  &__buy {
+    display: flex;
+    align-items: center;
+    padding: 9px 0;
+    @include adaptive-value(padding-right, 15, 10);
+    @include adaptive-value(padding-left, 15, 10);
+
+    background-color: transparent;
+    border: none;
+    border-radius: 3px;
+
+    @include family("Commissioner");
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+
+    &:hover {
+      background-color: #52aa50;
+
+      span {
+        display: inline-block;
+        opacity: 1;
+        visibility: visible;
+        order: 1;
+        padding-left: 10px;
+      }
+
+      svg {
+        fill: #fff;
+        order: 0;
+      }
+    }
+
+    span {
+      order: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: order 0.3s, opacity 0.3s, padding 0.3s;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+      fill: #000;
+      order: 1;
+      transition: 0.3s;
+    }
+  }
+}

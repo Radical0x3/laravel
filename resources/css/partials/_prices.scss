@@ -1,0 +1,41 @@
+.prices {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__old {
+    position: relative;
+
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    color: $secondary-grey;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: $red;
+
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    span {
+      font-size: 13px;
+      line-height: 16px;
+    }
+  }
+
+  &__new {
+    color: $red;
+
+    span {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}

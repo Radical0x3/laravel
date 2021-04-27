@@ -1,0 +1,28 @@
+.categories {
+  background: linear-gradient(99.18deg, $orange 3.07%, #fe374a 100.56%);
+  border-radius: 22px;
+
+  @include adaptive-value(padding-top, 92, 40);
+  @include adaptive-value(padding-bottom, 80, 40);
+  @include adaptive-value(padding-left, 157, 20);
+  @include adaptive-value(padding-right, 155, 20);
+
+  color: #fff;
+  position: relative;
+  z-index: 1;
+
+  &__top {
+    @include adaptive-value(margin-bottom, 83, 35);
+
+    @media (max-width: 576px) {
+      .section-title {
+        text-align: center;
+      }
+    }
+  }
+
+  &__list {
+    position: relative;
+    z-index: 1;
+  }
+}

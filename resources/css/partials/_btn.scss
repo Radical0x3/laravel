@@ -1,0 +1,94 @@
+.btn {
+  @include adaptive-value(padding-top, 19, 14);
+  @include adaptive-value(padding-bottom, 19, 14);
+  border: 2px solid transparent;
+
+  color: #fff;
+  font-size: 15px;
+  line-height: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+
+  position: relative;
+  z-index: 2;
+
+  cursor: pointer;
+  transition: 0.3s;
+
+  &-sm {
+    max-width: 190px !important;
+    @include adaptive-value(padding-left, 34, 15);
+    @include adaptive-value(padding-right, 34, 15);
+  }
+
+  &-lg {
+    @include adaptive-value(padding-left, 56, 20);
+    @include adaptive-value(padding-right, 30, 20);
+  }
+
+  &-transparent {
+    background: transparent;
+    border-color: #fff;
+  }
+
+  &-gradient {
+    background: linear-gradient(0deg, $primary, $primary);
+    border-color: $primary;
+
+    &:hover {
+      background: linear-gradient(0deg, #fff, #fff);
+    }
+  }
+
+  &-svg {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+
+    span {
+      @include adaptive-value(margin-right, 25, 10);
+    }
+
+    svg {
+      @include adaptive-value(width, 18, 14);
+      @include adaptive-value(height, 18, 14);
+
+      object-fit: cover;
+      fill: #fff;
+
+      transition: 0.3s;
+    }
+
+    &:hover {
+      svg {
+        fill: $primary;
+      }
+    }
+  }
+
+  &-round {
+    @include adaptive-value(border-radius, 70, 30);
+  }
+
+  &-rect {
+    @include family("Montserrat");
+    @include adaptive-value(font-size, 16, 14);
+    line-height: 20px;
+    font-weight: 700;
+    border-radius: 3px;
+    padding: 13px 0;
+    @include adaptive-value(padding-left, 30, 15);
+    @include adaptive-value(padding-right, 30, 15);
+  }
+
+  &:hover {
+    background: #fff;
+    color: $primary;
+  }
+
+  &:active {
+    color: $orange;
+    text-shadow: 1px 1px 2px $orange;
+  }
+}

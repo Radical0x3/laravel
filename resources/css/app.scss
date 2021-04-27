@@ -1,0 +1,67 @@
+@import "partials/vars";
+@import "custom";
+@import "~normalize.css/normalize.css";
+@import "~bootstrap/scss/bootstrap-grid.scss";
+@import "partials/top";
+@import "partials/wrapper";
+@import "partials/categories";
+@import "partials/category";
+@import "partials/text";
+@import "partials/text-section";
+@import "partials/empty-section";
+@import "partials/section-title";
+@import "partials/btn";
+@import "partials/circle";
+@import "partials/pop";
+@import "partials/slider";
+@import "partials/bottom";
+@import "partials/recall";
+@import "partials/cards";
+@import "partials/card";
+@import "partials/time";
+@import "partials/shop";
+@import "partials/box";
+@import "partials/product";
+@import "partials/rating";
+@import "partials/price";
+@import "partials/prices";
+@import "partials/label";
+@import "partials/goods";
+@import "partials/scrollbar";
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  @include family("Roboto");
+  margin: 0;
+  min-width: 320px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  &:focus {
+    box-shadow: 0 0 5px 1px #000;
+  }
+}
+
+.other {
+  position: relative;
+}
+
+.row {
+  height: 100%;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+  overflow-y: visible;
+}

@@ -1,0 +1,114 @@
+.circle {
+  &-wrap {
+    position: absolute;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  &-sm {
+    @include adaptive-value(width, 160, 110);
+    @include adaptive-value(height, 144, 90);
+    border-radius: 0 0 0 22px;
+
+    bottom: 0;
+    left: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      @include adaptive-value(width, 244, 110);
+      @include adaptive-value(height, 244, 110);
+
+      border-radius: 50%;
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(255, 255, 255, 0.042) 0%,
+        rgba(216, 248, 255, 0.2) 100%
+      );
+      backdrop-filter: blur(120px);
+
+      transform: matrix(0, 1, 1, 0, 0, 0);
+      position: absolute;
+      @include adaptive-value(left, -83, -30);
+      @include adaptive-value(bottom, -100, -50);
+    }
+  }
+
+  &-lg {
+    @include adaptive-value(width, 617, 180);
+    @include adaptive-value(height, 829, 200);
+    border-radius: 0 0 22px 0;
+
+    bottom: 0;
+    right: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      @include adaptive-value(width, 775, 250);
+      @include adaptive-value(height, 775, 250);
+
+      border-radius: 50%;
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(254, 52, 73, 0.2) 0%,
+        rgba(255, 55, 74, 0.2) 100%
+      );
+      backdrop-filter: blur(40px);
+
+      transform: matrix(1, 0, 0, -1, 0, 0);
+      position: absolute;
+      @include adaptive-value(right, -358, -100);
+      bottom: -46px;
+    }
+  }
+
+  &-xl {
+    &::before {
+      content: "";
+      display: block;
+      @include adaptive-value(width, 994, 280);
+      @include adaptive-value(height, 994, 280);
+
+      border-radius: 50%;
+      background: radial-gradient(
+        54.91% 54.29% at 47.11% 34.48%,
+        #ff6d43 0%,
+        rgba(255, 0, 0, 0.05) 100%
+      );
+
+      position: absolute;
+      @include adaptive-value(right, -428, -130);
+      @include adaptive-value(bottom, -284, -60);
+    }
+  }
+
+  &-gradient {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      rgba(255, 255, 255, 0) 0deg,
+      #f5df4d 180deg,
+      #ff6d43 360deg
+    );
+
+    transform: matrix(0, 1, 1, 0, 0, 0);
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+  }
+
+  &-vector {
+    @include adaptive-value(width, 120, 100);
+    @include adaptive-value(height, 115, 95);
+    object-fit: cover;
+
+    position: absolute;
+    top: -20px;
+    right: -23px;
+    z-index: 1;
+  }
+}

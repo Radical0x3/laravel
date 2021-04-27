@@ -1,0 +1,22 @@
+.bottom {
+  @include adaptive-value(padding-top, 50, 25);
+  @include adaptive-value(padding-bottom, 57, 14);
+  background-color: #f7f9f9;
+
+  overflow-x: hidden;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 110%;
+    height: 30px;
+
+    background-color: #fff;
+    border-radius: 50% 50% 50% 50% / 0% 0% 100% 100%;
+
+    position: absolute;
+    left: -5%;
+    top: 0;
+  }
+}

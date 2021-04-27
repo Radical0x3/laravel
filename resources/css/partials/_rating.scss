@@ -1,0 +1,39 @@
+.rating {
+  display: flex;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 10px;
+
+    &[data-total-value="1"] .rating__icon:nth-child(n + 5),
+    &[data-total-value="2"] .rating__icon:nth-child(n + 4),
+    &[data-total-value="3"] .rating__icon:nth-child(n + 3),
+    &[data-total-value="4"] .rating__icon:nth-child(n + 2),
+    &[data-total-value="5"] .rating__icon:nth-child(n + 1) {
+      fill: #ffd600;
+    }
+  }
+
+  &__icon {
+    width: 12px;
+    height: 12px;
+    object-fit: cover;
+    fill: #d8dadb;
+  }
+
+  &__votes {
+    @include family("Montserrat");
+    font-size: 13px;
+    line-height: 16px;
+    color: $secondary-grey;
+    text-decoration: none;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}

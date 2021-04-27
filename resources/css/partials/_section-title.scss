@@ -1,0 +1,5 @@
+.section-title {
+  @include adaptive-value(font-size, 64, 28);
+  @include adaptive-value(line-height, 72, 34);
+  font-weight: 300;
+}

@@ -1,0 +1,39 @@
+.scrollbar-track-x {
+  width: 90% !important;
+  max-width: 1188px !important;
+  height: 4px !important;
+  background: rgba(#000, 0.1) !important;
+  border-radius: 3px !important;
+
+  left: 50% !important;
+  transform: translateX(-50%);
+}
+
+.scrollbar-thumb-x {
+  // max-width: 250px;
+  background: #000 !important;
+  height: 4px !important;
+  border-radius: 3px !important;
+}
+
+// .ps__rail-x {
+//   height: 4px;
+//   max-height: 4px;
+//   max-width: 1188px;
+//   display: block;
+//   background-color: rgba(#000, 0.1) !important;
+//   opacity: 1;
+//   border-radius: 3px;
+
+//   &:hover {
+//     opacity: 1;
+//   }
+// }
+
+// .ps__thumb-x {
+//   height: 4px;
+//   max-height: 4px;
+//   background-color: #000;
+//   border-radius: 3px;
+//   bottom: 0;
+// }

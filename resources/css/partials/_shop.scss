@@ -1,0 +1,6 @@
+.shop {
+  max-width: 1920px;
+  @include adaptive-value(padding, 30, 10);
+  margin: 0 auto 10px;
+  overflow-x: hidden;
+}

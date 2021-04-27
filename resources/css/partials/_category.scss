@@ -1,0 +1,49 @@
+.category {
+  display: flex;
+  flex-direction: column;
+
+  transition: transform 0.3s;
+
+  @media (min-width: 769px) {
+    &:hover {
+      transform: translateY(20px);
+    }
+  }
+
+  &:hover {
+    .category__link {
+      text-decoration: underline;
+    }
+  }
+
+  &__image {
+    &-wrap {
+      display: block;
+      margin-bottom: 20px;
+
+      position: relative;
+
+      img {
+        max-width: 311px;
+        max-height: 446px;
+        width: 100%;
+        object-fit: cover;
+
+        border-radius: 44px 44px 44px 0px;
+      }
+    }
+  }
+
+  &__link {
+    @include adaptive-value(font-size, 30, 18);
+    @include adaptive-value(line-height, 40, 26);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+
+    position: relative;
+    z-index: 3;
+
+    transition: color 0.3s;
+  }
+}

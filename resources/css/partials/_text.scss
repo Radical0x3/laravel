@@ -1,0 +1,12 @@
+.text {
+  max-width: 325px;
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 24px;
+  color: $grey;
+  text-align: center;
+
+  position: relative;
+  z-index: 1;
+}

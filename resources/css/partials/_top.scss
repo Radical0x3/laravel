@@ -1,0 +1,8 @@
+.top {
+  @include adaptive-value(padding-top, 20, 10);
+  @include adaptive-value(padding-left, 40, 10);
+  @include adaptive-value(padding-right, 40, 10);
+  
+  position: relative;
+  overflow-x: hidden;
+}

@@ -1,0 +1,3 @@
+.text-section {
+  @include adaptive-value(padding-top, 106, 40);
+}

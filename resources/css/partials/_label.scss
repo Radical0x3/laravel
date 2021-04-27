@@ -1,0 +1,36 @@
+.label {
+  padding: 7px 13px;
+  border-radius: 30px;
+
+  @include family("Montserrat");
+  font-size: 13px;
+  line-height: 16px;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 0;
+  left: 33px;
+  transform: translateY(-50%);
+
+  &_new {
+    background: map-get($colors, green);
+  }
+
+  &_special {
+    background: map-get($colors, blue);
+  }
+
+  &_sale {
+    background: map-get($colors, red);
+  }
+
+  &_top {
+    background: map-get($colors, orange);
+  }
+
+  &_def {
+    background: $secondary-grey;
+  }
+}
