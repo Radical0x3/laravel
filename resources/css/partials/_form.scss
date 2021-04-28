@@ -1,0 +1,46 @@
+.form {
+  width: 100%;
+  position: relative;
+
+  &__search {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background: #dde8f0;
+    @include adaptive-value(padding, 20, 10);
+    color: $dark-blue;
+    transition: 0.3s;
+
+    &::placeholder {
+      color: rgba($dark-blue, 0.7);
+    }
+
+    &:focus {
+      box-shadow: 0 0 5px 1px rgba(#000, 0.2);
+    }
+  }
+
+  &__submit {
+    width: 18px;
+    height: 18px;
+
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    fill: $dark-blue;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      fill: $secondary-orange;
+    }
+  }
+}

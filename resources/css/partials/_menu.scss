@@ -1,0 +1,54 @@
+.menu {
+  display: flex;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+
+    &.active {
+      .menu__link {
+        color: $dark-blue;
+
+        &::before {
+          width: 100%;
+          background: $dark-blue;
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      &::after {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #dde8f0;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: 700;
+    color: $smoke-blue;
+    text-decoration: none;
+    margin-right: 10px;
+
+    transition: 0.3s;
+
+    &:hover {
+      color: $dark-blue;
+    }
+
+    &_dark {
+      color: $dark-blue;
+    }
+
+    &::before {
+      width: 0;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.phones {
+  position: relative;
+  padding: 0 5px 0 10px;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      .phones__text {
+        color: $secondary-orange;
+      }
+    }
+
+    &.active {
+      .arrow-down {
+        transform: rotate(-135deg);
+        margin-top: 3px;
+      }
+    }
+  }
+
+  &__body {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 4px 4px 6px -4px #ccc, -4px 4px 6px -4px #ccc;
+    padding: 10px 5px 10px 10px;
+    z-index: 2;
+
+    position: absolute;
+    top: 110%;
+    left: 0;
+
+    &-text {
+      &:not(:last-child) {
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 1.2;
+    color: $dark-blue;
+    font-weight: 700;
+    margin-right: 14px;
+
+    transition: color 0.3s;
+  }
+}

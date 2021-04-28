@@ -1,0 +1,60 @@
+.catalog {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $secondary-orange;
+  border-radius: 10px 0 0 0;
+  padding: 5% 6% 5% 5%;
+  max-height: 60px;
+
+  &__action {
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    &:hover {
+      .hamburger {
+        &__body,
+        &::before,
+        &::after {
+          background: $dark-blue;
+        }
+      }
+
+      .catalog__text {
+        color: $dark-blue;
+      }
+    }
+  }
+
+  &__text {
+    @include adaptive-value(font-size, 24, 16);
+    line-height: 1.2;
+    font-weight: 500;
+    color: #fff;
+    transition: color 0.3s;
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &::before {
+      width: 100%;
+      background: rgba(#fff, 0.5);
+      transition: 0.3s;
+    }
+
+    &:hover {
+      color: $dark-blue;
+
+      &::before {
+        background: $dark-blue;
+      }
+    }
+  }
+}

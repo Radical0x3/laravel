@@ -1,0 +1,13 @@
+.link-decor {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    height: 1px;
+
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+  }
+}

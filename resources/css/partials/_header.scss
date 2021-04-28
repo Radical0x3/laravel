@@ -1,0 +1,9 @@
+.header {
+  padding: 0 10px;
+  @include adaptive-value(padding-top, 16, 10);
+  @include adaptive-value(padding-bottom, 16, 10);
+  position: relative;
+  z-index: 99;
+}
+
+

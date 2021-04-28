@@ -1,0 +1,35 @@
+.hamburger {
+  width: 25px;
+  position: relative;
+  margin-right: 20px;
+
+  &__body {
+    width: 15px;
+    height: 3px;
+    background: #fff;
+    border-radius: 18px;
+    transition: background 0.3s;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 18px;
+
+    position: absolute;
+    left: 0;
+    transition: background 0.3s;
+  }
+
+  &::before {
+    top: -10px;
+  }
+
+  &::after {
+    top: 10px;
+  }
+}

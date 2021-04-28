@@ -2,6 +2,17 @@
 @import "custom";
 @import "~normalize.css/normalize.css";
 @import "~bootstrap/scss/bootstrap-grid.scss";
+@import "partials/header";
+@import "partials/logo";
+@import "partials/menu";
+@import "partials/link-decor";
+@import "partials/phones";
+@import "partials/arrow";
+@import "partials/user-action";
+@import "partials/catalog";
+@import "partials/hamburger";
+@import "partials/form";
+@import "partials/user-button";
 @import "partials/top";
 @import "partials/wrapper";
 @import "partials/categories";
@@ -47,17 +58,17 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-* {
-  &:focus {
-    box-shadow: 0 0 5px 1px #000;
-  }
-}
+// * {
+//   &:focus {
+//     box-shadow: 0 0 5px 1px #000;
+//   }
+// }
 
 .other {
   position: relative;
 }
 
-.row {
+._h100 {
   height: 100%;
 }
 
