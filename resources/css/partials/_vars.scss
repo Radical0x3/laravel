@@ -12,11 +12,18 @@ $orange: #ff7800;
 $secondary-orange: #ffbe48;
 
 $colors: (
-  green: #219653,
-  blue: #2f80ed,
-  red: #e02020,
-  orange: #ff8a00,
+  "green": #219653,
+  "blue": #2f80ed,
+  "red": #e02020,
+  "orange": #ff8a00,
+  "grey": #a7b0b5,
 );
+
+@each $label, $color in $colors {
+  .label_#{$label} {
+    background: $color;
+  }
+}
 
 @mixin adaptive-value($property, $startSize, $minSize, $type: 1) {
   $addSize: $startSize - $minSize;

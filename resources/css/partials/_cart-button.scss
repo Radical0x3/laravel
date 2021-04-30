@@ -1,0 +1,9 @@
+.cart-button {
+  @media (max-width: 768px) {
+    padding: 7% 2%;
+  }
+
+  @media (max-width: 676px) {
+    margin-right: 10px !important;
+  }
+}

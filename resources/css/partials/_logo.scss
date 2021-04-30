@@ -3,4 +3,9 @@
   height: 41px;
   object-fit: cover;
   fill: $blue;
+
+  @media (max-width: 768px) {
+    width: 80px;
+    fill: #fff;
+  }
 }

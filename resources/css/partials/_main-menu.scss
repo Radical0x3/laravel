@@ -1,0 +1,30 @@
+.main-menu {
+  &__item {
+    &:hover {
+      .menu__link {
+        color: $dark-blue;
+      }
+    }
+  }
+
+  @media (max-width: 1199.5px) {
+    display: block;
+
+    .menu {
+      &__item {
+        margin-right: 0;
+        margin-bottom: 5px;
+
+        &::after {
+          display: none;
+        }
+      }
+
+      &__link {
+        &::before {
+          width: 0 !important;
+        }
+      }
+    }
+  }
+}

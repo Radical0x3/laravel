@@ -1,7 +1,6 @@
 .user-action {
   display: flex;
   align-items: center;
-  margin-right: 7%;
 
   font-size: 14px;
   line-height: 1.2;
@@ -19,9 +18,22 @@
     height: 20px;
     object-fit: cover;
     fill: $secondary-orange;
+    transition: fill 0.3s;
+
+    @media (max-width: 1200px) {
+      fill: $dark-blue;
+    }
   }
 
   &:hover {
     color: $secondary-orange;
+
+    @media (max-width: 1199.5px) {
+      color: #fff;
+
+      .user-action__icon {
+        fill: #fff;
+      }
+    }
   }
 }

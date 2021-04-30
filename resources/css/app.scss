@@ -2,6 +2,7 @@
 @import "custom";
 @import "~normalize.css/normalize.css";
 @import "~bootstrap/scss/bootstrap-grid.scss";
+@import "~perfect-scrollbar/css/perfect-scrollbar.css";
 @import "partials/header";
 @import "partials/logo";
 @import "partials/menu";
@@ -11,9 +12,18 @@
 @import "partials/user-action";
 @import "partials/catalog";
 @import "partials/hamburger";
+@import "partials/main-hamburger";
 @import "partials/form";
+@import "partials/log-in";
 @import "partials/user-button";
+@import "partials/user-mobile-button";
+@import "partials/lang-menu";
+@import "partials/main-menu";
+@import "partials/main-blur";
+@import "partials/cart-button";
 @import "partials/top";
+@import "partials/mobile";
+@import "partials/mobile-catalog";
 @import "partials/wrapper";
 @import "partials/categories";
 @import "partials/category";
@@ -42,12 +52,23 @@
 
 html {
   overflow-x: hidden;
+
+  &.lock {
+    overflow: hidden;
+  }
 }
 
 body {
   @include family("Roboto");
   margin: 0;
   min-width: 320px;
+  position: relative;
+}
+
+.main {
+  @media (max-width: 1199.5px) {
+    @include adaptive-value(padding-top, 120, 60);
+  }
 }
 
 *,
@@ -72,7 +93,15 @@ body {
   height: 100%;
 }
 
+._w100 {
+  width: 100%;
+}
+
 .overflow-x-auto {
   overflow-x: auto;
   overflow-y: visible;
+}
+
+.mobile-logo {
+  fill: $dark-blue;
 }

@@ -5,6 +5,7 @@
   @include adaptive-value(padding-right, 30, 10);
   @include adaptive-value(padding-bottom, 41, 15);
   margin: 0 auto 30px;
+  position: relative;
 
   &__outer {
     margin-top: -20px;

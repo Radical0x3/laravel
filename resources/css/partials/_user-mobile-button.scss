@@ -1,0 +1,9 @@
+.user-mobile-button {
+  @media (max-width: 1199.5px) {
+    border-color: $secondary-orange;
+
+    &:last-child {
+      border-width: 2px;
+    }
+  }
+}

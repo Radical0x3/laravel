@@ -1,0 +1,12 @@
+.main-hamburger {
+  display: none;
+
+  @media (max-width: 1199.5px) {
+    display: flex;
+    cursor: pointer;
+  }
+
+  .hamburger {
+    margin-right: 0;
+  }
+}

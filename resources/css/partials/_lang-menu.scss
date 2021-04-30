@@ -1,0 +1,9 @@
+.lang-menu {
+  &__item {
+    &:hover {
+      .menu__link {
+        color: $secondary-orange;
+      }
+    }
+  }
+}

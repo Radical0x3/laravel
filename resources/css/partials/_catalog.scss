@@ -16,8 +16,8 @@
     &:hover {
       .hamburger {
         &__body,
-        &::before,
-        &::after {
+        &::after,
+        &::before {
           background: $dark-blue;
         }
       }

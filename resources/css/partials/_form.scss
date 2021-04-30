@@ -7,7 +7,12 @@
     border: none;
     border-radius: 10px;
     background: #dde8f0;
-    @include adaptive-value(padding, 20, 10);
+    @include adaptive-value(padding-top, 20, 10);
+    @include adaptive-value(padding-left, 20, 10);
+    @include adaptive-value(padding-bottom, 20, 10);
+    padding-right: 25px;
+    @include adaptive-value(font-size, 16, 13);
+    line-height: 1.2;
     color: $dark-blue;
     transition: 0.3s;
 

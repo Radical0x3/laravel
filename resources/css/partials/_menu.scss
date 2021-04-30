@@ -39,10 +39,6 @@
 
     transition: 0.3s;
 
-    &:hover {
-      color: $dark-blue;
-    }
-
     &_dark {
       color: $dark-blue;
     }
@@ -50,5 +46,13 @@
     &::before {
       width: 0;
     }
+
+    @media (max-width: 1199.5px) {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 1199.5px) {
+    margin-bottom: 10px;
   }
 }

@@ -9,4 +9,13 @@
   &-down {
     transform: rotate(45deg);
   }
+
+  &:hover {
+    border-color: $dark-blue;
+  }
+
+  @media (max-width: 1199.5px) {
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+  }
 }

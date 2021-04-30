@@ -13,24 +13,5 @@
   top: 0;
   left: 33px;
   transform: translateY(-50%);
-
-  &_new {
-    background: map-get($colors, green);
-  }
-
-  &_special {
-    background: map-get($colors, blue);
-  }
-
-  &_sale {
-    background: map-get($colors, red);
-  }
-
-  &_top {
-    background: map-get($colors, orange);
-  }
-
-  &_def {
-    background: $secondary-grey;
-  }
+  z-index: 1;
 }

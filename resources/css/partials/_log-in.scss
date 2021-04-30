@@ -1,0 +1,14 @@
+.log-in {
+  svg {
+    @media (max-width: 1199.5px) {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  span {
+    @media (max-width: 767.5px) {
+      display: none;
+    }
+  }
+}

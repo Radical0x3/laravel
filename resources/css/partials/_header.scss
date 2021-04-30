@@ -1,9 +1,18 @@
 .header {
   padding: 0 10px;
-  @include adaptive-value(padding-top, 16, 10);
-  @include adaptive-value(padding-bottom, 16, 10);
+  @include adaptive-value(padding-top, 16, 5);
+  @include adaptive-value(padding-bottom, 16, 5);
   position: relative;
   z-index: 99;
+
+  @media (max-width: 1199.5px) {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: $secondary-orange;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
 }
-
-

@@ -1,14 +1,23 @@
 .hamburger {
+  display: flex;
+  align-items: center;
   width: 25px;
-  position: relative;
+  height: 21px;
   margin-right: 20px;
 
+  position: relative;
+
   &__body {
-    width: 15px;
+    width: 75%;
     height: 3px;
     background: #fff;
     border-radius: 18px;
-    transition: background 0.3s;
+
+    position: absolute;
+    top: 51%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: 0.3s;
   }
 
   &::before,
@@ -22,14 +31,42 @@
 
     position: absolute;
     left: 0;
-    transition: background 0.3s;
+    transition: 0.3s;
   }
 
   &::before {
-    top: -10px;
+    top: -1px;
   }
 
   &::after {
-    top: 10px;
+    top: calc(100% - 2px);
+  }
+
+  &:hover {
+    .hamburger__body {
+      background: $dark-blue;
+    }
+
+    &::after,
+    &::before {
+      background: $dark-blue;
+    }
+  }
+
+  &.active {
+    &::before {
+      top: 50%;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      top: 50%;
+      transform: rotate(-45deg);
+    }
+
+    .hamburger__body {
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 }
