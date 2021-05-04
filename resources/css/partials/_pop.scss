@@ -1,12 +1,12 @@
 .pop {
-  @include adaptive-value(width, 840, 300);
+  @include adaptive-value(width, 841, 300);
   @include adaptive-value(height, 944, 300);
   object-fit: cover;
-  
+
   position: absolute;
-  left: 40%;
-  @include adaptive-value(top, -450, -130);
-  transform: translateX(-42%);
+  left: 41%;
+  @include adaptive-value(top, -479, -130);
+  transform: translateX(calc(-43% + 1px));
   z-index: 0;
 
   @media (max-width: 768px) {

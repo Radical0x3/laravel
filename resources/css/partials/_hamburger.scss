@@ -3,7 +3,7 @@
   align-items: center;
   width: 25px;
   height: 21px;
-  margin-right: 20px;
+  margin-right: 22px;
 
   position: relative;
 
@@ -14,7 +14,7 @@
     border-radius: 18px;
 
     position: absolute;
-    top: 51%;
+    top: 47%;
     left: 0;
     transform: translateY(-50%);
     transition: 0.3s;
@@ -24,7 +24,7 @@
   &::after {
     content: "";
     display: block;
-    width: 100%;
+    width: 115%;
     height: 3px;
     background: #fff;
     border-radius: 18px;

@@ -1,21 +1,9 @@
 import $ from "jquery";
-import PerfectScrollbar from "perfect-scrollbar";
-import Scrollbar from "smooth-scrollbar";
 require("slick-carousel");
-
-const container = document.querySelector(".goods");
-const ps = new PerfectScrollbar(container, {
-  wheelSpeed: 1,
-  wheelPropagation: true,
-  minScrollbarLength: 20,
-  maxScrollbarLength: 200,
-});
+require("jquery-mousewheel");
+import SimpleBar from "simplebar";
 
 $(document).ready(function () {
-  // Scrollbar.initAll({
-  //   alwaysShowTracks: true,
-  // });
-
   testWebP(function (support) {
     if (support === true) {
       document.querySelector("body").classList.add("webp");
@@ -77,6 +65,7 @@ $(document).ready(function () {
   $(".js-accordion-btn").on("click", function (event) {
     const currentNode = event.target.closest(".js-accordion-btn");
     const accordionHeader = $(this).parents(".js-accordion-header");
+    const group = $(this).parents(".js-accordion-group");
 
     if (!currentNode) return;
 
@@ -86,9 +75,9 @@ $(document).ready(function () {
       $(accordionHeader).removeClass("active");
       targetNode.slideUp();
     } else {
-      $(".js-accordion-header.active").removeClass("active");
-      $(".js-accordion-body").slideUp();
-      $(accordionHeader).addClass("active");
+      group.find(".js-accordion-header.active").removeClass("active");
+      group.find(".js-accordion-body").slideUp();
+      accordionHeader.addClass("active");
       targetNode.slideDown({
         start: function () {
           $(this).css({
@@ -99,10 +88,10 @@ $(document).ready(function () {
     }
   });
 
-  let accordionContainer = $(".js-accordion-header");
+  let accordionContainer = $(".js-accordion-header-to-hide");
   if (window.innerWidth >= 1200) {
     $(document).on("mouseup", function (e) {
-      let elem = $(".js-accordion-body");
+      let elem = $(".js-accordion-body-to-hide");
 
       if (
         accordionContainer.has(e.target).length === 0 &&
@@ -138,6 +127,25 @@ $(document).ready(function () {
       bodyUnlock();
     }
   });
+
+  // Scroll to button
+  $(".js-scroll-to").on("click", function (e) {
+    e.preventDefault();
+    const target = $(this).attr("href");
+
+    document.querySelector(target).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+
+  $(".js-coockie-btn").on("click", function () {
+    $(this).parents(".js-coockie").removeClass("active");
+  });
+
+  // Button appears from bottom
+  setTimeout(function () {
+    $(".js-coockie").addClass("active");
+  }, 2000);
 });
 
 // Close the hamburger when blur area was clicked

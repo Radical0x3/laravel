@@ -1,6 +1,6 @@
 .bottom {
-  @include adaptive-value(padding-top, 50, 25);
-  @include adaptive-value(padding-bottom, 57, 14);
+  padding-top: 50px;
+  @include adaptive-value(padding-bottom, 70, 20);
   background-color: #f7f9f9;
 
   overflow-x: hidden;
@@ -9,14 +9,18 @@
   &::after {
     content: "";
     display: block;
-    width: 110%;
-    height: 30px;
+    width: 120%;
+    @include adaptive-value(height, 70, 40);
 
     background-color: #fff;
     border-radius: 50% 50% 50% 50% / 0% 0% 100% 100%;
 
     position: absolute;
-    left: -5%;
-    top: 0;
+    left: -10%;
+    top: -8%;
+
+    @media (max-width: 991.5px) {
+      top: -6px;
+    }
   }
 }

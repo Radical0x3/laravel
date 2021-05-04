@@ -1,6 +1,17 @@
 .time {
   display: flex;
 
+  &__dash {
+    display: inline-block;
+    margin: -2px 3px 0 0;
+
+    font-size: 14px;
+
+    @media (max-width: 991.5px) {
+      margin: 0 5px 0 0;
+    }
+  }
+
   svg {
     width: 18px;
     height: 18px;

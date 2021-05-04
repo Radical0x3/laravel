@@ -1,6 +1,145 @@
 .shop {
   max-width: 1920px;
-  @include adaptive-value(padding, 30, 10);
-  margin: 0 auto 10px;
+  @include adaptive-value(padding-top, 35, 10);
+  @include adaptive-value(padding-left, 40, 10);
+  @include adaptive-value(padding-right, 40, 10);
+  margin: 0 auto;
   overflow-x: hidden;
+
+  &__column {
+    &:nth-child(1) {
+      .shop__inner {
+        &:first-child {
+          margin-bottom: 36px;
+
+          @media (max-width: 1200px) {
+            margin-bottom: 20px;
+
+            .btn {
+              margin-left: 0 !important;
+            }
+          }
+
+          .btn {
+            margin-left: 9px !important;
+          }
+        }
+
+        &:last-child {
+          .btn {
+            margin-left: 14px !important;
+          }
+
+          @media (max-width: 1200px) {
+            .btn {
+              margin-left: 0 !important;
+            }
+          }
+        }
+      }
+
+      .row {
+        padding-right: 26px !important;
+
+        @media (max-width: 1200px) {
+          padding-right: 10px !important;
+        }
+
+        @media (max-width: 450px) {
+          padding-right: 0 !important;
+        }
+      }
+
+      @media (max-width: 991.5px) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &:nth-child(2) {
+      .row {
+        height: 100%;
+        padding-left: 10px !important;
+        padding-right: 5px !important;
+
+        @media (max-width: 991.5px) {
+          padding-right: 0 !important;
+        }
+
+        @media (max-width: 450px) {
+          padding-left: 0 !important;
+        }
+      }
+
+      .box {
+        height: 100%;
+      }
+
+      .btn {
+        padding-bottom: 12px;
+        padding-top: 12px;
+      }
+
+      @media (max-width: 991.5px) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &:nth-child(3) {
+      padding-left: 31px !important;
+
+      @media (max-width: 1200px) {
+        padding-left: 15px !important;
+      }
+
+      @media (max-width: 991.5px) {
+        padding-left: 0 !important;
+      }
+
+      .shop__inner {
+        &:first-child {
+          padding-right: 10px !important;
+          margin-bottom: 36px !important;
+
+          .btn {
+            padding-bottom: 10px;
+            padding-top: 10px;
+            margin-left: 20px;
+          }
+
+          @media (max-width: 1200px) {
+            margin-bottom: 20px !important;
+
+            .btn {
+              margin-left: 0 !important;
+            }
+          }
+
+          @media (max-width: 450px) {
+            padding-right: 0 !important;
+          }
+        }
+
+        &:nth-child(2) {
+          padding-left: 10px !important;
+          margin-bottom: 36px !important;
+
+          .btn {
+            margin-left: 30px;
+          }
+
+          @media (max-width: 1200px) {
+            margin-bottom: 20px !important;
+
+            .btn {
+              margin-left: 0 !important;
+            }
+          }
+
+          @media (max-width: 450px) {
+            padding-left: 0 !important;
+          }
+        }
+      }
+    }
+  }
 }

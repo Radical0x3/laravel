@@ -1,39 +1,30 @@
-// .scrollbar-track-x {
-//   width: 90% !important;
-//   max-width: 1188px !important;
-//   height: 4px !important;
-//   background: rgba(#000, 0.1) !important;
-//   border-radius: 3px !important;
+.simplebar {
+  &-track {
+    background: rgba(#000, 0.1);
+    border-radius: 3px;
+    opacity: 1 !important;
+  }
 
-//   left: 50% !important;
-//   transform: translateX(-50%);
-// }
+  &-horizontal {
+    width: 95% !important;
+    max-width: 1188px !important;
+    height: 4px !important;
 
-// .scrollbar-thumb-x {
-//   // max-width: 250px;
-//   background: #000 !important;
-//   height: 4px !important;
-//   border-radius: 3px !important;
-// }
+    left: 50% !important;
+    transform: translateX(-50%);
 
-// .ps__rail-x {
-//   height: 4px;
-//   max-height: 4px;
-//   max-width: 1188px;
-//   display: block;
-//   background-color: rgba(#000, 0.1) !important;
-//   opacity: 1;
-//   border-radius: 3px;
+    .simplebar-scrollbar {
+      height: 4px !important;
+      background: #000;
+      border-radius: 3px;
 
-//   &:hover {
-//     opacity: 1;
-//   }
-// }
+      top: 0 !important;
+    }
+  }
 
-// .ps__thumb-x {
-//   height: 4px;
-//   max-height: 4px;
-//   background-color: #000;
-//   border-radius: 3px;
-//   bottom: 0;
-// }
+  &-scrollbar {
+    &::before {
+      opacity: 1 !important;
+    }
+  }
+}

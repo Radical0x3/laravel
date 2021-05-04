@@ -1,0 +1,35 @@
+.scroll-up {
+  text-align: center;
+
+  &-abs {
+    position: absolute;
+    @include adaptive-value(top, 58, 20);
+    right: 5%;
+
+    @media (max-width: 1600px) {
+      right: 1%;
+    }
+
+    @media (max-width: 1450px) {
+      display: none;
+    }
+  }
+
+  &__body {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $light-grey;
+    border-radius: 50%;
+    margin-bottom: 8px;
+  }
+
+  span {
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+}

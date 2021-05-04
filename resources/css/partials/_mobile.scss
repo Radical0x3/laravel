@@ -3,7 +3,7 @@
   height: 100%;
   background: #fff;
   padding: 0 10px 10px;
-  @include adaptive-value(padding-top, 120, 60);
+  @include adaptive-value(padding-top, 120, 70);
 
   overflow-x: hidden;
   overflow-y: auto;

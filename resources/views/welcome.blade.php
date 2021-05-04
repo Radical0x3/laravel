@@ -11,11 +11,11 @@
 </head>
 
 <body id="home">
-  <header class="header">
+  <header class="header js-accordion-group">
     <div class="wrapper lock-padding">
       <div class="container-fluid px-0">
-        <div class="row header-row mx-0 mb-md-3 d-xl-flex d-none align-items-center justify-content-between js-row-1">
-          <div class="col-xxl-3 col-md-1 mr-xxl-5 mr-md-6 pl-0 js-logo-wrap">
+        <div class="row header__row d-xl-flex d-none align-items-center justify-content-between js-row-1">
+          <div class="header__column col-xxl-3 col-md-1 px-0 js-logo-wrap">
             <a href="#">
               <svg class="logo">
                 <use href="{{ asset('images/icons/spritemap.svg#sprite-wezom-logo') }}"></use>
@@ -23,7 +23,7 @@
             </a>
           </div>
 
-          <div class="col mr-xxl-5 mr-0 d-flex align-items-center justify-content-between js-menu-wrap">
+          <div class="header__column col px-0 d-flex align-items-center justify-content-between js-menu-wrap">
             <nav class="menu main-menu js-menu">
               <div class="menu__item main-menu__item js-menu-item active">
                 <a href="#" class="menu__link link-decor">О Компании</a>
@@ -39,11 +39,11 @@
               </div>
             </nav>
             <div class="phones js-accordion">
-              <div class="phones__top js-accordion-header">
+              <div class="phones__top js-accordion-header js-accordion-header-to-hide">
                 <a href="tel:+380680000000" class="phones__text">+38 068 000 00 00</a>
-                <div class="arrow arrow-down js-accordion-btn"></div>
+                <div class="arrow arrow-small arrow-down js-accordion-btn"></div>
               </div>
-              <div class="phones__body js-accordion-body">
+              <div class="phones__body js-accordion-body js-accordion-body-to-hide">
                 <a href="tel:+380680000001" class="phones__text phones__body-text">+38 068 000 00 01</a>
                 <a href="tel:+380680000002" class="phones__text phones__body-text">+38 068 000 00 02</a>
                 <a href="tel:+380680000003" class="phones__text phones__body-text">+38 068 000 00 03</a>
@@ -51,7 +51,7 @@
             </div>
           </div>
 
-          <div class="col-xl-2 px-0 d-flex justify-content-end align-items-center js-lang-wrap">
+          <div class="header__column col-xl-2 px-0 d-flex justify-content-end align-items-center js-lang-wrap">
             <div class="menu lang-menu mr-xxl-6 mr-0">
               <div class="menu__item lang-menu__item">
                 <a href="#" class="menu__link menu__link_dark">Ua</a>
@@ -69,14 +69,14 @@
           </div>
         </div>
 
-        <div class="row header-row mx-0 js-row-2">
-          <div class="col-1 px-0 align-items-center main-hamburger">
+        <div class="row header__row js-row-2">
+          <div class="header__column col-1 px-0 align-items-center main-hamburger">
             <div class="hamburger js-main-hamburger">
               <div class="hamburger__body"></div>
             </div>
           </div>
 
-          <div class="col-xl-3 d-xl-block d-none mr-xl-5 mr-0 pl-0">
+          <div class="header__column col-xl-3 d-xl-block d-none px-0">
             <div class="catalog">
               <div class="catalog__action">
                 <div class="hamburger">
@@ -89,7 +89,7 @@
             </div>
           </div>
 
-          <div class="col mr-xl-5 mr-0 d-flex align-items-center">
+          <div class="header__column col-7 d-flex align-items-center">
             <form action="#" class="form">
               <input type="text" name="search" class="form__search" placeholder="Поиск, например “турбина”">
               <div class="form__submit js-search-submit">
@@ -101,9 +101,9 @@
           </div>
 
           <div
-            class="col-xl-2 col-m-3 col-4 px-0 d-flex align-items-center justify-content-xl-start justify-content-end js-user-button-wrap">
-            <div class="row _w100 justify-content-xl-start justify-content-end">
-              <div class="col-4 user-button d-xl-flex d-none">
+            class="header__column col-xl-2 col-4 px-0 d-flex align-items-center justify-content-xl-start justify-content-end js-user-button-wrap">
+            <div class="row justify-content-xl-start justify-content-end">
+              <div class="header__inner col-4 user-button d-xl-flex d-none">
                 <div class="user-button__body">
                   <svg class="user-button__icon">
                     <use href="{{ asset('images/icons/spritemap.svg#sprite-top-compare') }}"></use>
@@ -111,7 +111,7 @@
                 </div>
               </div>
 
-              <div class="col-4 user-button d-xl-flex d-none">
+              <div class="header__inner col-4 px-0 user-button d-xl-flex d-none">
                 <div class="user-button__body">
                   <svg class="user-button__icon">
                     <use href="{{ asset('images/icons/spritemap.svg#sprite-top-wish') }}"></use>
@@ -119,7 +119,7 @@
                 </div>
               </div>
 
-              <div class="col-xl-4 col-md-5 col-6 user-button cart-button mr-xl-0 mr-sm-2">
+              <div class="header__inner col-xl-4 col-md-5 col-7 px-0 user-button cart-button">
                 <div class="user-button__body">
                   <svg class="user-button__icon">
                     <use href="{{ asset('images/icons/spritemap.svg#sprite-top-cart') }}"></use>
@@ -128,7 +128,7 @@
                 </div>
               </div>
 
-              <div class="col-md-6 col-4 d-xl-none d-flex align-items-center justify-content-center pl-0">
+              <div class="header__inner col-md-4 col-3 d-xl-none d-flex align-items-center justify-content-end px-0">
                 <a href="#" class="user-action log-in d-xl-none d-flex">
                   <span class="user-action__text">Войти</span>
                   <svg class="user-action__icon">
@@ -144,7 +144,7 @@
   </header>
 
   <main class="main">
-    <div class="mobile js-mobile">
+    <div class="mobile js-mobile js-accordion-group">
       <div class="container-fluid _h100">
         <div class="row _h100 justify-content-between">
           <div class="col-12 mb-3">
@@ -189,7 +189,7 @@
                 <div class="phones js-accordion">
                   <div class="phones__top js-accordion-header">
                     <a href="tel:+380680000000" class="phones__text">+38 068 000 00 00</a>
-                    <div class="arrow arrow-down js-accordion-btn"></div>
+                    <div class="arrow arrow-small arrow-down js-accordion-btn"></div>
                   </div>
                   <div class="phones__body js-accordion-body">
                     <a href="tel:+380680000001" class="phones__text phones__body-text">+38 068 000 00 01</a>
@@ -205,7 +205,7 @@
                 <div class="catalog mobile-catalog js-accordion">
                   <div class="mobile-catalog__top js-accordion-header">
                     <span class="catalog__text mobile-catalog__text">каталог</span>
-                    <div class="arrow arrow-down js-accordion-btn"></div>
+                    <div class="arrow arrow-small arrow-down js-accordion-btn"></div>
                   </div>
 
                   <div class="mobile-catalog__body js-accordion-body">
@@ -250,9 +250,9 @@
     <section class="top">
       <div class="categories">
         <div class="wrapper">
-          <header class="categories__top container-fluid">
-            <div class="row align-items-center justify-content-sm-between justify-content-center">
-              <div class="section-title col-md-8 col-sm-7 mb-sm-0 mb-3">Популярные категории</div>
+          <header class="categories__top container-fluid px-0">
+            <div class="categories__row row align-items-center justify-content-sm-between justify-content-center">
+              <div class="section-title categories__title col-md-8 col-sm-7 px-0">Популярные категории</div>
               <a href="#" class="btn btn-sm btn-transparent btn-round col-md-4 col-sm-5">
                 Все категории
               </a>
@@ -296,10 +296,12 @@
 
     <section class="other">
       <div class="container-fluid text-section">
-        <div class="row col-12 justify-content-center">
-          <p class="text">
-            Тут должен быть какой то текст, потом придумаем какой точно будет =)
-          </p>
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <p class="text">
+              Тут должен быть какой то текст, потом придумаем какой точно будет =)
+            </p>
+          </div>
         </div>
       </div>
 
@@ -307,16 +309,18 @@
         <div class="recall">
           <div class="container-fluid">
             <div class="row justify-content-center">
-              <div class="recall__inner">
-                <button class="btn btn-lg btn-gradient btn-svg btn-round ">
-                  <span>замовити зворотній зв’язок</span>
-                  <svg>
-                    <use href="{{ asset('images/icons/spritemap.svg#sprite-right-arrow') }}"></use>
+              <div class="col-12">
+                <div class="recall__inner">
+                  <button class="btn btn-lg btn-gradient btn-svg btn-round ">
+                    <span>замовити зворотній зв’язок</span>
+                    <svg>
+                      <use href="{{ asset('images/icons/spritemap.svg#sprite-right-arrow') }}"></use>
+                    </svg>
+                  </button>
+                  <svg class="circle-vector">
+                    <use href="{{ asset('images/icons/spritemap.svg#sprite-circle') }}"></use>
                   </svg>
-                </button>
-                <svg class="circle-vector">
-                  <use href="{{ asset('images/icons/spritemap.svg#sprite-circle') }}"></use>
-                </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -329,18 +333,18 @@
         @isset($cards)
           <div class="cards">
             <div class="wrapper">
-              <div class="container-fluid overflow-hidden">
+              <div class="cards__container container-fluid overflow-hidden px-0">
                 <div class="row align-items-stretch">
                   @foreach ($cards as $card)
-                    <div class="col-lg-3 col-md-4 col-m-6 mb-3">
+                    <div class="cards__inner col-lg-3 col-md-4 col-m-6 px-0">
                       <div class="card">
                         <p class="card__text">{{ $card['text'] }}</p>
                         <div class="time">
                           <svg>
                             <use href="{{ asset('images/icons/spritemap.svg#sprite-clock') }}"></use>
                           </svg>
-                          <span>&mdash; &nbsp;</span>
-                          <span>{{ $card['duration'] }} min</span>
+                          <span class="time__dash">—</span>
+                          <span class="time__duration">{{ $card['duration'] }} min</span>
                         </div>
                       </div>
                     </div>
@@ -361,12 +365,16 @@
       <img src="{{ asset('images/pop.png') }}" alt="pop image" class="pop">
     </section>
 
+    @php
+      $shopItems = ['Снаряжение', 'Ножи и инструменты', 'Оружие', 'Патроны', 'Аксессуары', 'Тир'];
+    @endphp
+
     <section class="shop">
-      <div class="container-fluid px-0">
-        <div class="row">
-          <div class="col col-xs-12 pr-xl-4 pr-lg-1 mb-lg-0 mb-md-4 mb-3">
-            <div class="row">
-              <div class="col-12 mb-lg-5 mb-md-4 mb-3">
+      <div class="container-fluid">
+        <div class="row px-0">
+          <div class="shop__column col-lg-3 col-m-6 col-12 px-0">
+            <div class="row mx-0">
+              <div class="shop__inner col-12 px-0">
                 <div class="box">
                   <picture>
                     <source srcset="{{ asset('images/shop/shop-1.webp') }}" type="image/webp">
@@ -378,7 +386,8 @@
                   </a>
                 </div>
               </div>
-              <div class="col-12">
+
+              <div class="shop__inner col-12 px-0">
                 <div class="box">
                   <picture>
                     <source srcset="{{ asset('images/shop/shop-2.webp') }}" type="image/webp">
@@ -393,10 +402,10 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-m-6 col-12 pr-xl-4 pr-lg-1 mb-lg-0 mb-md-4 mb-3">
-            <div class="row _h100">
-              <div class="col">
-                <div class="box box-h-100">
+          <div class="shop__column col-lg-3 col-m-6 col-12 px-0">
+            <div class="row mx-0">
+              <div class="shop__inner col px-0">
+                <div class="box">
                   <picture>
                     <source srcset="{{ asset('images/shop/shop-3.webp') }}" type="image/webp">
                     <img src="{{ asset('images/shop/shop-3.jpg') }}" alt="box image" class="box__img">
@@ -410,9 +419,9 @@
             </div>
           </div>
 
-          <div class="col-lg-6 col-12">
-            <div class="row">
-              <div class="col-m-6 col-12 mb-lg-5 mb-md-4 mb-3">
+          <div class="shop__column col-lg-6 col-12 px-0">
+            <div class="row mx-0">
+              <div class="shop__inner col-m-6 col-12 px-0">
                 <div class="box">
                   <picture>
                     <source srcset="{{ asset('images/shop/shop-4.webp') }}" type="image/webp">
@@ -424,7 +433,7 @@
                   </a>
                 </div>
               </div>
-              <div class="col-m-6 col-12 mb-lg-0 mb-md-4 mb-3">
+              <div class="shop__inner col-m-6 col-12 px-0">
                 <div class="box">
                   <picture>
                     <source srcset="{{ asset('images/shop/shop-5.webp') }}" type="image/webp">
@@ -437,7 +446,7 @@
                 </div>
               </div>
 
-              <div class="col-12">
+              <div class="col-12 px-0">
                 <div class="box">
                   <picture>
                     <source srcset="{{ asset('images/shop/shop-6.webp') }}" type="image/webp">
@@ -479,11 +488,11 @@
     @endphp
 
     @isset($goods)
-      <section class="goods custom-scrollbar overflow-x-auto">
-        <div class="container-fluid px-0 goods__outer">
+      <section class="goods custom-scrollbar" data-simplebar>
+        <div class="goods__outer container-fluid">
           <div class="row flex-nowrap align-items-stretch goods__inner" data-scrollbar>
             @foreach ($goods as $item)
-              <div class="col-lg-3 col-md-4 col-m-6 col-12 pl-lg-4 pl-md-3 pl-2">
+              <div class="js-scroll-item col-lg-3 col-md-4 col-m-6 col-12 pl-lg-4 pl-md-3 pl-2">
                 <div class="product">
                   @if (array_key_exists('label', $item))
                     @php
@@ -559,6 +568,216 @@
     @endisset
   </main>
 
+  <footer class="footer js-accordion-group">
+    <div class="footer__body">
+      <div class="container-fluid px-0 mb-lg-0">
+        <div class="row footer__row justify-content-between">
+          <div
+            class="col-xl-4 col-lg-5 col-12 d-lg-block d-flex justify-content-center align-items-center mb-lg-0 mb-3">
+            <a href="#" class="footer-logo mr-lg-0 mr-5">
+              <svg class="logo ">
+                <use href="{{ asset('images/icons/spritemap.svg#sprite-wezom-logo') }}"></use>
+              </svg>
+            </a>
+
+            <div class="menu-social">
+              <a href="https://www.instagram.com/" target="_blank" class="menu-social__item">
+                <svg class="menu-social__icon">
+                  <use href="{{ asset('images/icons/spritemap.svg#sprite-instagram') }}"></use>
+                </svg>
+              </a>
+              <a href="https://www.facebook.com/" target="_blank" class="menu-social__item">
+                <svg class="menu-social__icon">
+                  <use href="{{ asset('images/icons/spritemap.svg#sprite-facebook') }}"></use>
+                </svg>
+              </a>
+              <a href="https://www.facebook.com/" target="_blank" class="menu-social__item">
+                <svg class="menu-social__icon">
+                  <use href="{{ asset('images/icons/spritemap.svg#sprite-twitter') }}"></use>
+                </svg>
+              </a>
+              <a href="https://youtube.com/" target="_blank" class="menu-social__item">
+                <svg class="menu-social__icon">
+                  <use href="{{ asset('images/icons/spritemap.svg#sprite-youtube') }}"></use>
+                </svg>
+              </a>
+            </div>
+
+            <div class="payments payments-top">
+              <a href="https://novaposhta.ua/ru" target="_blank" class="nova-poshta">
+                <svg class="nova-poshta__icon">
+                  <use href="{{ asset('images/icons/spritemap.svg#sprite-nova-poshta') }}"></use>
+                </svg>
+              </a>
+
+              <div class="menu-payments">
+                <a href="https://www.visa.com.ua/" target="_blank" class="menu-payments__item">
+                  <svg class="menu-payments__icon">
+                    <use href="{{ asset('images/icons/spritemap.svg#sprite-visa') }}"></use>
+                  </svg>
+                </a>
+                <a href="https://www.mastercard.ua/uk-ua.html" target="_blank" class="menu-payments__item">
+                  <svg class="menu-payments__icon">
+                    <use href="{{ asset('images/icons/spritemap.svg#sprite-mastercard') }}"></use>
+                  </svg>
+                </a>
+                <a href="https://www.mastercard.ua/uk-ua.html" target="_blank" class="menu-payments__item">
+                  <svg class="menu-payments__icon">
+                    <use href="{{ asset('images/icons/spritemap.svg#sprite-maestro') }}"></use>
+                  </svg>
+                </a>
+                <a href="https://www.paypal.com/ru/home" target="_blank" class="menu-payments__item">
+                  <svg class="menu-payments__icon">
+                    <use href="{{ asset('images/icons/spritemap.svg#sprite-paypal') }}"></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-m-7 col-12 d-m-flex px-lg-0 _w100 mb-lg-0 mb-m-3">
+            <div class="row">
+              <div class="col-m-6 col-12">
+                <div class="links-list js-accordion pr-m-3">
+                  <div class="links-list__top js-accordion-header">
+                    <a href="#" class="links-list__header">Каталог</a>
+                    <div class="arrow arrow-small arrow-down js-accordion-btn"></div>
+                  </div>
+                  <div class="links-list__body js-accordion-body">
+                    <a href="#" class="links-list__item">Ноутбуки</a>
+                    <a href="#" class="links-list__item">Планшеты</a>
+                    <a href="#" class="links-list__item">Аксессуары для планшетов и электронных книг</a>
+                    <a href="#" class="links-list__item">Кабели и переходники</a>
+                    <a href="#" class="links-list__item">Сумки для ноутбуков</a>
+                    <a href="#" class="links-list__item">Автотовары</a>
+                    <a href="#" class="links-list__item">Сантехника</a>
+                    <a href="#" class="links-list__item">Ремонт</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-m-6 col-12">
+                <div class="links-list js-accordion">
+                  <div class="links-list__top js-accordion-header">
+                    <a href="#" class="links-list__header">Клиентам</a>
+                    <div class="arrow arrow-small arrow-down js-accordion-btn"></div>
+                  </div>
+                  <div class="links-list__body js-accordion-body">
+                    <a href="#" class="links-list__item">Политика конфиденциальности</a>
+                    <a href="#" class="links-list__item">Доставка и оплата</a>
+                    <a href="#" class="links-list__item">Способы оплаты</a>
+                    <a href="#" class="links-list__item">Гарантия</a>
+                    <a href="#" class="links-list__item">Регенерация турбины</a>
+                    <a href="#" class="links-list__item">Контакты</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-xl-2 col-md-3 col-sm-4 col-m-5 col-12 d-m-flex justify-content-sm-start justify-content-m-center mb-lg-0 mb-3">
+            <div class="links-list phones-list js-accordion">
+              <div class="links-list__top js-accordion-header">
+                <a href="#" class="links-list__header">Горячая линия</a>
+                <div class="arrow arrow-small arrow-down js-accordion-btn"></div>
+              </div>
+              <div class="links-list__body js-accordion-body">
+                <a href="tel:0800000000" class="links-list__item links-list__item_big">0 800 000 000</a>
+                <a href="tel:+380680000000" class="links-list__item links-list__item_medium">+38 068 000 00 00</a>
+                <a href="tel:+380990000000" class="links-list__item links-list__item_medium">+38 099 000 00 00</a>
+                <a href="tel:+380960000000" class="links-list__item links-list__item_medium">+38 096 000 00 00</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 d-xxl-none mt-xxl-0 mt-lg-3">
+            <div class="row align-items-sm-center align-items-end justify-content-center">
+              <div class="col-8 d-lg-none">
+                <div class="payments">
+                  <a href="#" class="nova-poshta">
+                    <svg class="nova-poshta__icon">
+                      <use href="{{ asset('images/icons/spritemap.svg#sprite-nova-poshta') }}"></use>
+                    </svg>
+                  </a>
+
+                  <div class="menu-payments">
+                    <a href="#" class="menu-payments__item">
+                      <svg class="menu-payments__icon">
+                        <use href="{{ asset('images/icons/spritemap.svg#sprite-visa') }}"></use>
+                      </svg>
+                    </a>
+                    <a href="#" class="menu-payments__item">
+                      <svg class="menu-payments__icon">
+                        <use href="{{ asset('images/icons/spritemap.svg#sprite-mastercard') }}"></use>
+                      </svg>
+                    </a>
+                    <a href="#" class="menu-payments__item">
+                      <svg class="menu-payments__icon">
+                        <use href="{{ asset('images/icons/spritemap.svg#sprite-maestro') }}"></use>
+                      </svg>
+                    </a>
+                    <a href="#" class="menu-payments__item">
+                      <svg class="menu-payments__icon">
+                        <use href="{{ asset('images/icons/spritemap.svg#sprite-paypal') }}"></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-auto d-xxl-none">
+                <div class="scroll-up">
+                  <div class="scroll-up__body">
+                    <a href="#home" class="arrow arrow-big arrow-up js-scroll-to"></a>
+                  </div>
+                  <span>Вверх</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid px-0">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-4">
+            <span class="copyright">2020 © Test</span>
+          </div>
+          <div class="col-lg-2 col-md-3 col-8">
+            <a href="https://wezom.com.ua/" target="_blank" class="developed-by">Разработка \\ Wezom</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-up scroll-up-abs">
+      <div class="scroll-up__body">
+        <a href="#home" class="arrow arrow-big arrow-up js-scroll-to"></a>
+      </div>
+      <span>Вверх</span>
+    </div>
+  </footer>
+
+  <div class="coockie js-coockie">
+    <div class="container-fluid px-lg-4 px-3 py-lg-4 py-3">
+      <div class="row justify-content-center">
+        <div class="col-sm-9 col-12 mb-sm-0 mb-3">
+          <p class="coockie__text">
+            Этот сайт использует файлы cookies для более комфортной работы пользователя. Продолжая просмотр страниц
+            сайта, вы соглашаетесь с использованием файлов cookies. Если вам нужна дополнительная информация или вы не
+            хотите соглашаться с использованием cookies, пожалуйста, посетите страницу <a href="#">"Про cookies"</a>
+          </p>
+        </div>
+
+        <div class="col-3 d-flex align-items-center justify-content-center">
+          <a class="btn coockie__btn js-coockie-btn">
+            Согласен
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="{{ asset('js/app.js') }}"></script>
 </body>

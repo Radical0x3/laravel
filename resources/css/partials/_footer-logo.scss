@@ -1,0 +1,13 @@
+.footer-logo {
+  display: block;
+  margin-bottom: 9%;
+
+  svg {
+    @include adaptive-value(width, 114, 80);
+    fill: #fff;
+  }
+
+  @media (max-width: 991.5px) {
+    margin-bottom: 0;
+  }
+}

@@ -1,39 +1,20 @@
 .goods {
   max-width: 1920px;
+  width: 100%;
+  height: auto;
   padding: 10px 0;
   @include adaptive-value(padding-left, 16, 10);
   @include adaptive-value(padding-right, 30, 10);
-  @include adaptive-value(padding-bottom, 41, 15);
-  margin: 0 auto 30px;
+  @include adaptive-value(padding-bottom, 41, 21);
+  margin: 0 auto 8%;
   position: relative;
+  overflow-y: hidden !important;
 
   &__outer {
     margin-top: -20px;
   }
 
   &__inner {
-    padding-top: 25px;
-  }
-
-  .row {
-    // scrollbar-width: thin;
-    // scrollbar-color: #000 rgba(#000, 0.1);
-    // @include adaptive-value(padding-bottom, 37, 15);
-
-    // &::-webkit-scrollbar {
-    //   width: 1180px;
-    //   height: 4px;
-    //   overflow: hidden;
-    //   border-radius: 3px;
-    // }
-
-    // &::-webkit-scrollbar-track {
-    //   background: rgba(#000, 0.1);
-    // }
-
-    // &::-webkit-scrollbar-thumb {
-    //   background-color: #000;
-    //   border-radius: 3px;
-    // }
+    padding-top: 53px;
   }
 }

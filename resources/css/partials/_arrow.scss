@@ -1,21 +1,34 @@
 .arrow {
   border: solid $secondary-orange;
-  border-width: 0 2px 2px 0;
   display: inline-block;
-  padding: 2px;
-
   transition: 0.3s;
 
   &-down {
     transform: rotate(45deg);
   }
 
-  &:hover {
-    border-color: $dark-blue;
+  &-up {
+    transform: rotate(-135deg);
   }
 
-  @media (max-width: 1199.5px) {
+  &-small {
+    border-width: 0 2px 2px 0;
+    padding: 2px;
+
+    @media (max-width: 1199.5px) {
+      border-width: 0 3px 3px 0;
+      padding: 3px;
+    }
+  }
+
+  &-big {
     border-width: 0 3px 3px 0;
-    padding: 3px;
+    padding: 7px;
+    border-color: $smoke-blue;
+    margin-top: 7px;
+  }
+
+  &:hover {
+    border-color: $dark-blue;
   }
 }

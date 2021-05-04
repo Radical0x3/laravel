@@ -59,7 +59,7 @@
       transform: matrix(1, 0, 0, -1, 0, 0);
       position: absolute;
       @include adaptive-value(right, -358, -100);
-      bottom: -46px;
+      bottom: -40px;
     }
   }
 
@@ -107,8 +107,8 @@
     object-fit: cover;
 
     position: absolute;
-    top: -20px;
-    right: -23px;
+    top: -19px;
+    right: -7px;
     z-index: 1;
   }
 }

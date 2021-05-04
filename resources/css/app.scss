@@ -1,54 +1,69 @@
-@import "partials/vars";
 @import "custom";
-@import "~normalize.css/normalize.css";
+@import "partials/vars";
+
 @import "~bootstrap/scss/bootstrap-grid.scss";
-@import "~perfect-scrollbar/css/perfect-scrollbar.css";
-@import "partials/header";
-@import "partials/logo";
-@import "partials/menu";
-@import "partials/link-decor";
-@import "partials/phones";
+@import "~normalize.css/normalize.css";
+@import "~simplebar/dist/simplebar.min.css";
+
 @import "partials/arrow";
-@import "partials/user-action";
-@import "partials/catalog";
-@import "partials/hamburger";
-@import "partials/main-hamburger";
-@import "partials/form";
-@import "partials/log-in";
-@import "partials/user-button";
-@import "partials/user-mobile-button";
-@import "partials/lang-menu";
-@import "partials/main-menu";
-@import "partials/main-blur";
+@import "partials/bottom";
+@import "partials/box";
+@import "partials/btn";
+@import "partials/card";
+@import "partials/cards";
 @import "partials/cart-button";
-@import "partials/top";
-@import "partials/mobile";
-@import "partials/mobile-catalog";
-@import "partials/wrapper";
+@import "partials/catalog";
 @import "partials/categories";
 @import "partials/category";
-@import "partials/text";
-@import "partials/text-section";
-@import "partials/empty-section";
-@import "partials/section-title";
-@import "partials/btn";
 @import "partials/circle";
+@import "partials/coockie";
+@import "partials/copyright";
+@import "partials/developed-by";
+@import "partials/empty-section";
+@import "partials/footer";
+@import "partials/footer-logo";
+@import "partials/form";
+@import "partials/goods";
+@import "partials/hamburger";
+@import "partials/header";
+@import "partials/label";
+@import "partials/lang-menu";
+@import "partials/link-decor";
+@import "partials/links-list";
+@import "partials/log-in";
+@import "partials/logo";
+@import "partials/main-hamburger";
+@import "partials/main-blur";
+
+@import "partials/menu";
+@import "partials/main-menu";
+
+@import "partials/menu-payments";
+@import "partials/menu-social";
+@import "partials/mobile";
+@import "partials/mobile-catalog";
+@import "partials/nova-poshta";
+@import "partials/payments";
+@import "partials/phones";
 @import "partials/pop";
-@import "partials/slider";
-@import "partials/bottom";
-@import "partials/recall";
-@import "partials/cards";
-@import "partials/card";
-@import "partials/time";
-@import "partials/shop";
-@import "partials/box";
-@import "partials/product";
-@import "partials/rating";
 @import "partials/price";
 @import "partials/prices";
-@import "partials/label";
-@import "partials/goods";
+@import "partials/product";
+@import "partials/rating";
+@import "partials/recall";
 @import "partials/scrollbar";
+@import "partials/scroll-up";
+@import "partials/section-title";
+@import "partials/shop";
+@import "partials/slider";
+@import "partials/text";
+@import "partials/text-section";
+@import "partials/time";
+@import "partials/top";
+@import "partials/user-action";
+@import "partials/user-button";
+@import "partials/user-mobile-button";
+@import "partials/wrapper";
 
 html {
   overflow-x: hidden;
@@ -67,7 +82,7 @@ body {
 
 .main {
   @media (max-width: 1199.5px) {
-    @include adaptive-value(padding-top, 120, 60);
+    @include adaptive-value(padding-top, 120, 70);
   }
 }
 
@@ -104,4 +119,18 @@ body {
 
 .mobile-logo {
   fill: $dark-blue;
+}
+
+.payments-top {
+  @media (max-width: 991.5px) {
+    display: none;
+  }
+}
+
+.phones-list {
+  padding-left: 20px;
+
+  @media (max-width: 450px) {
+    padding-left: 0;
+  }
 }

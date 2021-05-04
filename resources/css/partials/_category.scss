@@ -19,7 +19,7 @@
   &__image {
     &-wrap {
       display: block;
-      margin-bottom: 20px;
+      margin-bottom: 17px;
 
       position: relative;
 
@@ -35,6 +35,8 @@
   }
 
   &__link {
+    display: inline-block;
+    width: 95%;
     @include adaptive-value(font-size, 30, 18);
     @include adaptive-value(line-height, 40, 26);
     color: #fff;

@@ -17,14 +17,15 @@
   transition: 0.3s;
 
   &-sm {
-    max-width: 190px !important;
-    @include adaptive-value(padding-left, 34, 15);
-    @include adaptive-value(padding-right, 34, 15);
+    max-width: 188px !important;
+    @include adaptive-value(padding-left, 32, 15);
+    @include adaptive-value(padding-right, 32, 15);
+    margin-top: 1px;
   }
 
   &-lg {
     @include adaptive-value(padding-left, 56, 20);
-    @include adaptive-value(padding-right, 30, 20);
+    @include adaptive-value(padding-right, 27, 20);
   }
 
   &-transparent {
@@ -44,10 +45,14 @@
   &-svg {
     display: flex;
     align-items: center;
-    margin: 0 auto;
+    margin-left: -7px;
+
+    @media (max-width: 991.5px) {
+      margin: 0 auto;
+    }
 
     span {
-      @include adaptive-value(margin-right, 25, 10);
+      @include adaptive-value(margin-right, 24, 10);
     }
 
     svg {
@@ -74,12 +79,12 @@
   &-rect {
     @include family("Montserrat");
     @include adaptive-value(font-size, 16, 14);
-    line-height: 20px;
+    line-height: 1.3;
     font-weight: 700;
     border-radius: 3px;
-    padding: 13px 0;
-    @include adaptive-value(padding-left, 30, 15);
-    @include adaptive-value(padding-right, 30, 15);
+    padding: 11px 0;
+    @include adaptive-value(padding-left, 28, 14);
+    @include adaptive-value(padding-right, 28, 14);
   }
 
   &:hover {

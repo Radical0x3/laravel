@@ -18,6 +18,11 @@
         margin-top: 3px;
       }
     }
+
+    @media (max-width: 1199.5px) {
+      width: 100%;
+      justify-content: space-between;
+    }
   }
 
   &__body {

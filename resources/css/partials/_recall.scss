@@ -1,8 +1,10 @@
 .recall {
-  @include adaptive-value(padding-bottom, 124, 34);
+  @include adaptive-value(padding-bottom, 141, 34);
 
   &__inner {
-    max-width: 385px !important;
+    max-width: 370px !important;
+    margin: 0 auto;
+
     position: relative;
 
     span {

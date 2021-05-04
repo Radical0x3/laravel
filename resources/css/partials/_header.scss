@@ -2,17 +2,136 @@
   padding: 0 10px;
   @include adaptive-value(padding-top, 16, 5);
   @include adaptive-value(padding-bottom, 16, 5);
+  margin-bottom: 7px;
   position: relative;
   z-index: 99;
 
   @media (max-width: 1199.5px) {
     width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
     background: $secondary-orange;
 
     position: fixed;
     top: 0;
     left: 0;
+  }
+
+  &__row {
+    &:nth-child(1) {
+      margin-bottom: 15px;
+
+      .header__column {
+        &:nth-child(1) {
+          padding-right: 13px !important;
+        }
+
+        &:nth-child(2) {
+          padding: 0 65px 0 47px !important;
+          margin-top: -5px !important;
+
+          .link-decor {
+            &::before {
+              left: 3px !important;
+              bottom: -6px !important;
+            }
+          }
+
+          .menu__link {
+            margin-right: 9px !important;
+
+            &:not(:last-child) {
+              &::after {
+                margin-top: 2px;
+              }
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          margin-top: -9px;
+          padding-right: 12px !important;
+
+          .menu__item {
+            margin-right: 5px !important;
+
+            &::after {
+              margin: 0 5px;
+            }
+          }
+
+          .menu__link {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      @media (max-width: 1199.5px) {
+        margin: 0;
+      }
+
+      .header__column {
+        &:nth-child(2) {
+          padding-right: 13px !important;
+        }
+
+        &:nth-child(3) {
+          @include adaptive-value(padding-right, 65, 15);
+          @include adaptive-value(padding-left, 42, 15);
+        }
+
+        &:nth-child(4) {
+          margin: 0 -14px !important;
+
+          @media (max-width: 1199.5px) {
+            margin: 0 !important;
+
+            .row {
+              width: 100%;
+              margin: 0;
+            }
+          }
+
+          .row {
+            width: 110%;
+          }
+
+          .user-button {
+            &:nth-child(2) {
+              .user-button__body {
+                padding: 16px 30px 6px !important;
+              }
+            }
+
+            &:nth-child(3) {
+              .user-button__body {
+                padding: 16px 34px 6px 26px !important;
+
+                @media (max-width: 1199.5px) {
+                  padding: 14px 30px 8px 22px !important;
+                }
+
+                .user-button__cloud {
+                  @media (max-width: 1199.5px) {
+                    // top: 9%;
+                    // right: 8%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .wrapper {
+    padding: 0 5px 0 15px;
+
+    @media (max-width: 1199.5px) {
+      padding: 0;
+    }
   }
 }

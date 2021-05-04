@@ -1,0 +1,19 @@
+.footer {
+  background: $blue;
+  padding: 0 10px;
+  @include adaptive-value(padding-top, 58, 20);
+  @include adaptive-value(padding-bottom, 47, 15);
+  position: relative;
+
+  &__body {
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &__row {
+    @include adaptive-value(padding-bottom, 35, 15);
+    @include adaptive-value(margin-bottom, 27, 15);
+    border-bottom: 1px solid $smoke-blue;
+  }
+}

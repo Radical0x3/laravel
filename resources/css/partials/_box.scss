@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  @include adaptive-value(height, 350, 250);
+  @include adaptive-value(height, 350, 200);
   padding: 10px;
   position: relative;
 
