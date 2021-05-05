@@ -44,7 +44,9 @@
 @import "partials/mobile-catalog";
 @import "partials/nova-poshta";
 @import "partials/payments";
+@import "partials/payments-top";
 @import "partials/phones";
+@import "partials/phones-list";
 @import "partials/pop";
 @import "partials/price";
 @import "partials/prices";
@@ -78,9 +80,15 @@ body {
   margin: 0;
   min-width: 320px;
   position: relative;
+
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .main {
+  flex: 1;
+
   @media (max-width: 1199.5px) {
     @include adaptive-value(padding-top, 120, 70);
   }
@@ -119,18 +127,4 @@ body {
 
 .mobile-logo {
   fill: $dark-blue;
-}
-
-.payments-top {
-  @media (max-width: 991.5px) {
-    display: none;
-  }
-}
-
-.phones-list {
-  padding-left: 20px;
-
-  @media (max-width: 450px) {
-    padding-left: 0;
-  }
 }

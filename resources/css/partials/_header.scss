@@ -113,11 +113,8 @@
                   padding: 14px 30px 8px 22px !important;
                 }
 
-                .user-button__cloud {
-                  @media (max-width: 1199.5px) {
-                    // top: 9%;
-                    // right: 8%;
-                  }
+                @media (max-width: 575.5px) {
+                  padding: 8px 25px !important;
                 }
               }
             }

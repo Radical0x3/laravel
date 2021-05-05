@@ -1,6 +1,6 @@
 .coockie {
   width: 99%;
-  max-width: 1530px;
+  max-width: 1526px;
   background: #74c3b4;
   border-radius: 10px 10px 0 0;
 
@@ -13,6 +13,26 @@
 
   &.active {
     bottom: 2px;
+  }
+
+  &__row {
+    margin: 0;
+    padding: 22px 41px 29px 25px;
+
+    @media (max-width: 991.5px) {
+      padding: 15px;
+    }
+  }
+
+  &__column {
+    &:nth-child(1) {
+      padding-right: 35px !important;
+
+      @media (max-width: 767.5px) {
+        padding-right: 0 !important;
+        margin-bottom: 10px;
+      }
+    }
   }
 
   &__text {
@@ -38,7 +58,7 @@
   &__btn {
     border: 1px solid $secondary-orange;
     border-radius: 10px 0;
-    padding: 10px 34px;
+    padding: 10px 40px;
     text-transform: none;
 
     &:hover {
@@ -47,9 +67,8 @@
       color: $dark-blue;
     }
 
-    @media (max-width: 768px) {
-      font-size: 13px;
-      padding: 8px 27px;
+    @media (max-width: 991.5px) {
+      padding: 8px 30px;
     }
   }
 }

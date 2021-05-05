@@ -5,7 +5,7 @@
   &__list {
     display: flex;
     flex-direction: row-reverse;
-    margin-right: 10px;
+    margin-right: 11px;
 
     &[data-total-value="1"] .rating__icon:nth-child(n + 5),
     &[data-total-value="2"] .rating__icon:nth-child(n + 4),

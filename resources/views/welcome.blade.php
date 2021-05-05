@@ -369,100 +369,85 @@
       $shopItems = ['Снаряжение', 'Ножи и инструменты', 'Оружие', 'Патроны', 'Аксессуары', 'Тир'];
     @endphp
 
-    <section class="shop">
-      <div class="container-fluid">
-        <div class="row px-0">
-          <div class="shop__column col-lg-3 col-m-6 col-12 px-0">
-            <div class="row mx-0">
-              <div class="shop__inner col-12 px-0">
-                <div class="box">
-                  <picture>
-                    <source srcset="{{ asset('images/shop/shop-1.webp') }}" type="image/webp">
-                    <img src="{{ asset('images/shop/shop-1.jpg') }}" alt="box image" class="box__img">
-                  </picture>
-                  <div class="box__blur"></div>
-                  <a href="#" class="btn btn-rect  btn-transparent box-btn">
-                    Снаряжение
-                  </a>
-                </div>
-              </div>
+    @isset($shopItems)
+      <section class="shop">
+        <div class="container-fluid">
+          <div class="row px-0">
+            @php
+              $id = 1;
+            @endphp
 
-              <div class="shop__inner col-12 px-0">
-                <div class="box">
-                  <picture>
-                    <source srcset="{{ asset('images/shop/shop-2.webp') }}" type="image/webp">
-                    <img src="{{ asset('images/shop/shop-2.jpg') }}" alt="box image" class="box__img">
-                  </picture>
-                  <div class="box__blur"></div>
-                  <a href="#" class="btn btn-rect  btn-transparent box-btn">
-                    ножи и инструменты
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+            @for ($i = 0; $i < 3; $i++)
+              @php
+                if ($i == 2) {
+                    $classes = 'shop__column col-lg-6 col-12 px-0';
+                } else {
+                    $classes = 'shop__column col-lg-3 col-m-6 col-12 px-0';
+                }
+              @endphp
 
-          <div class="shop__column col-lg-3 col-m-6 col-12 px-0">
-            <div class="row mx-0">
-              <div class="shop__inner col px-0">
-                <div class="box">
-                  <picture>
-                    <source srcset="{{ asset('images/shop/shop-3.webp') }}" type="image/webp">
-                    <img src="{{ asset('images/shop/shop-3.jpg') }}" alt="box image" class="box__img">
-                  </picture>
-                  <div class="box__blur"></div>
-                  <a href="#" class="btn btn-rect  btn-transparent box-btn">
-                    Оружие
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+              <div class="{{ $classes }}">
+                <div class="row mx-0">
+                  @php
+                    switch ($i) {
+                        case '0':
+                            $count = 2;
+                            break;
+                        case '1':
+                            $count = 1;
+                            break;
+                        case '2':
+                            $count = 3;
+                            break;
+                        default:
+                            $count = 1;
+                            break;
+                    }
+                  @endphp
 
-          <div class="shop__column col-lg-6 col-12 px-0">
-            <div class="row mx-0">
-              <div class="shop__inner col-m-6 col-12 px-0">
-                <div class="box">
-                  <picture>
-                    <source srcset="{{ asset('images/shop/shop-4.webp') }}" type="image/webp">
-                    <img src="{{ asset('images/shop/shop-4.jpg') }}" alt="box image" class="box__img">
-                  </picture>
-                  <div class="box__blur"></div>
-                  <a href="#" class="btn btn-rect  btn-transparent box-btn">
-                    Патроны
-                  </a>
-                </div>
-              </div>
-              <div class="shop__inner col-m-6 col-12 px-0">
-                <div class="box">
-                  <picture>
-                    <source srcset="{{ asset('images/shop/shop-5.webp') }}" type="image/webp">
-                    <img src="{{ asset('images/shop/shop-5.jpg') }}" alt="box image" class="box__img">
-                  </picture>
-                  <div class="box__blur"></div>
-                  <a href="#" class="btn btn-rect  btn-transparent box-btn">
-                    Аксессуары
-                  </a>
-                </div>
-              </div>
+                  @for ($j = 0; $j < $count; $j++)
+                    @php
+                      if ($count == 3) {
+                          if ($j == 2) {
+                              $innerClasses = 'col-12 px-0';
+                          } else {
+                              $innerClasses = 'shop__inner col-m-6 col-12 px-0';
+                          }
+                      } else {
+                          $innerClasses = 'shop__inner col-12 px-0';
+                      }
+                    @endphp
 
-              <div class="col-12 px-0">
-                <div class="box">
-                  <picture>
-                    <source srcset="{{ asset('images/shop/shop-6.webp') }}" type="image/webp">
-                    <img src="{{ asset('images/shop/shop-6.jpg') }}" alt="box image" class="box__img">
-                  </picture>
-                  <div class="box__blur"></div>
-                  <a href="#" class="btn btn-rect  btn-transparent box-btn">
-                    Тир
-                  </a>
+                    <div class="{{ $innerClasses }}">
+                      <div class="box">
+                        <picture>
+                          <source srcset="{{ asset('images/shop/shop-' . $id . '.webp') }}" type="image/webp">
+                          <img src="{{ asset('images/shop/shop-' . $id . '.jpg') }}" alt="box image" class="box__img">
+                        </picture>
+                        <div class="box__blur"></div>
+                        <a href="#" class="btn btn-rect  btn-transparent box-btn">
+                          {{ $shopItems[$id - 1] }}
+                        </a>
+                      </div>
+                    </div>
+
+                    @php
+                      $id++;
+                    @endphp
+                  @endfor
                 </div>
               </div>
-            </div>
+            @endfor
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    @endisset
+
+    @empty($shopItems)
+      <p class="empty-section">
+        Блоки отсутствуют
+      </p>
+    @endempty
 
     @php
       $goods = [
@@ -477,13 +462,13 @@
               'price' => '32 509',
               'new-price' => '27 632.65',
           ],
-          ['id' => 2, 'title' => 'Ружье Mossberg 590M Mag-Fed к.12 18.5" Synthetic1', 'label' => 'blue', 'label-text' => 'Акция', 'icons' => ['wish', 'compare'], 'rating' => '5', 'votes-count' => '2', 'price' => '32 509', 'new-price' => '27 632.65'],
-          ['id' => 3, 'title' => 'Ружье Mossberg 590M Mag-Fed к.12 18.5" Synthetic2', 'label' => 'red', 'label-text' => '-70%', 'icons' => ['wish', 'compare'], 'rating' => '3', 'votes-count' => '12', 'price' => '27 632.65'],
-          ['id' => 4, 'title' => 'Ружье Mossberg 590M Mag-Fed к.12 18.5" Synthetic3', 'label' => 'orange', 'label-text' => 'топ продаж', 'icons' => ['wish', 'compare', 'play'], 'rating' => '2', 'votes-count' => '46', 'price' => '32 509', 'new-price' => '27 632.65'],
-          ['id' => 1, 'title' => 'Ружье Mossberg 590M Mag-Fed к.12 18.5" Synthetic4', 'label' => 'green', 'label-text' => 'Новинка', 'icons' => ['wish', 'compare', 'play'], 'rating' => '1', 'votes-count' => '10', 'price' => '32 509', 'new-price' => '27 632.65'],
-          ['id' => 2, 'title' => 'Ружье Mossberg 590M Mag-Fed к.12 18.5" Synthetic5', 'label' => 'blue', 'label-text' => 'Акция', 'icons' => ['wish', 'compare'], 'rating' => '4', 'votes-count' => '11', 'price' => '32 509', 'new-price' => '27 632.65'],
-          ['id' => 3, 'title' => 'Ружье Mossberg 590M Mag-Fed к.12 18.5" Synthetic6', 'label' => 'red', 'label-text' => '-40%', 'icons' => ['wish', 'compare'], 'rating' => '2', 'votes-count' => '12', 'price' => '32 509', 'new-price' => '27 632.65'],
-          ['id' => 4, 'title' => 'Ружье Mossberg 590M Mag-Fed к.12 18.5" Synthetic7', 'label' => 'orange', 'label-text' => 'топ продаж', 'icons' => ['wish', 'compare', 'play'], 'rating' => '5', 'votes-count' => '13', 'price' => '27 632.65'],
+          ['id' => 2, 'title' => 'Ружье Mossberg 590M Mag-Fed к.12 18.5" Synthetic', 'label' => 'blue', 'label-text' => 'Акция', 'icons' => ['wish', 'compare'], 'rating' => '5', 'votes-count' => '2', 'price' => '32 509', 'new-price' => '27 632.65'],
+          ['id' => 3, 'title' => 'Ружье Mossberg 590M Mag-Fed к.12 18.5" Synthetic', 'label' => 'red', 'label-text' => '-70%', 'icons' => ['wish', 'compare'], 'rating' => '3', 'votes-count' => '12', 'price' => '27 632.65'],
+          ['id' => 4, 'title' => 'Ружье Mossberg 590M Mag-Fed к.12 18.5" Synthetic', 'label' => 'orange', 'label-text' => 'топ продаж', 'icons' => ['wish', 'compare', 'play'], 'rating' => '2', 'votes-count' => '46', 'price' => '32 509', 'new-price' => '27 632.65'],
+          ['id' => 1, 'title' => 'Ружье Mossberg 590M Mag-Fed к.12 18.5" Synthetic', 'label' => 'green', 'label-text' => 'Новинка', 'icons' => ['wish', 'compare', 'play'], 'rating' => '1', 'votes-count' => '10', 'price' => '32 509', 'new-price' => '27 632.65'],
+          ['id' => 2, 'title' => 'Ружье Mossberg 590M Mag-Fed к.12 18.5" Synthetic', 'label' => 'blue', 'label-text' => 'Акция', 'icons' => ['wish', 'compare'], 'rating' => '4', 'votes-count' => '11', 'price' => '32 509', 'new-price' => '27 632.65'],
+          ['id' => 3, 'title' => 'Ружье Mossberg 590M Mag-Fed к.12 18.5" Synthetic', 'label' => 'red', 'label-text' => '-40%', 'icons' => ['wish', 'compare'], 'rating' => '2', 'votes-count' => '12', 'price' => '32 509', 'new-price' => '27 632.65'],
+          ['id' => 4, 'title' => 'Ружье Mossberg 590M Mag-Fed к.12 18.5" Synthetic', 'label' => 'orange', 'label-text' => 'топ продаж', 'icons' => ['wish', 'compare', 'play'], 'rating' => '5', 'votes-count' => '13', 'price' => '27 632.65'],
       ];
     @endphp
 
@@ -566,15 +551,21 @@
         </div>
       </section>
     @endisset
+
+    @empty($goods)
+      <p class="empty-section">
+        Товары отсутствуют
+      </p>
+    @endempty
   </main>
 
-  <footer class="footer js-accordion-group">
+  <footer class="footer js-footer js-accordion-group">
     <div class="footer__body">
-      <div class="container-fluid px-0 mb-lg-0">
-        <div class="row footer__row justify-content-between">
+      <div class="container-fluid px-0">
+        <div class="row footer__row">
           <div
-            class="col-xl-4 col-lg-5 col-12 d-lg-block d-flex justify-content-center align-items-center mb-lg-0 mb-3">
-            <a href="#" class="footer-logo mr-lg-0 mr-5">
+            class="footer__column col-xl-5 col-lg-4 col-12 d-lg-block d-flex justify-content-center align-items-center px-0">
+            <a href="#" class="footer-logo">
               <svg class="logo ">
                 <use href="{{ asset('images/icons/spritemap.svg#sprite-wezom-logo') }}"></use>
               </svg>
@@ -635,10 +626,10 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 col-m-7 col-12 d-m-flex px-lg-0 _w100 mb-lg-0 mb-m-3">
+          <div class="footer__column col-lg-5 col-md-6 col-m-7 col-12 d-m-flex _w100 px-0">
             <div class="row">
-              <div class="col-m-6 col-12">
-                <div class="links-list js-accordion pr-m-3">
+              <div class="footer__inner col-xl-auto col-m-6 col-12 px-0">
+                <div class="links-list js-accordion">
                   <div class="links-list__top js-accordion-header">
                     <a href="#" class="links-list__header">Каталог</a>
                     <div class="arrow arrow-small arrow-down js-accordion-btn"></div>
@@ -656,7 +647,7 @@
                 </div>
               </div>
 
-              <div class="col-m-6 col-12">
+              <div class="footer__inner col-xl-auto col-m-6 col-12 px-0">
                 <div class="links-list js-accordion">
                   <div class="links-list__top js-accordion-header">
                     <a href="#" class="links-list__header">Клиентам</a>
@@ -676,7 +667,7 @@
           </div>
 
           <div
-            class="col-xl-2 col-md-3 col-sm-4 col-m-5 col-12 d-m-flex justify-content-sm-start justify-content-m-center mb-lg-0 mb-3">
+            class="footer__column col-xl-2 col-md-3 col-sm-4 col-m-5 col-12 d-m-flex justify-content-sm-start justify-content-m-center px-0">
             <div class="links-list phones-list js-accordion">
               <div class="links-list__top js-accordion-header">
                 <a href="#" class="links-list__header">Горячая линия</a>
@@ -691,9 +682,9 @@
             </div>
           </div>
 
-          <div class="col-12 d-xxl-none mt-xxl-0 mt-lg-3">
+          <div class="col-12 d-xxl-none px-0">
             <div class="row align-items-sm-center align-items-end justify-content-center">
-              <div class="col-8 d-lg-none">
+              <div class="col-9 d-lg-none">
                 <div class="payments">
                   <a href="#" class="nova-poshta">
                     <svg class="nova-poshta__icon">
@@ -744,7 +735,7 @@
           <div class="col-4">
             <span class="copyright">2020 © Test</span>
           </div>
-          <div class="col-lg-2 col-md-3 col-8">
+          <div class="col-md-3 col-8">
             <a href="https://wezom.com.ua/" target="_blank" class="developed-by">Разработка \\ Wezom</a>
           </div>
         </div>
@@ -760,9 +751,9 @@
   </footer>
 
   <div class="coockie js-coockie">
-    <div class="container-fluid px-lg-4 px-3 py-lg-4 py-3">
-      <div class="row justify-content-center">
-        <div class="col-sm-9 col-12 mb-sm-0 mb-3">
+    <div class="container-fluid px-0">
+      <div class="coockie__row row justify-content-center align-items-center">
+        <div class="coockie__column col-md-10 col-12 px-0">
           <p class="coockie__text">
             Этот сайт использует файлы cookies для более комфортной работы пользователя. Продолжая просмотр страниц
             сайта, вы соглашаетесь с использованием файлов cookies. Если вам нужна дополнительная информация или вы не
@@ -770,7 +761,7 @@
           </p>
         </div>
 
-        <div class="col-3 d-flex align-items-center justify-content-center">
+        <div class="coockie__column col-md-2 col-12 d-flex justify-content-md-end justify-content-center px-0">
           <a class="btn coockie__btn js-coockie-btn">
             Согласен
           </a>

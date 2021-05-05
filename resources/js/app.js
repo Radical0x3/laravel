@@ -146,6 +146,24 @@ $(document).ready(function () {
   setTimeout(function () {
     $(".js-coockie").addClass("active");
   }, 2000);
+
+  $(window).on("resize", function () {
+    $(".js-footer .js-accordion").each(function () {
+      const body = $(this).find(".js-accordion-body");
+      const header = $(this).find(".js-accordion-header");
+
+      if (window.innerWidth >= 450) {
+        if (!body.is(":visible")) {
+          body.css("display", "flex");
+        }
+      } else if (window.innerWidth < 450) {
+        if (body.is(":visible")) {
+          body.css("display", "none");
+          header.removeClass("active");
+        }
+      }
+    });
+  });
 });
 
 // Close the hamburger when blur area was clicked

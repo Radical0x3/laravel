@@ -1,6 +1,7 @@
 .menu-social {
   display: flex;
-  margin-bottom: 40px;
+  @include adaptive-value(margin-bottom, 36, 10);
+  padding-left: 7px;
 
   @media (max-width: 991.5px) {
     margin-bottom: 0;
@@ -12,10 +13,18 @@
     transition: opacity 0.3s;
 
     &:not(:last-child) {
-      margin-right: 7%;
+      margin-right: 23px;
 
       @media (max-width: 991.5px) {
         margin-right: 10px;
+      }
+    }
+
+    &:last-child {
+      margin-left: 3px;
+
+      svg {
+        width: 26px;
       }
     }
 

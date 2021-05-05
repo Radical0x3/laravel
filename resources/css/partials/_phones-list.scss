@@ -1,0 +1,7 @@
+.phones-list {
+  margin-left: -2px;
+
+  @media (max-width: 1200px) {
+    margin-left: 0;
+  }
+}

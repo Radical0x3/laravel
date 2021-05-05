@@ -5,8 +5,8 @@
   padding: 10px 0;
   @include adaptive-value(padding-left, 16, 10);
   @include adaptive-value(padding-right, 30, 10);
-  @include adaptive-value(padding-bottom, 41, 21);
-  margin: 0 auto 8%;
+  @include adaptive-value(padding-bottom, 40, 21);
+  margin: 0 auto 7.5%;
   position: relative;
   overflow-y: hidden !important;
 
@@ -15,6 +15,6 @@
   }
 
   &__inner {
-    padding-top: 53px;
+    padding-top: 54px;
   }
 }

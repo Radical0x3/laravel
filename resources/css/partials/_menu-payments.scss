@@ -1,14 +1,13 @@
 .menu-payments {
   display: flex;
+  margin-top: -2px;
 
   &__item {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30%;
-    max-width: 53px;
-    height: 25%;
-    max-height: 31px;
+    width: 53px;
+    height: 31px;
     background: $light-grey;
     border-radius: 3px;
     opacity: 0.5;
@@ -16,6 +15,12 @@
 
     &:not(:last-child) {
       margin-right: 6px;
+    }
+
+    &:last-child {
+      svg {
+        height: 45px;
+      }
     }
 
     &:hover {
