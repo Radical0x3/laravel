@@ -276,10 +276,10 @@
                   href="{{ asset('images/top-slider/category-' . $category['id'] . '.jpg') }}"
                   class="category__image-wrap">
                   <picture>
-                    <source data-srcset="{{ asset('images/top-slider/category-' . $category['id'] . '.webp') }}"
-                      class="lazyload" type="image/webp">
-                    <img data-src="{{ asset('images/top-slider/category-' . $category['id'] . '.jpg') }}"
-                      alt="category poster" class="category__image lazyload">
+                    <source dsrcset="{{ asset('images/top-slider/category-' . $category['id'] . '.webp') }}"
+                      type="image/webp">
+                    <img src="{{ asset('images/top-slider/category-' . $category['id'] . '.jpg') }}"
+                      alt="category poster" loading="lazy" decoding="async" class="category__image">
                   </picture>
                   <div class="circle-gradient"></div>
                 </a>
@@ -368,7 +368,7 @@
         @endempty
       </div>
 
-      <img data-src="{{ asset('images/pop.png') }}" alt="pop image" class="pop lazyload">
+      <img src="{{ asset('images/pop.png') }}" alt="pop image" class="pop" loading="lazy" decoding="async">
     </section>
 
     @php
@@ -427,13 +427,12 @@
                     <div class="{{ $innerClasses }}">
                       <div class="box">
                         <picture>
-                          <source data-srcset="{{ asset('images/shop/shop-' . $id . '.webp') }}" class="lazyload"
-                            type="image/webp">
-                          <img data-src="{{ asset('images/shop/shop-' . $id . '.jpg') }}" alt="box image"
-                            class="box__img lazyload">
+                          <source srcset="{{ asset('images/shop/shop-' . $id . '.webp') }}" type="image/webp">
+                          <img src="{{ asset('images/shop/shop-' . $id . '.jpg') }}" alt="box image" loading="lazy"
+                            decoding="async" class="box__img">
                         </picture>
                         <div class="box__blur"></div>
-                        <a href="#" class="btn btn_rect btn_transparent">
+                        <a href="#" class="btn btn_rect">
                           {{ $shopItems[$id - 1] }}
                         </a>
                       </div>
@@ -503,9 +502,9 @@
                     <div class="product__wrap">
                       <a href="#">
                         <picture>
-                          <source data-srcset="{{ asset('images/stuff.webp') }}" class="lazyload" type="image/webp">
-                          <img data-src="{{ asset('images/stuff.jpg') }}" alt="box image"
-                            class="product__img lazyload">
+                          <source srcset="{{ asset('images/stuff.webp') }}" type="image/webp">
+                          <img src="{{ asset('images/stuff.jpg') }}" alt="box image" loading="lazy" decoding="async"
+                            class="product__img">
                         </picture>
                       </a>
 
@@ -608,8 +607,8 @@
                 <div class="basket-popup__image-wrap">
                   <div class="basket-popup__image-holder"></div>
                   <a href="#">
-                    <img data-src="{{ asset('images/basket-popup/basket-popup-' . $item['id'] . '.jpg') }}"
-                      alt="basket popup image" class="basket-popup__image lazyload">
+                    <img src="{{ asset('images/basket-popup/basket-popup-' . $item['id'] . '.jpg') }}"
+                      alt="basket popup image" class="basket-popup__image" loading="lazy" decoding="async">
                   </a>
                 </div>
               </div>

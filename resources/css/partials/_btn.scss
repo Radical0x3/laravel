@@ -2,7 +2,8 @@
   display: inline-block;
   @include adaptive-value(padding-top, 19, 14);
   @include adaptive-value(padding-bottom, 19, 14);
-  border: 2px solid transparent;
+  border: 2px solid #fff;
+  background: transparent;
 
   color: #fff;
   font-size: 15px;
@@ -27,8 +28,6 @@
     @include adaptive-value(padding-left, 32, 15);
     @include adaptive-value(padding-right, 32, 15);
     margin-top: 1px;
-    background: transparent;
-    border-color: #fff;
   }
 
   &_lg {
