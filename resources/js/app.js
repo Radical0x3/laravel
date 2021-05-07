@@ -1,7 +1,9 @@
-import $ from "jquery";
-require("slick-carousel");
-require("jquery-mousewheel");
+import "./import-jquery";
+import "slick-carousel";
 import SimpleBar from "simplebar";
+import "@fancyapps/fancybox";
+import "lazysizes";
+import "lazysizes/plugins/parent-fit/ls.parent-fit";
 
 $(document).ready(function () {
   testWebP(function (support) {
@@ -10,6 +12,10 @@ $(document).ready(function () {
     } else {
       document.querySelector("body").classList.add("no-webp");
     }
+  });
+
+  $(".js-popup").fancybox({
+    touch: false,
   });
 
   // Initialise slider
@@ -164,18 +170,50 @@ $(document).ready(function () {
       }
     });
   });
+
+  $(".js-main-blur").on("click", function () {
+    const mobileMenu = $(".js-mobile");
+    const hamburger = $(".js-main-hamburger");
+
+    mobileMenu.removeClass("active");
+    hamburger.removeClass("active");
+    $(this).removeClass("active");
+    bodyUnlock();
+  });
+
+  // Remove an item from the basket
+  $(".js-basket-popup-remove").on("click", function () {
+    const elem = $(".js-cart-button .js-cart-count");
+    const count = +elem.text();
+
+    $(this).parents(".js-basket-popup-item").remove();
+    elem.text(count - 1);
+
+    if (+elem.text() <= 0) {
+      elem.addClass("hidden");
+    }
+  });
+
+  $(".js-basket-popup-button").on("click", function () {
+    const action = $(this).attr("data-basket-action");
+    const elem = $(this).siblings(".js-basket-popup-text").find("span");
+    let val = +elem.text();
+
+    if (action == "plus") {
+      val++;
+    } else if (action == "minus" && val > 0) {
+      val--;
+    }
+
+    if (val != +elem.text()) {
+      elem.text(val);
+    }
+  });
+
+  $(".js-cart-button").on("click", function () {});
 });
 
 // Close the hamburger when blur area was clicked
-$(".js-main-blur").on("click", function () {
-  const mobileMenu = $(".js-mobile");
-  const hamburger = $(".js-main-hamburger");
-
-  mobileMenu.removeClass("active");
-  hamburger.removeClass("active");
-  $(this).removeClass("active");
-  bodyUnlock();
-});
 
 function testWebP(callback) {
   var webP = new Image();
@@ -189,7 +227,6 @@ function testWebP(callback) {
 let unlock = true;
 const timeout = 200;
 const body = document.querySelector("body");
-const root = document.querySelector("html");
 const lockPadding = document.querySelectorAll(".lock-padding");
 
 function bodyLock() {
@@ -202,7 +239,7 @@ function bodyLock() {
     }
   }
   body.style.paddingRight = lockPaddingValue;
-  root.classList.add("lock");
+  body.classList.add("lock");
 
   unlock = false;
   setTimeout(function () {
@@ -217,7 +254,7 @@ function bodyUnlock() {
       el.style.paddingRight = "0px";
     }
     body.style.paddingRight = "0px";
-    root.classList.remove("lock");
+    body.classList.remove("lock");
   }, timeout);
 
   unlock = false;

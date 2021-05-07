@@ -1,0 +1,40 @@
+.basket-count {
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    .basket-count__body-text {
+      color: $dark-blue;
+    }
+  }
+
+  &__action {
+    width: 15px;
+    height: 15px;
+    object-fit: cover;
+    fill: rgba($smoke-blue, 0.7);
+
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      fill: $dark-blue;
+    }
+  }
+
+  &__body {
+    min-width: 55px;
+    text-align: center;
+    padding: 9px 10px;
+    margin: 0 8px;
+    border: 1px solid $light-grey;
+    border-radius: 10px;
+
+    &-text {
+      font-size: 18px;
+      line-height: 1.2;
+      color: rgba($smoke-blue, 0.7);
+      transition: 0.3s;
+    }
+  }
+}

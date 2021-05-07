@@ -21,8 +21,16 @@
     border-radius: 0 10px 0 0;
   }
 
+  &:not(:nth-child(3)) {
+    &:hover {
+      box-shadow: 2px 0px 0px 0px $green;
+      z-index: 1;
+    }
+  }
+
   &:hover {
-    background: #ffcb6d;
+    background: $green;
+    border-color: $green;
 
     .user-button__icon {
       fill: #fff;
@@ -30,12 +38,7 @@
 
     .user-button__cloud {
       border-color: #fff;
-      color: #fff;
-      background: #ffcb6d;
-
-      @media (max-width: 1200px) {
-        border-color: #fff;
-      }
+      background: #fff;
     }
   }
 
@@ -71,6 +74,10 @@
     right: 8%;
     transition: 0.3s;
 
+    &.hidden {
+      display: none;
+    }
+
     @media (max-width: 1300px) {
       right: 12%;
     }
@@ -78,7 +85,7 @@
     @media (max-width: 1199.5px) {
       border-color: $dark-blue;
       @include adaptive-value(padding-right, 8, 3);
-    @include adaptive-value(padding-left, 8, 4);
+      @include adaptive-value(padding-left, 8, 4);
     }
 
     @media (max-width: 576px) {

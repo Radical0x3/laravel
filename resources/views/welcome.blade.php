@@ -108,6 +108,7 @@
                   <svg class="user-button__icon">
                     <use href="{{ asset('images/icons/spritemap.svg#sprite-top-compare') }}"></use>
                   </svg>
+                  <div class="user-button__cloud hidden">0</div>
                 </div>
               </div>
 
@@ -116,16 +117,19 @@
                   <svg class="user-button__icon">
                     <use href="{{ asset('images/icons/spritemap.svg#sprite-top-wish') }}"></use>
                   </svg>
+                  <div class="user-button__cloud hidden">0</div>
                 </div>
               </div>
 
-              <div class="header__inner col-xl-4 col-md-5 col-7 px-0 user-button cart-button">
-                <div class="user-button__body">
-                  <svg class="user-button__icon">
-                    <use href="{{ asset('images/icons/spritemap.svg#sprite-top-cart') }}"></use>
-                  </svg>
-                  <div class="user-button__cloud">3</div>
-                </div>
+              <div class="header__inner col-xl-4 col-md-5 col-7 px-0 user-button cart-button js-cart-button">
+                <a data-fancybox data-src="#basket-popup" href="javascript:;" class="js-popup">
+                  <div class="user-button__body">
+                    <svg class="user-button__icon">
+                      <use href="{{ asset('images/icons/spritemap.svg#sprite-top-cart') }}"></use>
+                    </svg>
+                    <div class="user-button__cloud js-cart-count">3</div>
+                  </div>
+                </a>
               </div>
 
               <div class="header__inner col-md-4 col-3 d-xl-none d-flex align-items-center justify-content-end px-0">
@@ -253,7 +257,7 @@
           <header class="categories__top container-fluid px-0">
             <div class="categories__row row align-items-center justify-content-sm-between justify-content-center">
               <div class="section-title categories__title col-md-8 col-sm-7 px-0">Популярные категории</div>
-              <a href="#" class="btn btn-sm btn-transparent btn-round col-md-4 col-sm-5">
+              <a href="#" class="btn btn_sm btn_round col-md-4 col-sm-5">
                 Все категории
               </a>
             </div>
@@ -268,12 +272,14 @@
           <div class="categories__list">
             @foreach ($categories as $category)
               <div class="category">
-                <a href="#" class="category__image-wrap">
+                <a data-fancybox data-caption="{{ $category['text'] }}"
+                  href="{{ asset('images/top-slider/category-' . $category['id'] . '.jpg') }}"
+                  class="category__image-wrap">
                   <picture>
-                    <source srcset="{{ asset('images/top-slider/category-' . $category['id'] . '.webp') }}"
-                      type="image/webp">
-                    <img src="{{ asset('images/top-slider/category-' . $category['id'] . '.jpg') }}"
-                      alt="category poster" class="category__image">
+                    <source data-srcset="{{ asset('images/top-slider/category-' . $category['id'] . '.webp') }}"
+                      class="lazyload" type="image/webp">
+                    <img data-src="{{ asset('images/top-slider/category-' . $category['id'] . '.jpg') }}"
+                      alt="category poster" class="category__image lazyload">
                   </picture>
                   <div class="circle-gradient"></div>
                 </a>
@@ -311,9 +317,9 @@
             <div class="row justify-content-center">
               <div class="col-12">
                 <div class="recall__inner">
-                  <button class="btn btn-lg btn-gradient btn-svg btn-round ">
-                    <span>замовити зворотній зв’язок</span>
-                    <svg>
+                  <button class="btn btn_lg btn_round ">
+                    <span class="btn__text">замовити зворотній зв’язок</span>
+                    <svg class="btn__svg">
                       <use href="{{ asset('images/icons/spritemap.svg#sprite-right-arrow') }}"></use>
                     </svg>
                   </button>
@@ -362,7 +368,7 @@
         @endempty
       </div>
 
-      <img src="{{ asset('images/pop.png') }}" alt="pop image" class="pop">
+      <img data-src="{{ asset('images/pop.png') }}" alt="pop image" class="pop lazyload">
     </section>
 
     @php
@@ -421,11 +427,13 @@
                     <div class="{{ $innerClasses }}">
                       <div class="box">
                         <picture>
-                          <source srcset="{{ asset('images/shop/shop-' . $id . '.webp') }}" type="image/webp">
-                          <img src="{{ asset('images/shop/shop-' . $id . '.jpg') }}" alt="box image" class="box__img">
+                          <source data-srcset="{{ asset('images/shop/shop-' . $id . '.webp') }}" class="lazyload"
+                            type="image/webp">
+                          <img data-src="{{ asset('images/shop/shop-' . $id . '.jpg') }}" alt="box image"
+                            class="box__img lazyload">
                         </picture>
                         <div class="box__blur"></div>
-                        <a href="#" class="btn btn-rect  btn-transparent box-btn">
+                        <a href="#" class="btn btn_rect btn_transparent">
                           {{ $shopItems[$id - 1] }}
                         </a>
                       </div>
@@ -495,8 +503,9 @@
                     <div class="product__wrap">
                       <a href="#">
                         <picture>
-                          <source srcset="{{ asset('images/stuff.webp') }}" type="image/webp">
-                          <img src="{{ asset('images/stuff.jpg') }}" alt="box image" class="product__img">
+                          <source data-srcset="{{ asset('images/stuff.webp') }}" class="lazyload" type="image/webp">
+                          <img data-src="{{ asset('images/stuff.jpg') }}" alt="box image"
+                            class="product__img lazyload">
                         </picture>
                       </a>
 
@@ -558,6 +567,132 @@
       </p>
     @endempty
   </main>
+
+  @php
+    $basketItems = [
+        [
+            'id' => 1,
+            'title' => '070-150-017 Картридж турбины для Mercedes E-klasse (W211) 2.7CDI',
+            'price' => '5 000',
+            'count' => 4,
+            'services' => ['Регенерация турбины 500₴', 'Регенерация турбины за 1 день 500₴', 'Регенерация турбины за 1 день 500₴'],
+        ],
+        [
+            'id' => 2,
+            'title' => '070-150-017 Картридж турбины для Mercedes E-klasse',
+            'price' => '5 000',
+            'count' => 1,
+            'services' => ['Регенерация турбины за 1 день 500₴'],
+        ],
+        [
+            'id' => 3,
+            'title' => '070-150-017 Картридж турбины E-klasse (W211)',
+            'price' => '5 000',
+            'count' => 1,
+            'services' => ['Регенерация турбины за 1 день 500₴'],
+        ],
+    ];
+  @endphp
+
+  <div style="display: none;" id="basket-popup" class="basket-popup">
+    <div class="basket-popup__title">Корзина</div>
+    <div class="container-fluid">
+      @isset($basketItems)
+        <div class="row basket-popup__body">
+          @foreach ($basketItems as $item)
+            <div class="col-12 basket-popup__item js-basket-popup-item">
+              <div class="basket-popup__item-aside">
+                <svg class="basket-popup__item-remove js-basket-popup-remove">
+                  <use href="{{ asset('images/icons/spritemap.svg#sprite-close') }}"></use>
+                </svg>
+                <div class="basket-popup__image-wrap">
+                  <div class="basket-popup__image-holder"></div>
+                  <a href="#">
+                    <img data-src="{{ asset('images/basket-popup/basket-popup-' . $item['id'] . '.jpg') }}"
+                      alt="basket popup image" class="basket-popup__image lazyload">
+                  </a>
+                </div>
+              </div>
+              <div class="basket-popup__item-content">
+                <a href="#" class="basket-popup__item-link">{{ $item['title'] }}</a>
+                <div class="basket-popup__item-inner">
+                  <div class="basket-popup__item-services">
+                    <p class="basket-popup__item-price">Стоимость товара: <span>{{ $item['price'] }}</span> ₴</p>
+
+                    @for ($i = 0; $i < count($item['services']); $i++)
+                      <div class="service">
+                        <span class="service__text">Доп. услуга:</span>
+                        <span class="service__title">{{ $item['services'][$i] }}</span>
+                      </div>
+                    @endfor
+                  </div>
+                  <div class="basket-popup__item-summary">
+                    <div class="basket-count">
+                      <svg class="basket-count__action js-basket-popup-button" data-basket-action="minus">
+                        <use href="{{ asset('images/icons/spritemap.svg#sprite-minus') }}"></use>
+                      </svg>
+
+                      <div class="basket-count__body js-basket-popup-text">
+                        <span class="basket-count__body-text">{{ $item['count'] }}</span>
+                      </div>
+
+                      <svg class="basket-count__action js-basket-popup-button" data-basket-action="plus">
+                        <use href="{{ asset('images/icons/spritemap.svg#sprite-plus') }}"></use>
+                      </svg>
+                    </div>
+                    <div class="basket-popup__item-total"><span>21 000</span> ₴
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              @if ($loop->last)
+                <div class="total-line">
+                  <span class="total-line__text">Итого</span>
+                </div>
+              @endif
+            </div>
+          @endforeach
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="basket-popup__total"><span>32 000</span> ₴</div>
+          </div>
+        </div>
+
+        <div class="row basket-popup__bottom">
+          <div class="col-6">
+            <a href="#" class="btn btn_main">Продолжить покупки</a>
+          </div>
+          <div class="col-6 d-flex justify-content-end">
+            <a href="#" class="btn btn_main">
+              <span class="btn__text">Оформить заказ</span>
+              <svg class="btn__svg">
+                <use href="{{ asset('images/icons/spritemap.svg#sprite-cart') }}"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      @endisset
+    </div>
+
+    @empty($basketItems)
+      <div class="row">
+        <div class="col-12">
+          <p class="empty-section">
+            Корзина пустая
+          </p>
+        </div>
+      </div>
+
+      <div class="row basket-popup__bottom">
+        <div class="col-12 d-flex justify-content-center">
+          <a href="#" class="btn btn_main">Начать покупки</a>
+        </div>
+      </div>
+    @endempty
+  </div>
 
   <footer class="footer js-footer js-accordion-group">
     <div class="footer__body">

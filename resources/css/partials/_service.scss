@@ -1,0 +1,18 @@
+.service {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 14px;
+  background: rgba($light-grey, 0.5);
+  padding: 8px 10px;
+  border-radius: 4px;
+  margin-bottom: 1px;
+
+  &__text {
+    color: $smoke-blue;
+  }
+
+  &__title {
+    font-weight: 500;
+    color: $dark-blue;
+  }
+}

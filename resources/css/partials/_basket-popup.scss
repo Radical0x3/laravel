@@ -1,0 +1,171 @@
+.basket-popup {
+  width: 100%;
+  max-width: 900px;
+  padding: 42px 40px 40px;
+
+  background: #ffffff;
+  box-shadow: 0px 10px 80px rgba(0, 52, 41, 0.3);
+  border-radius: 10px;
+
+  &__title {
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: $dark-blue;
+
+    margin-bottom: 19px;
+  }
+
+  &__body {
+    margin-bottom: 28px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    padding: 11px 0;
+    border-top: 1px solid #ededed;
+    position: relative;
+
+    &-aside {
+      display: flex;
+      align-items: center;
+      padding-right: 20px;
+      flex: 0;
+    }
+
+    &-content {
+      flex: 1;
+    }
+
+    &-remove {
+      width: 15px;
+      height: 15px;
+      object-fit: cover;
+      fill: rgba($smoke-blue, 0.5);
+      margin-right: 20px;
+
+      transition: 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        fill: $dark-blue;
+      }
+    }
+
+    &-link {
+      display: inline-block;
+      font-size: 18px;
+      line-height: 1;
+      color: $dark-blue;
+      text-decoration: none;
+      margin-bottom: 8px;
+    }
+
+    &-price {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+      line-height: 1.2;
+      color: $smoke-blue;
+
+      span {
+        font-weight: 700;
+        color: $dark-blue;
+      }
+    }
+
+    &-inner {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    &-services {
+      width: 58%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-right: 20px;
+    }
+
+    &-summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1;
+    }
+
+    &-total {
+      font-size: 24px;
+      line-height: 1.2;
+      color: $dark-blue;
+      font-weight: 300;
+
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &-wrap {
+      width: 100%;
+      max-width: 120px;
+      min-width: 120px;
+      border-radius: 5px;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    &-holder {
+      padding-top: 100%;
+    }
+  }
+
+  &__total {
+    margin-bottom: 25px;
+    font-size: 36px;
+    line-height: 1.2;
+    color: $dark-blue;
+    text-align: right;
+    font-weight: 300;
+
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
+.total-line {
+  width: 100%;
+  display: flex;
+
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+
+  &::before {
+    content: "";
+    display: block;
+    flex: 1;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #ededed;
+    margin-top: 7px;
+  }
+
+  &__text {
+    flex: 0;
+    font-size: 14px;
+    line-height: 1.2;
+    padding-left: 20px;
+  }
+}

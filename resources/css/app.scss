@@ -2,10 +2,13 @@
 @import "partials/vars";
 
 @import "~bootstrap/scss/bootstrap-grid.scss";
+@import "~@fancyapps/fancybox/dist/jquery.fancybox.min.css";
 @import "~normalize.css/normalize.css";
 @import "~simplebar/dist/simplebar.min.css";
 
 @import "partials/arrow";
+@import "partials/basket-popup";
+@import "partials/basket-count";
 @import "partials/bottom";
 @import "partials/box";
 @import "partials/btn";
@@ -56,6 +59,7 @@
 @import "partials/scrollbar";
 @import "partials/scroll-up";
 @import "partials/section-title";
+@import "partials/service";
 @import "partials/shop";
 @import "partials/slider";
 @import "partials/text";
@@ -67,14 +71,6 @@
 @import "partials/user-mobile-button";
 @import "partials/wrapper";
 
-html {
-  overflow-x: hidden;
-
-  &.lock {
-    overflow: hidden;
-  }
-}
-
 body {
   @include family("Roboto");
   margin: 0;
@@ -84,6 +80,16 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+
+  overflow-x: hidden;
+
+  &.lock {
+    overflow: hidden;
+  }
+
+  // &.fancybox-active {
+  //   overflow: hidden;
+  // }
 }
 
 .main {
