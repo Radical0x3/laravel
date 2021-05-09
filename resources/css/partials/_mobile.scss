@@ -1,9 +1,9 @@
 .mobile {
   width: 320px;
-  height: calc(100% - 60px);
+  height: calc(100% - 54px);
   background: #fff;
   padding: 0 0 10px;
-  @include adaptive-value(padding-top, 60, 10);
+  @include adaptive-value(padding-top, 65, 15);
 
   overflow-x: hidden;
   overflow-y: auto;

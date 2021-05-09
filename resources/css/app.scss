@@ -166,7 +166,7 @@ body {
   height: 100%;
   background: #fff;
   padding: 0 0 10px;
-  @include adaptive-value(padding-top, 60, 10);
+  @include adaptive-value(padding-top, 65, 15);
   position: absolute;
   top: 0;
   left: -100%;
