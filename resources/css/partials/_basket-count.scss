@@ -30,6 +30,11 @@
     border: 1px solid $light-grey;
     border-radius: 10px;
 
+    @media (max-width: 576px) {
+      min-width: 45px;
+      padding: 6px 10px;
+    }
+
     &-text {
       font-size: 18px;
       line-height: 1.2;

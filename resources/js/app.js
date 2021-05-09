@@ -4,6 +4,8 @@ import SimpleBar from "simplebar";
 import "@fancyapps/fancybox";
 import "lazysizes";
 import "lazysizes/plugins/parent-fit/ls.parent-fit";
+import MobileDetect from "mobile-detect";
+const md = new MobileDetect(window.navigator.userAgent);
 
 $(document).ready(function () {
   testWebP(function (support) {
@@ -14,8 +16,31 @@ $(document).ready(function () {
     }
   });
 
+  // Initialize simplebar only on PC
+  if (!md.mobile()) {
+    const scrollbar = new SimpleBar(
+      document.querySelector(".custom-scrollbar")
+    );
+
+    $(".cart-button").hover(
+      function () {
+        $(this).find(".js-cart-info").addClass("active");
+      },
+      function () {
+        $(this).find(".js-cart-info").removeClass("active");
+      }
+    );
+  }
+
+  // Basket popup
   $(".js-popup").fancybox({
     touch: false,
+    beforeShow: function () {
+      $("html").css({ "overflow-y": "hidden" });
+    },
+    afterClose: function () {
+      $("html").css({ "overflow-y": "visible" });
+    },
   });
 
   // Initialise slider
@@ -95,16 +120,26 @@ $(document).ready(function () {
   });
 
   let accordionContainer = $(".js-accordion-header-to-hide");
+  let catalogContainer = $(".js-catalog-action");
   if (window.innerWidth >= 1200) {
     $(document).on("mouseup", function (e) {
-      let elem = $(".js-accordion-body-to-hide");
+      let accordion = $(".js-accordion-body-to-hide");
+      let catalog = $(".js-main-list");
 
       if (
         accordionContainer.has(e.target).length === 0 &&
-        elem.has(e.target).length === 0
+        accordion.has(e.target).length === 0
       ) {
-        $(elem).slideUp();
+        $(accordion).slideUp();
         $(accordionContainer).removeClass("active");
+      }
+
+      if (
+        catalogContainer.has(e.target).length === 0 &&
+        catalog.has(e.target).length === 0
+      ) {
+        catalog.removeClass("active");
+        $(".js-hamburger").removeClass("active");
       }
     });
   } else {
@@ -130,6 +165,9 @@ $(document).ready(function () {
       $(this).removeClass("active");
       mobileMenu.removeClass("active");
       blur.removeClass("active");
+      $(".js-mobile-sublist.mobile-sublist_opened").removeClass(
+        "mobile-sublist_opened"
+      );
       bodyUnlock();
     }
   });
@@ -171,6 +209,7 @@ $(document).ready(function () {
     });
   });
 
+  // Close the hamburger when blur area was clicked
   $(".js-main-blur").on("click", function () {
     const mobileMenu = $(".js-mobile");
     const hamburger = $(".js-main-hamburger");
@@ -178,6 +217,9 @@ $(document).ready(function () {
     mobileMenu.removeClass("active");
     hamburger.removeClass("active");
     $(this).removeClass("active");
+    $(".js-mobile-sublist.mobile-sublist_opened").removeClass(
+      "mobile-sublist_opened"
+    );
     bodyUnlock();
   });
 
@@ -210,10 +252,40 @@ $(document).ready(function () {
     }
   });
 
-  $(".js-cart-button").on("click", function () {});
-});
+  $(".js-catalog-action").on("click", function () {
+    const menu = $(this).siblings(".js-main-list");
+    const hamburger = $(this).find(".js-hamburger");
 
-// Close the hamburger when blur area was clicked
+    if (!menu.hasClass("active")) {
+      menu.addClass("active");
+      hamburger.addClass("active");
+    } else {
+      menu.removeClass("active");
+      hamburger.removeClass("active");
+    }
+  });
+
+  $(".js-main-list-item").on("mouseenter", function () {
+    const id = $(this).attr("data-category-id");
+    const target = $(`.js-main-sublist-item[data-category-id='${id}']`);
+
+    if (!target.hasClass("active")) {
+      $(".js-main-sublist-item.active").removeClass("active");
+      target.addClass("active");
+    }
+  });
+
+  $(".js-main-mobile-list-item").on("click", function () {
+    const menu = $(this).attr("data-menu");
+    const target = $(`.js-mobile-sublist[data-menu="${menu}"]`);
+
+    target.addClass("mobile-sublist_opened");
+  });
+
+  $(".js-mobile-sublist-back").on("click", function () {
+    $(this).parents(".js-mobile-sublist").removeClass("mobile-sublist_opened");
+  });
+});
 
 function testWebP(callback) {
   var webP = new Image();
@@ -226,7 +298,7 @@ function testWebP(callback) {
 
 let unlock = true;
 const timeout = 200;
-const body = document.querySelector("body");
+const root = document.querySelector("html");
 const lockPadding = document.querySelectorAll(".lock-padding");
 
 function bodyLock() {
@@ -238,8 +310,8 @@ function bodyLock() {
       el.style.paddingRight = lockPaddingValue;
     }
   }
-  body.style.paddingRight = lockPaddingValue;
-  body.classList.add("lock");
+  root.style.paddingRight = lockPaddingValue;
+  root.classList.add("lock");
 
   unlock = false;
   setTimeout(function () {
@@ -253,8 +325,8 @@ function bodyUnlock() {
       const el = lockPadding[i];
       el.style.paddingRight = "0px";
     }
-    body.style.paddingRight = "0px";
-    body.classList.remove("lock");
+    root.style.paddingRight = "0px";
+    root.classList.remove("lock");
   }, timeout);
 
   unlock = false;

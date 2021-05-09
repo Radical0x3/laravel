@@ -86,10 +86,10 @@
     align-items: center;
     padding: 13px 20px;
     background: #fff;
-    border-radius: 20px 0;
+    border-radius: 10px 0;
     border: 2px solid $secondary-orange;
 
-    font-size: 24px;
+    @include adaptive-value(font-size, 24, 18);
     line-height: 1.2;
     font-weight: 500;
     color: $dark-blue;
@@ -106,8 +106,8 @@
     }
 
     .btn__svg {
-      width: 30px;
-      height: 30px;
+      @include adaptive-value(width, 30, 20);
+      @include adaptive-value(height, 30, 20);
       object-fit: cover;
       fill: $dark-blue;
       margin-left: 16px;

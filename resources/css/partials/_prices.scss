@@ -1,8 +1,11 @@
 .prices {
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 8px;
+  transition: 0.3s;
+  overflow: hidden;
 
   &__old {
     position: relative;

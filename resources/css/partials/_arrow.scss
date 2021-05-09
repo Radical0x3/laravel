@@ -3,15 +3,23 @@
   display: inline-block;
   transition: 0.3s;
 
-  &-down {
+  &_down {
     transform: rotate(45deg);
   }
 
-  &-up {
+  &_up {
     transform: rotate(-135deg);
   }
 
-  &-small {
+  &_right {
+    transform: rotate(-45deg);
+  }
+
+  &_left {
+    transform: rotate(135deg);
+  }
+
+  &_small {
     border-width: 0 2px 2px 0;
     padding: 2px;
 
@@ -21,7 +29,13 @@
     }
   }
 
-  &-big {
+  &_medium {
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+    border-color: rgba($dark-blue, 0.5);
+  }
+
+  &_big {
     border-width: 0 3px 3px 0;
     padding: 7px;
     border-color: $smoke-blue;

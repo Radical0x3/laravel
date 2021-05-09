@@ -1,0 +1,35 @@
+.main-sublist {
+  width: 300px;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #fff;
+
+  position: absolute;
+  top: 0;
+  left: calc(100% - 1px);
+  transition: 0.3s;
+
+  &__content {
+    margin: 0;
+  }
+
+  &__item {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+
+    ul {
+      font-size: 18px;
+      line-height: 1.2;
+      color: $dark-blue;
+
+      li {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

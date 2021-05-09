@@ -1,10 +1,16 @@
 .user-mobile-button {
-  @media (max-width: 1199.5px) {
-    border-color: $secondary-orange;
+  &:last-child {
+    .user-button__body {
+      @media (max-width: 1199.5px) {
+        border-width: 2px;
+        box-shadow: none !important;
+      }
+    }
+  }
 
-    &:last-child {
-      border-width: 2px;
-      box-shadow: none !important;
+  .user-button__body {
+    @media (max-width: 1199.5px) {
+      border-color: $secondary-orange;
     }
   }
 

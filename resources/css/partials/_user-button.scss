@@ -2,49 +2,52 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 90px;
 
-  border: solid #ffcb6d;
-  border-width: 2px 0 2px 2px;
-
-  cursor: pointer;
   position: relative;
-  overflow: hidden;
-  transition: 0.3s;
-
-  @media (max-width: 1199.5px) {
-    border-color: #fff;
-  }
 
   &:nth-child(3) {
-    border-width: 2px;
-    border-radius: 0 10px 0 0;
+    .user-button__body {
+      border-width: 2px;
+      border-radius: 0 10px 0 0;
+    }
   }
 
   &:not(:nth-child(3)) {
-    &:hover {
-      box-shadow: 2px 0px 0px 0px $green;
-      z-index: 1;
-    }
-  }
-
-  &:hover {
-    background: $green;
-    border-color: $green;
-
-    .user-button__icon {
-      fill: #fff;
-    }
-
-    .user-button__cloud {
-      border-color: #fff;
-      background: #fff;
+    .user-button__body {
+      &:hover {
+        box-shadow: 2px 0px 0px 0px $green;
+        z-index: 1;
+      }
     }
   }
 
   &__body {
-    position: relative;
+    max-width: 90px;
     padding: 14px 30px 8px;
+    border: solid #ffcb6d;
+    border-width: 2px 0 2px 2px;
+
+    position: relative;
+    transition: 0.3s;
+    cursor: pointer;
+
+    @media (max-width: 1199.5px) {
+      border-color: #fff;
+    }
+
+    &:hover {
+      background: $green;
+      border-color: $green !important;
+
+      .user-button__icon {
+        fill: #fff;
+      }
+
+      .user-button__cloud {
+        border-color: #fff;
+        background: #fff;
+      }
+    }
   }
 
   &__icon {
@@ -86,10 +89,6 @@
       border-color: $dark-blue;
       @include adaptive-value(padding-right, 8, 3);
       @include adaptive-value(padding-left, 8, 4);
-    }
-
-    @media (max-width: 576px) {
-      right: 23%;
     }
   }
 }

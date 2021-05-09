@@ -1,0 +1,40 @@
+.cart-info {
+  width: 338px;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0px 10px 80px rgba(0, 52, 41, 0.3);
+  border-radius: 20px;
+
+  position: absolute;
+  top: 100%;
+  right: 0;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__top {
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.2;
+    color: $smoke-blue;
+
+    &_bold {
+      font-weight: 700;
+      color: $dark-blue;
+    }
+  }
+
+  &__btn {
+    margin-bottom: 30px;
+  }
+}
