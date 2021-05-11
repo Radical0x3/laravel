@@ -80,7 +80,7 @@ html {
   overflow-x: hidden;
 
   &.lock {
-    overflow-y: hidden;
+    overflow-y: hidden !important;
   }
 }
 

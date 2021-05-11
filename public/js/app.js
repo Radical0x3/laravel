@@ -5786,7 +5786,7 @@ $(document).ready(function () {
 
       if (catalogContainer.has(e.target).length === 0 && catalog.has(e.target).length === 0) {
         catalog.removeClass("active");
-        $(".js-hamburger").removeClass("active");
+        $(".js-hamburger-body").removeClass("animate");
       }
     });
   } else {
@@ -5801,14 +5801,15 @@ $(document).ready(function () {
   $(".js-main-hamburger").on("click", function () {
     var mobileMenu = $(".js-mobile");
     var blur = $(".js-main-blur");
+    var hamburger = $(this).find(".js-main-hamburger-body");
 
-    if (!$(this).hasClass("active")) {
-      $(this).addClass("active");
+    if (!hamburger.hasClass("animate")) {
+      hamburger.addClass("animate");
       mobileMenu.addClass("active");
       blur.addClass("active");
       bodyLock();
     } else {
-      $(this).removeClass("active");
+      hamburger.removeClass("animate");
       mobileMenu.removeClass("active");
       blur.removeClass("active");
       $(".js-mobile-sublist.mobile-sublist_opened").removeClass("mobile-sublist_opened");
@@ -5850,9 +5851,9 @@ $(document).ready(function () {
 
   $(".js-main-blur").on("click", function () {
     var mobileMenu = $(".js-mobile");
-    var hamburger = $(".js-main-hamburger");
+    var hamburger = $(".js-main-hamburger-body");
     mobileMenu.removeClass("active");
-    hamburger.removeClass("active");
+    hamburger.removeClass("animate");
     $(this).removeClass("active");
     $(".js-mobile-sublist.mobile-sublist_opened").removeClass("mobile-sublist_opened");
     bodyUnlock();
@@ -5885,14 +5886,14 @@ $(document).ready(function () {
   });
   $(".js-catalog-action").on("click", function () {
     var menu = $(this).siblings(".js-main-list");
-    var hamburger = $(this).find(".js-hamburger");
+    var hamburger = $(this).find(".js-hamburger-body");
 
     if (!menu.hasClass("active")) {
       menu.addClass("active");
-      hamburger.addClass("active");
+      hamburger.addClass("animate");
     } else {
       menu.removeClass("active");
-      hamburger.removeClass("active");
+      hamburger.removeClass("animate");
     }
   });
   $(".js-main-list-item").on("mouseenter", function () {

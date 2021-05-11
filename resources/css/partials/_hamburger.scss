@@ -1,72 +1,61 @@
 .hamburger {
-  display: flex;
-  align-items: center;
   width: 25px;
-  height: 21px;
-  margin-right: 22px;
+  height: 22px;
+  margin-right: 20px;
 
   position: relative;
+  cursor: pointer;
 
   &__body {
-    width: 75%;
+    width: 18px;
     height: 3px;
-    background: #fff;
+    background: rgba(255, 255, 255, 1);
     border-radius: 18px;
 
-    position: absolute;
-    top: 47%;
-    left: 0;
-    transform: translateY(-50%);
-    transition: 0.3s;
-  }
+    position: relative;
+    transform: translateY(11px);
+    transition: background 0.3s;
 
-  &::before,
-  &::after {
-    content: "";
-    display: block;
-    width: 115%;
-    height: 3px;
-    background: #fff;
-    border-radius: 18px;
+    &.animate {
+      background: rgba(255, 255, 255, 0);
 
-    position: absolute;
-    left: 0;
-    transition: 0.3s;
-  }
+      &::after {
+        top: 0;
+        transform: rotate(45deg);
+        transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1),
+          transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), background 0.3s;
+      }
 
-  &::before {
-    top: -1px;
-  }
-
-  &::after {
-    top: calc(100% - 2px);
-  }
-
-  &:hover {
-    .hamburger__body {
-      background: $dark-blue;
+      &::before {
+        bottom: 0;
+        transform: rotate(-45deg);
+        transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1),
+          transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), background 0.3s;
+      }
     }
 
-    &::after,
-    &::before {
-      background: $dark-blue;
-    }
-  }
+    &::before,
+    &::after {
+      content: "";
+      width: 25px;
+      height: 3px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 1);
 
-  &.active {
+      position: absolute;
+      left: 0;
+    }
+
     &::before {
-      top: 50%;
-      transform: rotate(45deg);
+      bottom: 10px;
+      transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+        transform 300ms cubic-bezier(0.23, 1, 0.32, 1), background 0.3s;
     }
 
     &::after {
-      top: 50%;
-      transform: rotate(-45deg);
-    }
-
-    .hamburger__body {
-      opacity: 0;
-      visibility: hidden;
+      top: 10px;
+      transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+        transform 300ms cubic-bezier(0.23, 1, 0.32, 1), background 0.3s;
     }
   }
 }

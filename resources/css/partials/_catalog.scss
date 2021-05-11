@@ -16,10 +16,15 @@
 
     &:hover {
       .hamburger {
-        &__body,
-        &::after,
-        &::before {
-          background: $dark-blue;
+        &__body {
+          &:not(.animate) {
+            background: $dark-blue;
+          }
+
+          &::after,
+          &::before {
+            background: $dark-blue;
+          }
         }
       }
 

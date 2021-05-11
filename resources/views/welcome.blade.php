@@ -72,7 +72,7 @@
         <div class="row header__row js-row-2">
           <div class="header__column col-1 px-0 align-items-center main-hamburger">
             <div class="hamburger js-main-hamburger">
-              <div class="hamburger__body"></div>
+              <div class="hamburger__body js-main-hamburger-body"></div>
             </div>
           </div>
 
@@ -80,7 +80,7 @@
             <div class="catalog js-catalog">
               <div class="catalog__action js-catalog-action">
                 <div class="hamburger js-hamburger">
-                  <div class="hamburger__body"></div>
+                  <div class="hamburger__body js-hamburger-body"></div>
                 </div>
                 <span class="catalog__text">каталог</span>
               </div>
