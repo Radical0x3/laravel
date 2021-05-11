@@ -5701,6 +5701,18 @@ $(document).ready(function () {
         "overflow-y": "visible"
       });
     }
+  });
+  $(".js-category-image").fancybox({
+    beforeShow: function beforeShow() {
+      $("html").css({
+        "overflow-y": "hidden"
+      });
+    },
+    afterClose: function afterClose() {
+      $("html").css({
+        "overflow-y": "visible"
+      });
+    }
   }); // Initialise slider
 
   var categoriesSlider = $(".categories__list");
@@ -5710,9 +5722,6 @@ $(document).ready(function () {
       slidesToShow: 6,
       arrows: false,
       variableWidth: true,
-      autoplay: false,
-      autoplaySpeed: 2000,
-      pauseOnHover: true,
       responsive: [{
         breakpoint: 1501,
         settings: {

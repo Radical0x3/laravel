@@ -806,17 +806,21 @@
           <div class="categories__list">
             @foreach ($categories as $category)
               <div class="category">
-                <a data-fancybox="gallery" data-caption="{{ $category['text'] }}"
-                  href="{{ asset('images/top-slider/category-' . $category['id'] . '.jpg') }}"
-                  class="category__image-wrap">
-                  <picture>
-                    <source data-srcset="{{ asset('images/top-slider/category-' . $category['id'] . '.webp') }}"
-                      type="image/webp" class="lazyload">
-                    <img data-src="{{ asset('images/top-slider/category-' . $category['id'] . '.jpg') }}"
-                      alt="category poster lazyload" class="category__image">
-                  </picture>
+                <div class="category__inner">
+                  <a data-fancybox="gallery" data-caption="{{ $category['text'] }}"
+                    href="{{ asset('images/top-slider/category-' . $category['id'] . '.jpg') }}"
+                    class="category__image-wrap js-category-image">
+                    <picture>
+                      <source data-srcset="{{ asset('images/top-slider/category-' . $category['id'] . '.webp') }}"
+                        type="image/webp" class="lazyload">
+                      <img width="311" height="446"
+                        data-src="{{ asset('images/top-slider/category-' . $category['id'] . '.jpg') }}"
+                        alt="category poster lazyload" class="category__image">
+                    </picture>
+                  </a>
+
                   <div class="circle-gradient"></div>
-                </a>
+                </div>
                 <a href="#" class="category__link">{{ $category['text'] }}</a>
               </div>
             @endforeach
@@ -1038,7 +1042,7 @@
                       <a href="#">
                         <picture>
                           <source data-srcset="{{ asset('images/stuff.webp') }}" type="image/webp" class="lazyload">
-                          <img data-src="{{ asset('images/stuff.jpg') }}" alt="box image"
+                          <img width="394" height="394" data-src="{{ asset('images/stuff.jpg') }}" alt="box image"
                             class="product__img lazyload">
                         </picture>
                       </a>

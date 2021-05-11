@@ -1,7 +1,7 @@
 .slick {
   &-list {
     width: 100%;
-    clip-path: inset(-100vw -100vw -100vw 0);
+    clip-path: inset(-100vw -101vw -100vw 0);
 
     @media (max-width: 769px) {
       clip-path: none;
