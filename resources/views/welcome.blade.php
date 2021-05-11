@@ -69,19 +69,23 @@
           </div>
         </div>
 
-        <div class="row header__row js-row-2">
+        <div class="row header__row js-row-2 align-items-center">
           <div class="header__column col-1 px-0 align-items-center main-hamburger">
-            <div class="hamburger js-main-hamburger">
-              <div class="hamburger__body js-main-hamburger-body"></div>
-            </div>
+            <svg class="hamburger js-main-hamburger" viewBox="0 0 100 80" width="25" height="25">
+              <rect class="hamburger__line hamburger__line-1" width="100" height="12" rx="8"></rect>
+              <rect class="hamburger__line hamburger__line-2" y="37" width="72" height="12" rx="8"></rect>
+              <rect class="hamburger__line hamburger__line-3" y="75" width="100" height="12" rx="8"></rect>
+            </svg>
           </div>
 
           <div class="header__column col-xl-3 d-xl-block d-none px-0">
             <div class="catalog js-catalog">
               <div class="catalog__action js-catalog-action">
-                <div class="hamburger js-hamburger">
-                  <div class="hamburger__body js-hamburger-body"></div>
-                </div>
+                <svg class="hamburger js-hamburger" viewBox="0 0 100 80" width="25" height="25">
+                  <rect class="hamburger__line hamburger__line-1" width="100" height="12" rx="8"></rect>
+                  <rect class="hamburger__line hamburger__line-2" y="37" width="72" height="12" rx="8"></rect>
+                  <rect class="hamburger__line hamburger__line-3" y="75" width="100" height="12" rx="8"></rect>
+                </svg>
                 <span class="catalog__text">каталог</span>
               </div>
 
@@ -391,6 +395,10 @@
       </div>
     </div>
   </header>
+
+  <svg>
+    <use href="{{ asset('images/icons/spritemap.svg#sprite-triangle') }}"></use>
+  </svg>
 
   <main class="main">
     <div class="mobile js-mobile js-accordion-group">
@@ -1328,7 +1336,7 @@
           </div>
 
           <div
-            class="footer__column col-xl-2 col-md-3 col-sm-4 col-m-5 col-12 d-m-flex justify-content-sm-start justify-content-m-center px-0">
+            class="footer__column col-xl-2 col-md-3 col-sm-4 col-m-5 col-12 d-m-flex justify-content-xl-start justify-content-m-center px-0">
             <div class="links-list phones-list js-accordion">
               <div class="links-list__top js-accordion-header">
                 <a href="#" class="links-list__header">Горячая линия</a>
@@ -1378,7 +1386,7 @@
                 </div>
               </div>
 
-              <div class="col-auto d-xxl-none">
+              <div class="col-auto d-lg-none">
                 <div class="scroll-up">
                   <div class="scroll-up__body">
                     <a href="#home" class="arrow arrow_big arrow_up js-scroll-to"></a>

@@ -139,7 +139,7 @@ $(document).ready(function () {
         catalog.has(e.target).length === 0
       ) {
         catalog.removeClass("active");
-        $(".js-hamburger-body").removeClass("animate");
+        $(".js-hamburger").removeClass("active");
       }
     });
   } else {
@@ -155,15 +155,14 @@ $(document).ready(function () {
   $(".js-main-hamburger").on("click", function () {
     const mobileMenu = $(".js-mobile");
     const blur = $(".js-main-blur");
-    const hamburger = $(this).find(".js-main-hamburger-body");
 
-    if (!hamburger.hasClass("animate")) {
-      hamburger.addClass("animate");
+    if (!$(this).hasClass("active")) {
+      $(this).addClass("active");
       mobileMenu.addClass("active");
       blur.addClass("active");
       bodyLock();
     } else {
-      hamburger.removeClass("animate");
+      $(this).removeClass("active");
       mobileMenu.removeClass("active");
       blur.removeClass("active");
       $(".js-mobile-sublist.mobile-sublist_opened").removeClass(
@@ -213,10 +212,10 @@ $(document).ready(function () {
   // Close the hamburger when blur area was clicked
   $(".js-main-blur").on("click", function () {
     const mobileMenu = $(".js-mobile");
-    const hamburger = $(".js-main-hamburger-body");
+    const hamburger = $(".js-main-hamburger");
 
     mobileMenu.removeClass("active");
-    hamburger.removeClass("animate");
+    hamburger.removeClass("active");
     $(this).removeClass("active");
     $(".js-mobile-sublist.mobile-sublist_opened").removeClass(
       "mobile-sublist_opened"
@@ -255,14 +254,14 @@ $(document).ready(function () {
 
   $(".js-catalog-action").on("click", function () {
     const menu = $(this).siblings(".js-main-list");
-    const hamburger = $(this).find(".js-hamburger-body");
+    const hamburger = $(this).find(".js-hamburger");
 
     if (!menu.hasClass("active")) {
       menu.addClass("active");
-      hamburger.addClass("animate");
+      hamburger.addClass("active");
     } else {
       menu.removeClass("active");
-      hamburger.removeClass("animate");
+      hamburger.removeClass("active");
     }
   });
 
@@ -285,6 +284,10 @@ $(document).ready(function () {
 
   $(".js-mobile-sublist-back").on("click", function () {
     $(this).parents(".js-mobile-sublist").removeClass("mobile-sublist_opened");
+  });
+
+  $(".svg").on("click", function () {
+    $(this).toggleClass("active");
   });
 });
 

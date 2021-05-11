@@ -73,6 +73,30 @@
       }
 
       .header__column {
+        &:nth-child(1) {
+          &:hover {
+            .hamburger {
+              &.active {
+                .hamburger__line {
+                  &:not(:nth-child(2)) {
+                    fill: $dark-blue;
+                  }
+                }
+              }
+
+              &:not(.active) {
+                .hamburger__line {
+                  fill: $dark-blue;
+                }
+              }
+            }
+
+            .catalog__text {
+              color: $dark-blue;
+            }
+          }
+        }
+
         &:nth-child(2) {
           padding-right: 13px !important;
         }

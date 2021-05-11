@@ -5786,7 +5786,7 @@ $(document).ready(function () {
 
       if (catalogContainer.has(e.target).length === 0 && catalog.has(e.target).length === 0) {
         catalog.removeClass("active");
-        $(".js-hamburger-body").removeClass("animate");
+        $(".js-hamburger").removeClass("active");
       }
     });
   } else {
@@ -5801,15 +5801,14 @@ $(document).ready(function () {
   $(".js-main-hamburger").on("click", function () {
     var mobileMenu = $(".js-mobile");
     var blur = $(".js-main-blur");
-    var hamburger = $(this).find(".js-main-hamburger-body");
 
-    if (!hamburger.hasClass("animate")) {
-      hamburger.addClass("animate");
+    if (!$(this).hasClass("active")) {
+      $(this).addClass("active");
       mobileMenu.addClass("active");
       blur.addClass("active");
       bodyLock();
     } else {
-      hamburger.removeClass("animate");
+      $(this).removeClass("active");
       mobileMenu.removeClass("active");
       blur.removeClass("active");
       $(".js-mobile-sublist.mobile-sublist_opened").removeClass("mobile-sublist_opened");
@@ -5851,9 +5850,9 @@ $(document).ready(function () {
 
   $(".js-main-blur").on("click", function () {
     var mobileMenu = $(".js-mobile");
-    var hamburger = $(".js-main-hamburger-body");
+    var hamburger = $(".js-main-hamburger");
     mobileMenu.removeClass("active");
-    hamburger.removeClass("animate");
+    hamburger.removeClass("active");
     $(this).removeClass("active");
     $(".js-mobile-sublist.mobile-sublist_opened").removeClass("mobile-sublist_opened");
     bodyUnlock();
@@ -5886,14 +5885,14 @@ $(document).ready(function () {
   });
   $(".js-catalog-action").on("click", function () {
     var menu = $(this).siblings(".js-main-list");
-    var hamburger = $(this).find(".js-hamburger-body");
+    var hamburger = $(this).find(".js-hamburger");
 
     if (!menu.hasClass("active")) {
       menu.addClass("active");
-      hamburger.addClass("animate");
+      hamburger.addClass("active");
     } else {
       menu.removeClass("active");
-      hamburger.removeClass("animate");
+      hamburger.removeClass("active");
     }
   });
   $(".js-main-list-item").on("mouseenter", function () {
@@ -5912,6 +5911,9 @@ $(document).ready(function () {
   });
   $(".js-mobile-sublist-back").on("click", function () {
     $(this).parents(".js-mobile-sublist").removeClass("mobile-sublist_opened");
+  });
+  $(".svg").on("click", function () {
+    $(this).toggleClass("active");
   });
 });
 

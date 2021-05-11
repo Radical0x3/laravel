@@ -16,14 +16,17 @@
 
     &:hover {
       .hamburger {
-        &__body {
-          &:not(.animate) {
-            background: $dark-blue;
+        &.active {
+          .hamburger__line {
+            &:not(:nth-child(2)) {
+              fill: $dark-blue;
+            }
           }
+        }
 
-          &::after,
-          &::before {
-            background: $dark-blue;
+        &:not(.active) {
+          .hamburger__line {
+            fill: $dark-blue;
           }
         }
       }
