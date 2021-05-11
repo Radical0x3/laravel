@@ -354,7 +354,7 @@
               </div>
 
               <div class="header__inner col-xl-4 col-md-5 col-7 px-0 user-button cart-button js-cart-button">
-                <a data-fancybox data-src="#basket-popup" href="javascript:;" class="js-popup">
+                <a data-fancybox data-src="#basket-popup" href="javascript:;" class="cart-button__body js-popup">
                   <div class="user-button__body">
                     <svg class="user-button__icon">
                       <use href="{{ asset('images/icons/spritemap.svg#sprite-top-cart') }}"></use>
@@ -378,6 +378,10 @@
 
                     <a href="#" class="underlined-link">Редактировать заказ</a>
                   </div>
+
+                  <svg class="cart-info__triangle">
+                    <use href="{{ asset('images/icons/spritemap.svg#sprite-triangle') }}"></use>
+                  </svg>
                 </div>
               </div>
 
@@ -395,10 +399,6 @@
       </div>
     </div>
   </header>
-
-  <svg>
-    <use href="{{ asset('images/icons/spritemap.svg#sprite-triangle') }}"></use>
-  </svg>
 
   <main class="main">
     <div class="mobile js-mobile js-accordion-group">

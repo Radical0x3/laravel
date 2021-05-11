@@ -22,7 +22,7 @@ $(document).ready(function () {
       document.querySelector(".custom-scrollbar")
     );
 
-    $(".cart-button").hover(
+    $(".js-cart-button").hover(
       function () {
         $(this).find(".js-cart-info").addClass("active");
       },

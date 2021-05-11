@@ -5681,7 +5681,7 @@ $(document).ready(function () {
 
   if (!md.mobile()) {
     var scrollbar = new simplebar__WEBPACK_IMPORTED_MODULE_2__.default(document.querySelector(".custom-scrollbar"));
-    $(".cart-button").hover(function () {
+    $(".js-cart-button").hover(function () {
       $(this).find(".js-cart-info").addClass("active");
     }, function () {
       $(this).find(".js-cart-info").removeClass("active");
