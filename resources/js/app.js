@@ -104,6 +104,7 @@ $(document).ready(function () {
     touch: false,
     beforeShow: function () {
       $("html").css({ "overflow-y": "hidden" });
+      observer.observe();
     },
     afterClose: function () {
       $("html").css({ "overflow-y": "visible" });
