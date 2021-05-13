@@ -43,10 +43,10 @@
                     class="category__image-wrap js-category-image">
                     <picture>
                       <source data-srcset="{{ asset('images/top-slider/category-' . $category['id'] . '.webp') }}"
-                        type="image/webp" class="lazyload">
+                        type="image/webp" class="lozad">
                       <img width="311" height="446"
                         data-src="{{ asset('images/top-slider/category-' . $category['id'] . '.jpg') }}"
-                        alt="category poster lazyload" class="category__image">
+                        alt="category poster lozad" class="category__image">
                     </picture>
                   </a>
 
@@ -137,7 +137,7 @@
         @endempty
       </div>
 
-      <img width="841" height="944" data-src="{{ asset('images/pop.png') }}" alt="pop image" class="pop lazyload">
+      <img width="841" height="944" data-src="{{ asset('images/pop.png') }}" alt="pop image" class="pop lozad">
     </section>
 
     @php
@@ -197,9 +197,9 @@
                       <div class="box">
                         <picture>
                           <source data-srcset="{{ asset('images/shop/shop-' . $id . '.webp') }}" type="image/webp"
-                            class="lazyload">
+                            class="lozad">
                           <img data-src="{{ asset('images/shop/shop-' . $id . '.jpg') }}" alt="box image"
-                            class="box__img lazyload">
+                            class="box__img lozad">
                         </picture>
                         <div class="box__blur"></div>
                         <a href="#" class="btn btn_rect">
@@ -250,7 +250,7 @@
     @endphp
 
     @isset($goods)
-      <section class="goods custom-scrollbar">
+      <section class="goods js-scrollbar">
         <div class="goods__outer container-fluid">
           <div class="row flex-nowrap align-items-stretch goods__inner" data-scrollbar>
             @foreach ($goods as $item)
@@ -272,9 +272,9 @@
                     <div class="product__wrap">
                       <a href="#">
                         <picture>
-                          <source data-srcset="{{ asset('images/stuff.webp') }}" type="image/webp" class="lazyload">
+                          <source data-srcset="{{ asset('images/stuff.webp') }}" type="image/webp" class="lozad">
                           <img width="394" height="394" data-src="{{ asset('images/stuff.jpg') }}" alt="box image"
-                            class="product__img lazyload">
+                            class="product__img lozad">
                         </picture>
                       </a>
 

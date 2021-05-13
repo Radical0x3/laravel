@@ -2,12 +2,16 @@ import "./import-jquery";
 import "slick-carousel";
 import SimpleBar from "simplebar";
 import "@fancyapps/fancybox";
-import "lazysizes";
-import "lazysizes/plugins/parent-fit/ls.parent-fit";
+import lozad from "lozad";
+// import "lazysizes";
+// import "lazysizes/plugins/parent-fit/ls.parent-fit";
 import MobileDetect from "mobile-detect";
 const md = new MobileDetect(window.navigator.userAgent);
 
 $(document).ready(function () {
+  const observer = lozad();
+  observer.observe();
+
   testWebP(function (support) {
     if (support === true) {
       document.querySelector("body").classList.add("webp");
@@ -17,7 +21,7 @@ $(document).ready(function () {
   });
 
   if (!md.mobile()) {
-    const scrollbar = document.querySelector(".custom-scrollbar");
+    const scrollbar = document.querySelector(".js-scrollbar");
 
     if (scrollbar) {
       new SimpleBar(scrollbar);
@@ -38,12 +42,15 @@ $(document).ready(function () {
     const gestureZone = document;
 
     let touchstartX = 0;
+    let touchstartY = 0;
     let touchendX = 0;
+    let touchendY = 0;
 
     gestureZone.addEventListener(
       "touchstart",
       function (event) {
         touchstartX = event.changedTouches[0].screenX;
+        touchstartY = event.changedTouches[0].screenY;
       },
       false
     );
@@ -52,6 +59,7 @@ $(document).ready(function () {
       "touchend",
       function (event) {
         touchendX = event.changedTouches[0].screenX;
+        touchendY = event.changedTouches[0].screenY;
         handleGesture(event);
       },
       false
@@ -59,8 +67,12 @@ $(document).ready(function () {
 
     function handleGesture(event) {
       const sliderArea = event.target.closest(".js-categories-list");
+      const scrollbarArea = event.target.closest(".js-scrollbar");
+      const diff = touchstartY - touchendY;
 
-      if (sliderArea) return;
+      if (sliderArea || scrollbarArea) return;
+
+      if (diff < -10 || diff > 10) return;
 
       // Swiped left
       if (touchendX < touchstartX) {
@@ -150,6 +162,10 @@ $(document).ready(function () {
           },
         },
       ],
+    });
+
+    categoriesSlider.on("afterChange", function () {
+      observer.observe();
     });
   }
 
