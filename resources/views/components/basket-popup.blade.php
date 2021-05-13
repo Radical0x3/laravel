@@ -13,7 +13,7 @@
                 <div class="basket-popup__image-holder"></div>
                 <a href="#">
                   <img data-src="{{ asset('images/basket-popup/basket-popup-' . $item['id'] . '.jpg') }}"
-                    alt="basket popup image" class="basket-popup__image lazyload">
+                    alt="basket popup image" class="basket-popup__image lozad">
                 </a>
               </div>
             </div>

@@ -105,9 +105,6 @@ $(document).ready(function () {
     beforeShow: function () {
       $("html").css({ "overflow-y": "hidden" });
     },
-    afterShow: function () {
-      observer.observe();
-    },
     afterClose: function () {
       $("html").css({ "overflow-y": "visible" });
     },
