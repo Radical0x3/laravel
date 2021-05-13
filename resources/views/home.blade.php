@@ -34,7 +34,7 @@
         @endphp
 
         @isset($categories)
-          <div class="categories__list">
+          <div class="categories__list js-categories-list">
             @foreach ($categories as $category)
               <div class="category">
                 <div class="category__inner">

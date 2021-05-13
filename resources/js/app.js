@@ -6,8 +6,6 @@ import "lazysizes";
 import "lazysizes/plugins/parent-fit/ls.parent-fit";
 import MobileDetect from "mobile-detect";
 const md = new MobileDetect(window.navigator.userAgent);
-import * as Hammer from "hammerjs";
-window.Hammer = Hammer.default;
 
 $(document).ready(function () {
   testWebP(function (support) {
@@ -34,22 +32,38 @@ $(document).ready(function () {
       }
     );
   } else if (md.mobile()) {
-    let swipe = new Hammer(document);
+    const mobileMenu = $(".js-mobile");
+    const burger = $(".js-main-hamburger");
+    const blur = $(".js-main-blur");
+    const gestureZone = document;
 
-    swipe.on("swiperight swipeleft", function (e) {
-      e.preventDefault();
-      const mobileMenu = $(".js-mobile");
-      const burger = $(".js-main-hamburger");
-      const blur = $(".js-main-blur");
+    let touchstartX = 0;
+    let touchendX = 0;
 
-      if (e.type == "swiperight") {
-        if (!burger.hasClass("active")) {
-          burger.addClass("active");
-          mobileMenu.addClass("active");
-          blur.addClass("active");
-          bodyLock();
-        }
-      } else {
+    gestureZone.addEventListener(
+      "touchstart",
+      function (event) {
+        touchstartX = event.changedTouches[0].screenX;
+      },
+      false
+    );
+
+    gestureZone.addEventListener(
+      "touchend",
+      function (event) {
+        touchendX = event.changedTouches[0].screenX;
+        handleGesture(event);
+      },
+      false
+    );
+
+    function handleGesture(event) {
+      const sliderArea = event.target.closest(".js-categories-list");
+
+      if (sliderArea) return;
+
+      // Swiped left
+      if (touchendX < touchstartX) {
         if (burger.hasClass("active")) {
           burger.removeClass("active");
           mobileMenu.removeClass("active");
@@ -60,7 +74,17 @@ $(document).ready(function () {
           bodyUnlock();
         }
       }
-    });
+
+      // Swiped right
+      if (touchendX > touchstartX) {
+        if (!burger.hasClass("active")) {
+          burger.addClass("active");
+          mobileMenu.addClass("active");
+          blur.addClass("active");
+          bodyLock();
+        }
+      }
+    }
   }
 
   // Basket popup
