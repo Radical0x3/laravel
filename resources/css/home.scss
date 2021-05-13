@@ -39,6 +39,7 @@
 @import "partials/main-hamburger";
 @import "partials/main-blur";
 @import "partials/main-list";
+@import "partials/main-mobile-list";
 @import "partials/main-sublist";
 
 @import "partials/menu";
@@ -48,6 +49,7 @@
 @import "partials/menu-social";
 @import "partials/mobile";
 @import "partials/mobile-catalog";
+@import "partials/mobile-sublist";
 @import "partials/nova-poshta";
 @import "partials/payments";
 @import "partials/payments-top";
@@ -132,89 +134,3 @@ body {
 .mobile-logo {
   fill: $dark-blue;
 }
-
-.main-mobile-list {
-  position: static;
-
-  &__item {
-    padding: 10px 15px 10px 10px;
-
-    &:hover {
-      .main-mobile-list__text {
-        padding-left: 30px;
-      }
-    }
-  }
-
-  &__link {
-    font-size: 20px;
-
-    .arrow {
-      margin-left: 0;
-      margin-right: -10px;
-    }
-  }
-
-  &__text {
-    margin-right: 0;
-    padding-left: 20px;
-  }
-}
-
-.mobile-sublist {
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  padding: 0 0 10px;
-  @include adaptive-value(padding-top, 65, 15);
-  position: absolute;
-  top: 0;
-  left: -100%;
-  transition: 0.3s;
-
-  &_opened {
-    transform: translate3d(100%, 0, 0);
-  }
-
-  &__title {
-    font-size: 26px;
-    line-height: 1.2;
-    color: $dark-blue;
-    font-weight: 500;
-    text-align: center;
-    margin-bottom: 15px;
-  }
-
-  &__back {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 8px 15px 8px 10px;
-    background: $secondary-orange;
-
-    font-size: 16px;
-    line-height: 1.2;
-    color: #fff;
-    font-weight: 700;
-
-    cursor: pointer;
-    transition: 0.3s;
-
-    &:hover {
-      background: $secondary-grey;
-    }
-
-    .arrow {
-      border-color: #fff;
-    }
-  }
-
-  &__icon {
-    width: 28px;
-    min-width: 28px;
-    height: 28px;
-  }
-}
-
-

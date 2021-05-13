@@ -1,0 +1,112 @@
+@import "custom";
+@import "partials/vars";
+
+@import "~bootstrap/scss/bootstrap-grid.scss";
+@import "~@fancyapps/fancybox/dist/jquery.fancybox.min.css";
+@import "~normalize.css/normalize.css";
+
+@import "partials/arrow";
+@import "partials/basket-popup";
+@import "partials/basket-count";
+@import "partials/btn";
+@import "partials/cart-button";
+@import "partials/cart-info";
+@import "partials/catalog";
+@import "partials/coockie";
+@import "partials/copyright";
+@import "partials/developed-by";
+@import "partials/empty-section";
+@import "partials/footer";
+@import "partials/footer-logo";
+@import "partials/form";
+@import "partials/hamburger";
+@import "partials/header";
+@import "partials/label";
+@import "partials/lang-menu";
+@import "partials/link-decor";
+@import "partials/links-list";
+@import "partials/log-in";
+@import "partials/logo";
+@import "partials/main-hamburger";
+@import "partials/main-blur";
+@import "partials/main-list";
+@import "partials/main-mobile-list";
+@import "partials/main-sublist";
+
+@import "partials/menu";
+@import "partials/main-menu";
+
+@import "partials/menu-payments";
+@import "partials/menu-social";
+@import "partials/mobile";
+@import "partials/mobile-catalog";
+@import "partials/mobile-sublist";
+@import "partials/nova-poshta";
+@import "partials/payments";
+@import "partials/payments-top";
+@import "partials/phones";
+@import "partials/phones-list";
+@import "partials/scroll-up";
+@import "partials/total-line";
+@import "partials/underlined-link";
+@import "partials/user-action";
+@import "partials/user-button";
+@import "partials/user-mobile-button";
+@import "partials/wrapper";
+
+html {
+  overflow-x: hidden;
+
+  &.lock {
+    overflow-y: hidden !important;
+  }
+}
+
+body {
+  @include family("Roboto");
+  margin: 0;
+  min-width: 320px;
+  position: relative;
+
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.main {
+  flex: 1;
+
+  @media (max-width: 1199.5px) {
+    @include adaptive-value(padding-top, 120, 70);
+  }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.other {
+  position: relative;
+}
+
+._h100 {
+  height: 100%;
+}
+
+._w100 {
+  width: 100%;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+.mobile-logo {
+  fill: $dark-blue;
+}

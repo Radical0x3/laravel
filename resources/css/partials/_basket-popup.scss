@@ -87,6 +87,11 @@
       color: $dark-blue;
       text-decoration: none;
       margin-bottom: 8px;
+      transition: 0.3s;
+
+      &:hover {
+        color: $green;
+      }
     }
 
     &-price {

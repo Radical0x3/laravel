@@ -14,7 +14,8 @@ const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin");
 
 mix
   .js("resources/js/app.js", "public/js")
-  .sass("resources/css/app.scss", "public/css")
+  .sass("resources/css/home.scss", "public/css")
+  .sass("resources/css/catalog.scss", "public/css")
   .copyDirectory("resources/images/", "public/images/", false)
   .copy("resources/css/fonts.css", "public/css")
   .copyDirectory("resources/fonts/", "public/fonts/", false)
