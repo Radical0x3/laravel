@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="{{ asset('css/catalog.css') }}">
 </head>
 
-<body>
+<body id="home">
   <x-header />
 
   <main class="main">
