@@ -6,8 +6,6 @@
 
   @media (min-width: 769px) {
     &:hover {
-      // transform: translateY(20px);
-
       .category__image {
         transform: scale(1.2);
       }
@@ -21,7 +19,7 @@
   }
 
   &__inner {
-    margin-bottom: 17px;
+    margin-bottom: 21px;
     position: relative;
   }
 

@@ -4,6 +4,7 @@
 @import "~bootstrap/scss/bootstrap-grid.scss";
 @import "~@fancyapps/fancybox/dist/jquery.fancybox.min.css";
 @import "~normalize.css/normalize.css";
+@import "~ion-rangeslider/css/ion.rangeSlider.css";
 
 @import "partials/arrow";
 @import "partials/basket-popup";
@@ -12,6 +13,9 @@
 @import "partials/cart-button";
 @import "partials/cart-info";
 @import "partials/catalog";
+@import "partials/catalog-option";
+@import "partials/catalog-sidebar";
+@import "partials/checkbox";
 @import "partials/coockie";
 @import "partials/copyright";
 @import "partials/developed-by";
@@ -29,6 +33,7 @@
 @import "partials/logo";
 @import "partials/main-hamburger";
 @import "partials/main-blur";
+@import "partials/main-catalog";
 @import "partials/main-list";
 @import "partials/main-mobile-list";
 @import "partials/main-sublist";
@@ -42,11 +47,21 @@
 @import "partials/mobile-catalog";
 @import "partials/mobile-sublist";
 @import "partials/nova-poshta";
+@import "partials/pagination";
 @import "partials/payments";
 @import "partials/payments-top";
 @import "partials/phones";
 @import "partials/phones-list";
+@import "partials/product";
+@import "partials/price";
+@import "partials/prices";
+@import "partials/range";
+@import "partials/rating";
+@import "partials/routes";
 @import "partials/scroll-up";
+@import "partials/section-title";
+@import "partials/select";
+@import "partials/service";
 @import "partials/total-line";
 @import "partials/underlined-link";
 @import "partials/user-action";
@@ -76,9 +91,15 @@ body {
 
 .main {
   flex: 1;
+  margin-bottom: 112px;
+  padding: 0 10px;
 
   @media (max-width: 1199.5px) {
     @include adaptive-value(padding-top, 120, 70);
+  }
+
+  &__head {
+    margin: -5px auto 17px;
   }
 }
 

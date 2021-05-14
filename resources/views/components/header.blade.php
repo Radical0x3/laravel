@@ -80,7 +80,7 @@
 
             <div class="main-list main-list_shadow main-list_rounded js-main-list">
               <div class="row main-list__body">
-                <div class="col-12 main-list__item js-main-list-item" data-category-id="1">
+                <div class="col-12 main-list__item main-list__item_rounded js-main-list-item" data-category-id="1">
                   <a href="#" class="main-list__link">
                     <svg class="main-list__icon">
                       <use href="{{ asset('images/icons/spritemap.svg#sprite-power') }}"></use>
@@ -90,7 +90,7 @@
                   </a>
                 </div>
 
-                <div class="col-12 main-list__item js-main-list-item" data-category-id="2">
+                <div class="col-12 main-list__item main-list__item_rounded js-main-list-item" data-category-id="2">
                   <a href="#" class="main-list__link">
                     <svg class="main-list__icon">
                       <use href="{{ asset('images/icons/spritemap.svg#sprite-cartridge') }}"></use>
@@ -100,7 +100,7 @@
                   </a>
                 </div>
 
-                <div class="col-12 main-list__item js-main-list-item" data-category-id="3">
+                <div class="col-12 main-list__item main-list__item_rounded js-main-list-item" data-category-id="3">
                   <a href="#" class="main-list__link">
                     <svg class="main-list__icon">
                       <use href="{{ asset('images/icons/spritemap.svg#sprite-geometry') }}"></use>
@@ -110,7 +110,7 @@
                   </a>
                 </div>
 
-                <div class="col-12 main-list__item js-main-list-item" data-category-id="4">
+                <div class="col-12 main-list__item main-list__item_rounded js-main-list-item" data-category-id="4">
                   <a href="#" class="main-list__link">
                     <svg class="main-list__icon">
                       <use href="{{ asset('images/icons/spritemap.svg#sprite-aktuator') }}"></use>
@@ -120,7 +120,7 @@
                   </a>
                 </div>
 
-                <div class="col-12 main-list__item js-main-list-item" data-category-id="5">
+                <div class="col-12 main-list__item main-list__item_rounded js-main-list-item" data-category-id="5">
                   <a href="#" class="main-list__link">
                     <svg class="main-list__icon">
                       <use href="{{ asset('images/icons/spritemap.svg#sprite-servoprivod') }}"></use>
@@ -130,7 +130,7 @@
                   </a>
                 </div>
 
-                <div class="col-12 main-list__item js-main-list-item" data-category-id="6">
+                <div class="col-12 main-list__item main-list__item_rounded js-main-list-item" data-category-id="6">
                   <a href="#" class="main-list__link">
                     <svg class="main-list__icon">
                       <use href="{{ asset('images/icons/spritemap.svg#sprite-prokladki') }}"></use>
@@ -140,7 +140,7 @@
                   </a>
                 </div>
 
-                <div class="col-12 main-list__item js-main-list-item" data-category-id="7">
+                <div class="col-12 main-list__item main-list__item_rounded js-main-list-item" data-category-id="7">
                   <a href="#" class="main-list__link">
                     <svg class="main-list__icon">
                       <use href="{{ asset('images/icons/spritemap.svg#sprite-zapchasti') }}"></use>
@@ -150,7 +150,7 @@
                   </a>
                 </div>
 
-                <div class="col-12 main-list__item js-main-list-item" data-category-id="8">
+                <div class="col-12 main-list__item main-list__item_rounded js-main-list-item" data-category-id="8">
                   <a href="#" class="main-list__link">
                     <svg class="main-list__icon">
                       <use href="{{ asset('images/icons/spritemap.svg#sprite-aktuator-2') }}"></use>
@@ -160,7 +160,7 @@
                   </a>
                 </div>
 
-                <div class="col-12 main-list__item js-main-list-item" data-category-id="9">
+                <div class="col-12 main-list__item main-list__item_rounded js-main-list-item" data-category-id="9">
                   <a href="#" class="main-list__link">
                     <svg class="main-list__icon">
                       <use href="{{ asset('images/icons/spritemap.svg#sprite-body-tourbine') }}"></use>
@@ -170,7 +170,7 @@
                   </a>
                 </div>
 
-                <div class="col-12 main-list__item js-main-list-item" data-category-id="10">
+                <div class="col-12 main-list__item main-list__item_rounded js-main-list-item" data-category-id="10">
                   <a href="#" class="main-list__link">
                     <svg class="main-list__icon">
                       <use href="{{ asset('images/icons/spritemap.svg#sprite-zapchasti-2') }}"></use>
@@ -366,9 +366,7 @@
                   <a href="#" class="underlined-link">Редактировать заказ</a>
                 </div>
 
-                <svg class="cart-info__triangle">
-                  <use href="{{ asset('images/icons/spritemap.svg#sprite-triangle') }}"></use>
-                </svg>
+
               </div>
             </div>
 

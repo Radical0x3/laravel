@@ -1,0 +1,27 @@
+.catalog-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 46px;
+
+  &_small {
+    max-height: 33px;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 500;
+    color: $smoke-blue;
+    margin-right: 20px;
+    white-space: nowrap;
+  }
+
+  &__select {
+    max-width: 245px;
+    min-width: 85px;
+
+    .arrow {
+      margin-top: -4px;
+    }
+  }
+}

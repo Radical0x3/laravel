@@ -1,14 +1,9 @@
 .main-mobile-list {
   position: static;
+  padding: 5px 0 9px;
 
   &__item {
     padding: 10px 15px 10px 10px;
-
-    &:hover {
-      .main-mobile-list__text {
-        padding-left: 30px;
-      }
-    }
   }
 
   &__link {

@@ -42,6 +42,16 @@
     margin-top: 7px;
   }
 
+  &_pag {
+    border-width: 0 2px 2px 0;
+    padding: 9px;
+    border-color: $smoke-blue;
+  }
+
+  &_dark {
+    border-color: $dark-blue;
+  }
+
   &:hover {
     border-color: $dark-blue;
   }

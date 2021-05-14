@@ -22,7 +22,7 @@
           <header class="categories__top container-fluid px-0">
             <div class="categories__row row align-items-center justify-content-sm-between justify-content-center">
               <div class="section-title categories__title col-md-8 col-sm-7 px-0">Популярные категории</div>
-              <a href="#" class="btn btn_sm btn_round col-md-4 col-sm-5">
+              <a href="/catalog" class="btn btn_sm btn_round col-md-4 col-sm-5">
                 Все категории
               </a>
             </div>

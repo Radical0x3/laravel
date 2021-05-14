@@ -1,0 +1,39 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    margin: 0 0 0 10px;
+  }
+
+  &__item {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    border: 1px solid $light-grey;
+    border-radius: 10px;
+
+    font-size: 18px;
+    line-height: 22px;
+    color: $smoke-blue;
+
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s;
+
+    &.active {
+      border-width: 2px;
+      border-color: #74c3b4;
+      color: $dark-blue;
+    }
+
+    &:hover {
+      background: rgba(#000, 0.02);
+      border-color: darken($light-grey, 30%);
+    }
+  }
+}

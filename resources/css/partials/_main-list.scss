@@ -1,7 +1,7 @@
 .main-list {
   width: 100%;
   background: #fff;
-  padding: 5px 0 9px;
+  padding: 5px 8px 9px 5px;
 
   position: absolute;
   top: 100%;
@@ -31,16 +31,17 @@
   }
 
   &__item {
-    padding: 8px 17px 8px 10px;
+    padding: 8px 9px 8px 5px;
     transition: 0.3s;
     cursor: pointer;
     position: static;
+    transition: background 0.3s;
 
     &:hover {
-      background: rgba(#eaeaea, 0.5);
+      background: $light-grey;
 
-      .main-list__text {
-        padding-left: 15px;
+      .main-list__link {
+        color: $dark-blue;
       }
     }
 
@@ -50,6 +51,10 @@
       &:first-child {
         border-top: 1px solid $secondary-grey;
       }
+    }
+
+    &_rounded {
+      border-radius: 10px;
     }
   }
 
@@ -62,6 +67,7 @@
     font-weight: 500;
     text-decoration: none;
     word-break: break-all;
+    transition: color 0.3s;
 
     .arrow {
       margin-left: auto;

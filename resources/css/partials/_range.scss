@@ -1,0 +1,38 @@
+.irs {
+  margin-top: 14px;
+}
+
+.irs--round {
+  height: 30px;
+
+  .irs-handle {
+    width: 30px;
+    height: 30px;
+    border-width: 2px;
+    border-color: $smoke-mint;
+    box-shadow: none;
+    cursor: pointer;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    &.to {
+      background-color: $green;
+      border-color: $green;
+    }
+  }
+
+  .irs-line {
+    height: 2px;
+    top: 15px;
+    transform: translateY(-50%);
+  }
+
+  .irs-bar {
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: $smoke-mint;
+    cursor: pointer;
+  }
+}

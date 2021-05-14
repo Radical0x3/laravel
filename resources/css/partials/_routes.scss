@@ -1,0 +1,23 @@
+.routes {
+  margin-bottom: 20px;
+
+  &__item {
+    font-size: 12px;
+    line-height: 1.2;
+    color: rgba($dark-blue, 0.5);
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $dark-blue;
+    }
+
+    &:not(:last-child) {
+      &::after {
+        content: "—";
+        display: inline-block;
+        margin-left: 4px;
+      }
+    }
+  }
+}

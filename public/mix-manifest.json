@@ -1,7 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/home.css": "/css/home.css",
     "/css/catalog.css": "/css/catalog.css",
+    "/css/home.css": "/css/home.css",
     "/images/pop.png": "/images/pop.png",
     "/images/stuff.jpg": "/images/stuff.jpg",
     "/images/stuff.webp": "/images/stuff.webp",

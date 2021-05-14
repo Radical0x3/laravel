@@ -115,4 +115,21 @@
       transition: 0.3s;
     }
   }
+
+  &_submit {
+    width: 100%;
+    background: $secondary-orange;
+    color: #fff;
+    border-radius: 10px 0;
+    border: 1px solid $secondary-orange;
+    padding: 10px 0;
+
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 500;
+
+    &:hover {
+      color: $secondary-orange;
+    }
+  }
 }

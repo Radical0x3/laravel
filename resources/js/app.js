@@ -3,8 +3,7 @@ import "slick-carousel";
 import SimpleBar from "simplebar";
 import "@fancyapps/fancybox";
 import lozad from "lozad";
-// import "lazysizes";
-// import "lazysizes/plugins/parent-fit/ls.parent-fit";
+import "ion-rangeslider";
 import MobileDetect from "mobile-detect";
 const md = new MobileDetect(window.navigator.userAgent);
 
@@ -169,6 +168,24 @@ $(document).ready(function () {
     });
   }
 
+  $(".js-sidebar-header").on("click", function () {
+    const targetNode = $(this).siblings(".js-sidebar-body");
+
+    if (targetNode.is(":visible")) {
+      $(this).removeClass("active");
+      targetNode.slideUp();
+    } else {
+      $(this).addClass("active");
+      targetNode.slideDown({
+        start: function () {
+          $(this).css({
+            display: "flex",
+          });
+        },
+      });
+    }
+  });
+
   // Accordion
   $(".js-accordion-btn").on("click", function (event) {
     const currentNode = event.target.closest(".js-accordion-btn");
@@ -196,12 +213,14 @@ $(document).ready(function () {
     }
   });
 
-  let accordionContainer = $(".js-accordion-header-to-hide");
-  let catalogContainer = $(".js-catalog-action");
+  const accordionContainer = $(".js-accordion-header-to-hide");
+  const catalogContainer = $(".js-catalog-action");
+  const selectContainer = $(".js-select__header");
   if (window.innerWidth >= 1200) {
     $(document).on("mouseup", function (e) {
-      let accordion = $(".js-accordion-body-to-hide");
-      let catalog = $(".js-main-list");
+      const accordion = $(".js-accordion-body-to-hide");
+      const catalog = $(".js-main-list");
+      const select = $(".js-select__body");
 
       if (
         accordionContainer.has(e.target).length === 0 &&
@@ -217,6 +236,13 @@ $(document).ready(function () {
       ) {
         catalog.removeClass("active");
         $(".js-hamburger").removeClass("active");
+      }
+
+      if (
+        selectContainer.has(e.target).length === 0 &&
+        select.has(e.target).length === 0
+      ) {
+        select.removeClass("active");
       }
     });
   } else {
@@ -361,6 +387,91 @@ $(document).ready(function () {
 
   $(".js-mobile-sublist-back").on("click", function () {
     $(this).parents(".js-mobile-sublist").removeClass("mobile-sublist_opened");
+  });
+
+  // Custom select
+  $(".js-select").on("click", function () {
+    const selectBody = $(this).find(".js-select__body");
+
+    if (!selectBody.hasClass("active")) {
+      $(".js-select").find(".js-select__body").removeClass("active");
+      selectBody.addClass("active");
+    } else {
+      selectBody.removeClass("active");
+    }
+  });
+
+  // Change a value of the custom select
+  $(".js-select-item").on("click", function () {
+    const text = $(this).children("span").text();
+    const parent = $(this).parents(".js-select").children(".js-select__header");
+
+    parent.children("span").text(text);
+  });
+
+  const range = $(".js-range-slider");
+  const inputFrom = $(".js-range-from");
+  const inputTo = $(".js-range-to");
+  let instance;
+  let min = 1847;
+  let max = 19717;
+  let from = 0;
+  let to = 0;
+
+  range.ionRangeSlider({
+    skin: "round",
+    type: "double",
+    min: 1847,
+    max: 19717,
+    from: 1847,
+    to: 19717,
+    grid: false,
+    hide_from_to: true,
+    hide_min_max: true,
+    onStart: updateInputs,
+    onChange: updateInputs,
+    onFinish: updateInputs,
+  });
+  instance = range.data("ionRangeSlider");
+
+  function updateInputs(data) {
+    from = data.from;
+    to = data.to;
+
+    inputFrom.prop("value", from);
+    inputTo.prop("value", to);
+  }
+
+  inputFrom.on("change", function () {
+    let val = $(this).prop("value");
+
+    if (val < min) {
+      val = min;
+    } else if (val > to) {
+      val = to;
+    }
+
+    instance.update({
+      from: val,
+    });
+
+    $(this).prop("value", val);
+  });
+
+  inputTo.on("change", function () {
+    let val = $(this).prop("value");
+
+    if (val < from) {
+      val = from;
+    } else if (val > max) {
+      val = max;
+    }
+
+    instance.update({
+      to: val,
+    });
+
+    $(this).prop("value", val);
   });
 });
 
