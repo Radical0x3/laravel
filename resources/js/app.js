@@ -71,6 +71,8 @@ $(document).ready(function () {
 
       if (sliderArea || scrollbarArea) return;
 
+      if ($("body").hasClass("fancybox-active")) return;
+
       if (diff < -10 || diff > 10) return;
 
       // Swiped left
@@ -378,9 +380,12 @@ $(document).ready(function () {
     }
   });
 
-  $(".js-main-mobile-list-item").on("click", function () {
+  $(".js-main-mobile-list-item").on("click", function (event) {
     const menu = $(this).attr("data-menu");
     const target = $(`.js-mobile-sublist[data-menu="${menu}"]`);
+    const link = event.target.closest("a");
+
+    if (link) return;
 
     target.addClass("mobile-sublist_opened");
   });

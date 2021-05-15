@@ -5699,6 +5699,7 @@ $(document).ready(function () {
       var scrollbarArea = event.target.closest(".js-scrollbar");
       var diff = touchstartY - touchendY;
       if (sliderArea || scrollbarArea) return;
+      if ($("body").hasClass("fancybox-active")) return;
       if (diff < -10 || diff > 10) return; // Swiped left
 
       if (touchendX < touchstartX) {
@@ -5992,9 +5993,11 @@ $(document).ready(function () {
       target.addClass("active");
     }
   });
-  $(".js-main-mobile-list-item").on("click", function () {
+  $(".js-main-mobile-list-item").on("click", function (event) {
     var menu = $(this).attr("data-menu");
     var target = $(".js-mobile-sublist[data-menu=\"".concat(menu, "\"]"));
+    var link = event.target.closest("a");
+    if (link) return;
     target.addClass("mobile-sublist_opened");
   });
   $(".js-mobile-sublist-back").on("click", function () {

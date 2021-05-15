@@ -12,26 +12,32 @@
   position: relative;
   transition: 0.3s;
 
-  &:hover {
-    box-shadow: 0px 20px 80px rgba(0, 0, 0, 0.1);
+  @media (min-width: 992px) {
+    &:hover {
+      box-shadow: 0px 20px 80px rgba(0, 0, 0, 0.1);
 
-    .product__buy {
-      background-color: #52aa50;
-      margin-right: 17px;
+      .product__buy {
+        background-color: #52aa50;
+        margin-right: 17px;
 
-      span {
-        display: inline-block;
-        opacity: 1;
-        visibility: visible;
-        order: 1;
-        padding-left: 10px;
-      }
+        span {
+          display: inline-block;
+          opacity: 1;
+          visibility: visible;
+          order: 1;
+          padding-left: 10px;
+        }
 
-      svg {
-        fill: #fff;
-        order: 0;
+        svg {
+          fill: #fff;
+          order: 0;
+        }
       }
     }
+  }
+
+  @media (max-width: 991.5px) {
+    padding-bottom: 5px;
   }
 
   &__wrap {
@@ -104,6 +110,10 @@
     &:hover {
       color: $primary;
     }
+
+    @media (max-width: 576px) {
+      font-size: 14px;
+    }
   }
 
   &__top {
@@ -115,8 +125,15 @@
     justify-content: space-between;
     align-items: flex-end;
     margin-right: -18px;
-
     position: relative;
+
+    @media (max-width: 991.5px) {
+      margin-right: 0;
+
+      .prices {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__buy {
@@ -139,20 +156,42 @@
     cursor: pointer;
     transition: 0.3s;
 
-    span {
+    @media (max-width: 991.5px) {
+      background-color: #52aa50;
+      padding: 9px 14px;
+      border: 1px solid #52aa50;
+
+      &:hover {
+        background-color: #fff;
+
+        .product__buy-icon {
+          fill: #52aa50;
+        }
+      }
+
+      span {
+        display: none;
+      }
+    }
+
+    &-text {
       order: 0;
       opacity: 0;
       visibility: hidden;
       transition: order 0.3s, opacity 0.3s, padding 0.3s;
     }
 
-    svg {
+    &-icon {
       width: 20px;
       height: 20px;
       object-fit: cover;
       fill: #000;
       order: 1;
       transition: 0.3s;
+
+      @media (max-width: 991.5px) {
+        fill: #fff;
+      }
     }
   }
 }

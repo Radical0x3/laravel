@@ -20,6 +20,7 @@
 @import "partials/copyright";
 @import "partials/developed-by";
 @import "partials/empty-section";
+@import "partials/filter-popup";
 @import "partials/footer";
 @import "partials/footer-logo";
 @import "partials/form";
@@ -44,6 +45,7 @@
 @import "partials/menu-payments";
 @import "partials/menu-social";
 @import "partials/mobile";
+@import "partials/mobile-button";
 @import "partials/mobile-catalog";
 @import "partials/mobile-sublist";
 @import "partials/nova-poshta";
@@ -62,6 +64,7 @@
 @import "partials/section-title";
 @import "partials/select";
 @import "partials/service";
+@import "partials/sort-popup";
 @import "partials/total-line";
 @import "partials/underlined-link";
 @import "partials/user-action";
@@ -91,7 +94,7 @@ body {
 
 .main {
   flex: 1;
-  margin-bottom: 112px;
+  @include adaptive-value(margin-bottom, 112, 50);
   padding: 0 10px;
 
   @media (max-width: 1199.5px) {
@@ -130,4 +133,8 @@ body {
 
 .mobile-logo {
   fill: $dark-blue;
+}
+
+.fancybox-slide--html {
+  padding: 10px;
 }

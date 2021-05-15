@@ -27,7 +27,7 @@
             <div
               class="col-12 mobile__column main-list__item main-list__item_bordered main-mobile-list__item js-main-mobile-list-item"
               data-menu="menu">
-              <a class="main-list__link main-mobile-list__link">
+              <a href="#" class="main-list__link main-mobile-list__link">
                 <div class="arrow arrow_medium arrow_left"></div>
                 <span class="main-list__text main-mobile-list__text">Меню</span>
               </a>
@@ -36,7 +36,7 @@
             <div
               class="col-12 mobile__column main-list__item main-list__item_bordered main-mobile-list__item js-main-mobile-list-item"
               data-menu="catalog">
-              <a class="main-list__link main-mobile-list__link">
+              <a href="/catalog" class="main-list__link main-mobile-list__link">
                 <div class="arrow arrow_medium arrow_left"></div>
                 <span class="main-list__text main-mobile-list__text">Каталог</span>
               </a>
@@ -45,7 +45,7 @@
             <div
               class="col-12 mobile__column main-list__item main-list__item_bordered main-mobile-list__item js-main-mobile-list-item"
               data-menu="contacts">
-              <a class="main-list__link main-mobile-list__link">
+              <a href="#" class="main-list__link main-mobile-list__link">
                 <div class="arrow arrow_medium arrow_left"></div>
                 <span class="main-list__text main-mobile-list__text">Контакты</span>
               </a>
@@ -54,7 +54,7 @@
             <div
               class="col-12 mobile__column main-list__item main-list__item_bordered main-mobile-list__item js-main-mobile-list-item"
               data-menu="dopmenu">
-              <a class="main-list__link main-mobile-list__link">
+              <a href="#" class="main-list__link main-mobile-list__link">
                 <div class="arrow arrow_medium arrow_left"></div>
                 <span class="main-list__text main-mobile-list__text">Доп меню</span>
               </a>

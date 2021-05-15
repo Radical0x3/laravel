@@ -123,7 +123,7 @@
 
         <div class="col-12 d-xxl-none px-0">
           <div class="row align-items-sm-center align-items-end justify-content-center">
-            <div class="col-9 d-lg-none">
+            <div class="col-m-7 col-9 d-lg-none">
               <div class="payments">
                 <a href="#" class="nova-poshta">
                   <svg class="nova-poshta__icon">

@@ -37,7 +37,7 @@
     <div class="main-catalog">
       <div class="container-fluid main-catalog__body">
         <div class="row mx-0">
-          <div class="main-catalog__column col-3">
+          <div class="main-catalog__column col-3 d-lg-block d-none">
             <aside class="catalog-sidebar">
               <div class="catalog-sidebar__item catalog-sidebar__item_toggle">
                 <div class="catalog-sidebar__top js-sidebar-header active">
@@ -155,7 +155,7 @@
 
           <div class="main-catalog__column col">
             <div class="row">
-              <div class="col-6">
+              <div class="col-6 d-lg-block d-none">
                 <div class="catalog-option">
                   <span class="catalog-option__text">Сортировать</span>
                   <div class="select catalog-option__select js-select">
@@ -180,7 +180,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6 d-flex justify-content-end">
+              <div class="col-6 d-lg-flex d-none justify-content-end">
                 <div class="catalog-option catalog-option_small">
                   <span class="catalog-option__text">Товаров на странице</span>
                   <div class="select catalog-option__select js-select">
@@ -204,6 +204,23 @@
                     </div>
                   </div>
                 </div>
+              </div>
+
+              <div class="col-m-6 col-12 d-lg-none d-block mb-m-6 mb-3">
+                <button data-fancybox data-src="#filter-popup" class="mobile-button js-popup">
+                  <span class="mobile-button__text">Фильтры</span>
+                  <svg class="mobile-button__icon">
+                    <use href="{{ asset('images/icons/spritemap.svg#sprite-filter') }}"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="col-m-6 col-12 d-lg-none d-block mb-6">
+                <button data-fancybox data-src="#sort-popup" class="mobile-button js-popup">
+                  <span class="mobile-button__text">Сортировка</span>
+                  <svg class="mobile-button__icon">
+                    <use href="{{ asset('images/icons/spritemap.svg#sprite-sort') }}"></use>
+                  </svg>
+                </button>
               </div>
 
               <div class="col-12">
@@ -230,9 +247,9 @@
                       ['id' => 9, 'title' => 'Ружье Mossberg 590M Mag-Fed к.12 18.5" Synthetic', 'icons' => ['wish', 'compare'], 'rating' => '5', 'votes-count' => '13', 'price' => '27 632.65'],
                   ];
                 @endphp
-                <div class="row justify-content-between">
+                <div class="row justify-content-m-between justify-content-center">
                   @foreach ($goods as $item)
-                    <div class="main-catalog__inner col-4">
+                    <div class="main-catalog__inner col-xl-4 col-lg-6 col-md-4 col-m-6 col-12">
                       <div class="product main-catalog__product">
                         @if (array_key_exists('label', $item))
                           @php
@@ -296,11 +313,11 @@
                             @endif
                           </div>
 
-                          <button class="product__buy">
-                            <svg>
+                          <button class="product__buy" title="Купить">
+                            <svg class="product__buy-icon">
                               <use href="{{ asset('images/icons/spritemap.svg#sprite-cart') }}"></use>
                             </svg>
-                            <span>Купить</span>
+                            <span class="product__buy-text">Купить</span>
                           </button>
                         </div>
                       </div>
@@ -309,7 +326,11 @@
 
                   <div class="col-12">
                     <div class="pagination">
-                      <div class="arrow arrow_pag arrow_left"></div>
+                      <div class="pagination__arrow">
+                        <svg class="pagination__icon">
+                          <use href="{{ asset('images/icons/spritemap.svg#sprite-arrow-left') }}"></use>
+                        </svg>
+                      </div>
                       <div class="pagination__list">
                         <div class="pagination__item">1</div>
                         <div class="pagination__item active">2</div>
@@ -317,7 +338,11 @@
                         <div class="pagination__item">4</div>
                         <div class="pagination__item">5</div>
                       </div>
-                      <div class="arrow arrow_pag arrow_right"></div>
+                      <div class="pagination__arrow">
+                        <svg class="pagination__icon">
+                          <use href="{{ asset('images/icons/spritemap.svg#sprite-arrow-right') }}"></use>
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -356,6 +381,8 @@
     ];
   @endphp
   <x-basket-popup :content="$basketItems" />
+  <x-filter-popup />
+  <x-sort-popup />
   <x-coockie />
 
   <script src="{{ asset('js/app.js') }}"></script>

@@ -15,6 +15,10 @@
     font-weight: 400;
     color: $secondary-grey;
 
+    @media (max-width: 576px) {
+      font-size: 14px;
+    }
+
     &::after {
       content: "";
       display: block;
@@ -31,6 +35,10 @@
     span {
       font-size: 13px;
       line-height: 16px;
+
+      @media (max-width: 576px) {
+      font-size: 12px;
+      }
     }
   }
 

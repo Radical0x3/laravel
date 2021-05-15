@@ -1,0 +1,35 @@
+.mobile-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 10px;
+  background: #fff;
+  border: 1px solid $light-grey;
+  border-radius: 10px;
+
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 500;
+  color: $dark-blue;
+
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background: darken(#fff, 5%);
+    border-color: $dark-blue;
+  }
+
+  &__icon {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    min-height: 20px;
+    fill: $dark-blue;
+  }
+
+  &__text {
+    margin-right: 10px;
+  }
+}

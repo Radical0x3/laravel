@@ -315,11 +315,11 @@
                       @endif
                     </div>
 
-                    <button class="product__buy">
-                      <svg>
+                    <button class="product__buy" title="Купить">
+                      <svg class="product__buy-icon">
                         <use href="{{ asset('images/icons/spritemap.svg#sprite-cart') }}"></use>
                       </svg>
-                      <span>Купить</span>
+                      <span class="product__buy-text">Купить</span>
                     </button>
                   </div>
                 </div>

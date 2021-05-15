@@ -1,0 +1,29 @@
+.filter-popup {
+  width: 100%;
+  max-width: 440px;
+  padding: 24px;
+
+  @media (max-width: 450px) {
+    padding: 24px 10px;
+  }
+
+  &__title {
+    padding-bottom: 15px;
+    border-bottom: 2px solid $dark-blue;
+    margin-bottom: 20px;
+
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: $dark-blue;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .catalog-sidebar__column {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,71 @@
+.sort-popup {
+  width: 100%;
+  max-width: 440px;
+  padding: 24px;
+
+  @media (max-width: 450px) {
+    padding: 24px 10px;
+  }
+
+  &__title {
+    padding-bottom: 15px;
+    border-bottom: 2px solid $dark-blue;
+    margin-bottom: 20px;
+
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: $dark-blue;
+  }
+
+  &__subtitle {
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $dark-blue;
+    margin-bottom: 15px;
+
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: $dark-blue;
+  }
+
+  &__list {
+    padding-bottom: 20px;
+    border-bottom: 1px solid $light-grey;
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    display: block;
+
+    &-text {
+      padding: 10px;
+      border-radius: 10px;
+      transition: 0.3s;
+
+      font-size: 18px;
+      line-height: 1.2;
+      color: $smoke-blue;
+      transition: 0.3s;
+    }
+  }
+
+  &__input {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+
+    &:checked + .sort-popup__item-text {
+      background: rgba($light-grey, 0.5);
+      color: $dark-blue;
+    }
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
