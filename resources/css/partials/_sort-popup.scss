@@ -32,8 +32,8 @@
 
   &__list {
     padding-bottom: 20px;
-    border-bottom: 1px solid $light-grey;
     margin-bottom: 20px;
+    border-bottom: 1px solid $light-grey;
   }
 
   &__item {
@@ -42,7 +42,6 @@
     &-text {
       padding: 10px;
       border-radius: 10px;
-      transition: 0.3s;
 
       font-size: 18px;
       line-height: 1.2;
@@ -54,9 +53,10 @@
   &__input {
     width: 1px;
     height: 1px;
+    clip: rect(0 0 0 0);
+
     overflow: hidden;
     position: absolute;
-    clip: rect(0 0 0 0);
 
     &:checked + .sort-popup__item-text {
       background: rgba($light-grey, 0.5);

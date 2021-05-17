@@ -4,16 +4,19 @@
 
   &__search {
     width: 100%;
-    border: none;
-    border-radius: 10px;
-    background: #dde8f0;
     @include adaptive-value(padding-top, 16, 9);
     @include adaptive-value(padding-left, 20, 10);
     @include adaptive-value(padding-bottom, 16, 9);
     padding-right: 25px;
+
+    background: #dde8f0;
+    border: none;
+    border-radius: 10px;
+
     @include adaptive-value(font-size, 16, 13);
     line-height: 1.2;
     color: $dark-blue;
+    
     transition: 0.3s;
 
     &::placeholder {

@@ -3,7 +3,7 @@
     <div class="container-fluid px-0">
       <div class="row header__row d-xl-flex d-none align-items-center justify-content-between js-row-1">
         <div class="header__column col-xxl-3 col-md-1 px-0 js-logo-wrap">
-          <a href="#">
+          <a href="/">
             <svg class="logo">
               <use href="{{ asset('images/icons/spritemap.svg#sprite-wezom-logo') }}"></use>
             </svg>
@@ -15,21 +15,26 @@
             <div class="menu__item main-menu__item js-menu-item active">
               <a href="#" class="menu__link link-decor">О Компании</a>
             </div>
+
             <div class="menu__item main-menu__item js-menu-item">
               <a href="#" class="menu__link">Политика конфиденциальности</a>
             </div>
+
             <div class="menu__item main-menu__item js-menu-item">
               <a href="#" class="menu__link">Доставка и оплата</a>
             </div>
+
             <div class="menu__item main-menu__item js-menu-item">
               <a href="#" class="menu__link">Гарантия</a>
             </div>
           </nav>
+
           <div class="phones js-accordion">
             <div class="phones__top js-accordion-header js-accordion-header-to-hide">
               <a href="tel:+380680000000" class="phones__text">+38 068 000 00 00</a>
               <div class="arrow arrow_small arrow_down js-accordion-btn"></div>
             </div>
+
             <div class="phones__body js-accordion-body js-accordion-body-to-hide">
               <a href="tel:+380680000001" class="phones__text phones__body-text">+38 068 000 00 01</a>
               <a href="tel:+380680000002" class="phones__text phones__body-text">+38 068 000 00 02</a>
@@ -43,10 +48,12 @@
             <div class="menu__item lang-menu__item">
               <a href="#" class="menu__link menu__link_dark">Ua</a>
             </div>
+
             <div class="menu__item lang-menu__item">
               <a href="#" class="menu__link menu__link_dark">Ru</a>
             </div>
           </div>
+
           <a href="#" class="user-action mr-3">
             <span class="user-action__text">Войти</span>
             <svg class="user-action__icon">
@@ -322,7 +329,7 @@
         <div
           class="header__column col-xl-2 col-4 px-0 d-flex align-items-center justify-content-xl-start justify-content-end js-user-button-wrap">
           <div class="row justify-content-xl-start justify-content-end">
-            <div class="header__inner col-4 user-button d-xl-flex d-none">
+            <div class="header__inner col-4 px-0 user-button d-xl-flex d-none">
               <div class="user-button__body">
                 <svg class="user-button__icon">
                   <use href="{{ asset('images/icons/spritemap.svg#sprite-top-compare') }}"></use>
@@ -365,8 +372,6 @@
 
                   <a href="#" class="underlined-link">Редактировать заказ</a>
                 </div>
-
-
               </div>
             </div>
 

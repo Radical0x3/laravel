@@ -4,8 +4,9 @@
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 8px;
-  transition: 0.3s;
+
   overflow: hidden;
+  transition: 0.3s;
 
   &__old {
     position: relative;
@@ -37,7 +38,7 @@
       line-height: 16px;
 
       @media (max-width: 576px) {
-      font-size: 12px;
+        font-size: 12px;
       }
     }
   }

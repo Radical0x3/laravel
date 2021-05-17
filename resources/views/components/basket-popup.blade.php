@@ -9,6 +9,7 @@
               <svg class="basket-popup__item-remove js-basket-popup-remove">
                 <use href="{{ asset('images/icons/spritemap.svg#sprite-close') }}"></use>
               </svg>
+
               <div class="basket-popup__image-wrap">
                 <div class="basket-popup__image-holder"></div>
                 <a href="#">
@@ -17,6 +18,7 @@
                 </a>
               </div>
             </div>
+
             <div class="basket-popup__item-content">
               <a href="#" class="basket-popup__item-link">{{ $item['title'] }}</a>
               <div class="basket-popup__item-inner">

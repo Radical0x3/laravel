@@ -1,8 +1,8 @@
 .footer {
-  background: $blue;
   padding: 0 10px;
   @include adaptive-value(padding-top, 58, 20);
   @include adaptive-value(padding-bottom, 47, 15);
+  background: $blue;
   position: relative;
 
   &__body {

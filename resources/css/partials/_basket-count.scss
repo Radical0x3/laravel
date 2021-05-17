@@ -24,11 +24,11 @@
 
   &__body {
     min-width: 55px;
-    text-align: center;
     padding: 9px 10px;
     margin: 0 8px;
     border: 1px solid $light-grey;
     border-radius: 10px;
+    text-align: center;
 
     @media (max-width: 576px) {
       min-width: 45px;

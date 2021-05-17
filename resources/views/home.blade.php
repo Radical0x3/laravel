@@ -92,6 +92,7 @@
                       <use href="{{ asset('images/icons/spritemap.svg#sprite-right-arrow') }}"></use>
                     </svg>
                   </button>
+
                   <svg class="circle-vector">
                     <use href="{{ asset('images/icons/spritemap.svg#sprite-circle') }}"></use>
                   </svg>
@@ -114,10 +115,12 @@
                     <div class="cards__inner col-lg-3 col-md-4 col-m-6 px-0">
                       <div class="card">
                         <p class="card__text">{{ $card['text'] }}</p>
+
                         <div class="time">
                           <svg>
                             <use href="{{ asset('images/icons/spritemap.svg#sprite-clock') }}"></use>
                           </svg>
+
                           <span class="time__dash">—</span>
                           <span class="time__duration">{{ $card['duration'] }} min</span>
                         </div>
@@ -201,6 +204,7 @@
                           <img data-src="{{ asset('images/shop/shop-' . $id . '.jpg') }}" alt="box image"
                             class="box__img lozad">
                         </picture>
+                        
                         <div class="box__blur"></div>
                         <a href="#" class="btn btn_rect">
                           {{ $shopItems[$id - 1] }}

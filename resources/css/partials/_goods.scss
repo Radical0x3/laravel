@@ -2,11 +2,12 @@
   max-width: 1920px;
   width: 100%;
   height: auto;
-  padding: 10px 0;
+  padding-top: 10px;
   @include adaptive-value(padding-left, 16, 10);
   @include adaptive-value(padding-right, 30, 10);
   @include adaptive-value(padding-bottom, 40, 21);
   margin: 0 auto 7.5%;
+  
   position: relative;
   overflow-y: hidden !important;
 

@@ -1,7 +1,6 @@
 .categories {
   background: linear-gradient(99.18deg, $orange 3.07%, #fe374a 100.56%);
   border-radius: 22px;
-
   @include adaptive-value(padding-top, 83, 35);
   @include adaptive-value(padding-bottom, 75, 40);
   @include adaptive-value(padding-left, 158, 20);

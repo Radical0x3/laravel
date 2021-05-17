@@ -1,9 +1,10 @@
 .mobile-sublist {
   width: 100%;
   height: 100%;
-  background: #fff;
-  padding: 0 0 10px;
+  padding-bottom: 10px;
   @include adaptive-value(padding-top, 65, 15);
+  background: #fff;
+
   position: absolute;
   top: 0;
   left: -100%;
@@ -14,12 +15,13 @@
   }
 
   &__title {
+    margin-bottom: 15px;
+
     font-size: 26px;
     line-height: 1.2;
     color: $dark-blue;
     font-weight: 500;
     text-align: center;
-    margin-bottom: 15px;
   }
 
   &__back {

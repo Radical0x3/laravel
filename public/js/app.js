@@ -5671,22 +5671,25 @@ __webpack_require__.r(__webpack_exports__);
 
 var md = new (mobile_detect__WEBPACK_IMPORTED_MODULE_6___default())(window.navigator.userAgent);
 $(document).ready(function () {
+  // Create an observer for lazyload
   var observer = lozad__WEBPACK_IMPORTED_MODULE_4___default()();
-  observer.observe();
+  observer.observe(); // Check if browser supports WebP
+
   testWebP(function (support) {
     if (support === true) {
       document.querySelector("body").classList.add("webp");
     } else {
       document.querySelector("body").classList.add("no-webp");
     }
-  });
+  }); // Check if user uses mobile device
 
   if (!md.mobile()) {
-    var scrollbar = document.querySelector(".js-scrollbar");
+    var scrollbar = document.querySelector(".js-scrollbar"); // Create a scrollbar component
 
     if (scrollbar) {
       new simplebar__WEBPACK_IMPORTED_MODULE_2__.default(scrollbar);
-    }
+    } // Show cart info on mouseenter or hide cart info on mouseleave
+
 
     $(".js-cart-button").hover(function () {
       $(this).find(".js-cart-info").addClass("active");
@@ -5697,9 +5700,12 @@ $(document).ready(function () {
     var handleGesture = function handleGesture(event) {
       var sliderArea = event.target.closest(".js-categories-list");
       var scrollbarArea = event.target.closest(".js-scrollbar");
-      var diff = touchstartY - touchendY;
-      if (sliderArea || scrollbarArea) return;
-      if ($("body").hasClass("fancybox-active")) return;
+      var diff = touchstartY - touchendY; // Don't recognize gestures on slider or scrollbar areas
+
+      if (sliderArea || scrollbarArea) return; // Don't recognize gestures when popup is shown
+
+      if ($("body").hasClass("fancybox-active")) return; // Don't recognize horizontal gestures on vertical gestures
+
       if (diff < -10 || diff > 10) return; // Swiped left
 
       if (touchendX < touchstartX) {
@@ -5723,10 +5729,12 @@ $(document).ready(function () {
       }
     };
 
+    // Create gestures events
     var mobileMenu = $(".js-mobile");
     var burger = $(".js-main-hamburger");
     var blur = $(".js-main-blur");
-    var gestureZone = document;
+    var gestureZone = document; // Coordinates of a gesture
+
     var touchstartX = 0;
     var touchstartY = 0;
     var touchendX = 0;
@@ -5740,7 +5748,7 @@ $(document).ready(function () {
       touchendY = event.changedTouches[0].screenY;
       handleGesture(event);
     }, false);
-  } // Basket popup
+  } // Open basket popup
 
 
   $(".js-popup").fancybox({
@@ -5755,7 +5763,8 @@ $(document).ready(function () {
         "overflow-y": "visible"
       });
     }
-  });
+  }); // Disable scroll when popup gallery is shown
+
   $(".js-category-image").fancybox({
     beforeShow: function beforeShow() {
       $("html").css({
@@ -5767,7 +5776,7 @@ $(document).ready(function () {
         "overflow-y": "visible"
       });
     }
-  }); // Initialise slider
+  }); // Initialize slider
 
   var categoriesSlider = $(".categories__list");
 
@@ -5811,7 +5820,8 @@ $(document).ready(function () {
     categoriesSlider.on("afterChange", function () {
       observer.observe();
     });
-  }
+  } // Sidebar's toggle blocks
+
 
   $(".js-sidebar-header").on("click", function () {
     var targetNode = $(this).siblings(".js-sidebar-body");
@@ -5832,14 +5842,12 @@ $(document).ready(function () {
   }); // Accordion
 
   $(".js-accordion-btn").on("click", function (event) {
-    var currentNode = event.target.closest(".js-accordion-btn");
     var accordionHeader = $(this).parents(".js-accordion-header");
     var group = $(this).parents(".js-accordion-group");
-    if (!currentNode) return;
-    var targetNode = $(accordionHeader).siblings(".js-accordion-body");
+    var targetNode = accordionHeader.siblings(".js-accordion-body");
 
     if (targetNode.is(":visible")) {
-      $(accordionHeader).removeClass("active");
+      accordionHeader.removeClass("active");
       targetNode.slideUp();
     } else {
       group.find(".js-accordion-header.active").removeClass("active");
@@ -5911,10 +5919,11 @@ $(document).ready(function () {
     document.querySelector(target).scrollIntoView({
       behavior: "smooth"
     });
-  });
+  }); // Hide coockie message
+
   $(".js-coockie-btn").on("click", function () {
     $(this).parents(".js-coockie").removeClass("active");
-  }); // Button appears from bottom
+  }); // Show coockie message
 
   setTimeout(function () {
     $(".js-coockie").addClass("active");
@@ -5956,7 +5965,8 @@ $(document).ready(function () {
     if (+elem.text() <= 0) {
       elem.addClass("hidden");
     }
-  });
+  }); // Change amount of the product
+
   $(".js-basket-popup-button").on("click", function () {
     var action = $(this).attr("data-basket-action");
     var elem = $(this).siblings(".js-basket-popup-text").find("span");
@@ -5971,7 +5981,8 @@ $(document).ready(function () {
     if (val != +elem.text()) {
       elem.text(val);
     }
-  });
+  }); // Show catalog menu
+
   $(".js-catalog-action").on("click", function () {
     var menu = $(this).siblings(".js-main-list");
     var hamburger = $(this).find(".js-hamburger");
@@ -5983,7 +5994,8 @@ $(document).ready(function () {
       menu.removeClass("active");
       hamburger.removeClass("active");
     }
-  });
+  }); // Show catalog submenu
+
   $(".js-main-list-item").on("mouseenter", function () {
     var id = $(this).attr("data-category-id");
     var target = $(".js-main-sublist-item[data-category-id='".concat(id, "']"));
@@ -5992,14 +6004,16 @@ $(document).ready(function () {
       $(".js-main-sublist-item.active").removeClass("active");
       target.addClass("active");
     }
-  });
+  }); // Show mobile submenu
+
   $(".js-main-mobile-list-item").on("click", function (event) {
     var menu = $(this).attr("data-menu");
     var target = $(".js-mobile-sublist[data-menu=\"".concat(menu, "\"]"));
     var link = event.target.closest("a");
     if (link) return;
     target.addClass("mobile-sublist_opened");
-  });
+  }); // Hide mobile submenu
+
   $(".js-mobile-sublist-back").on("click", function () {
     $(this).parents(".js-mobile-sublist").removeClass("mobile-sublist_opened");
   }); // Custom select
@@ -6013,13 +6027,14 @@ $(document).ready(function () {
     } else {
       selectBody.removeClass("active");
     }
-  }); // Change a value of the custom select
+  }); // Change a value of custom select
 
   $(".js-select-item").on("click", function () {
     var text = $(this).children("span").text();
     var parent = $(this).parents(".js-select").children(".js-select__header");
     parent.children("span").text(text);
-  });
+  }); // Create price's range slider
+
   var range = $(".js-range-slider");
   var inputFrom = $(".js-range-from");
   var inputTo = $(".js-range-to");
@@ -6042,14 +6057,15 @@ $(document).ready(function () {
     onChange: updateInputs,
     onFinish: updateInputs
   });
-  instance = range.data("ionRangeSlider");
+  instance = range.data("ionRangeSlider"); // Update input fields when price's range slider is changed
 
   function updateInputs(data) {
     from = data.from;
     to = data.to;
     inputFrom.prop("value", from);
     inputTo.prop("value", to);
-  }
+  } // Update price's range slider when input fields are changed
+
 
   inputFrom.on("change", function () {
     var val = $(this).prop("value");
@@ -6064,7 +6080,8 @@ $(document).ready(function () {
       from: val
     });
     $(this).prop("value", val);
-  });
+  }); // Update price's range slider when input fields are changed
+
   inputTo.on("change", function () {
     var val = $(this).prop("value");
 
@@ -6094,7 +6111,7 @@ function testWebP(callback) {
 var unlock = true;
 var timeout = 200;
 var root = document.querySelector("html");
-var lockPadding = document.querySelectorAll(".lock-padding");
+var lockPadding = document.querySelectorAll(".lock-padding"); // Compensate scroll width
 
 function bodyLock() {
   var lockPaddingValue = window.innerWidth - document.querySelector("body").offsetWidth + "px";

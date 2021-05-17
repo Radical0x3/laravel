@@ -8,9 +8,11 @@ import MobileDetect from "mobile-detect";
 const md = new MobileDetect(window.navigator.userAgent);
 
 $(document).ready(function () {
+  // Create an observer for lazyload
   const observer = lozad();
   observer.observe();
 
+  // Check if browser supports WebP
   testWebP(function (support) {
     if (support === true) {
       document.querySelector("body").classList.add("webp");
@@ -19,13 +21,16 @@ $(document).ready(function () {
     }
   });
 
+  // Check if user uses mobile device
   if (!md.mobile()) {
     const scrollbar = document.querySelector(".js-scrollbar");
 
+    // Create a scrollbar component
     if (scrollbar) {
       new SimpleBar(scrollbar);
     }
 
+    // Show cart info on mouseenter or hide cart info on mouseleave
     $(".js-cart-button").hover(
       function () {
         $(this).find(".js-cart-info").addClass("active");
@@ -35,11 +40,13 @@ $(document).ready(function () {
       }
     );
   } else if (md.mobile()) {
+    // Create gestures events
     const mobileMenu = $(".js-mobile");
     const burger = $(".js-main-hamburger");
     const blur = $(".js-main-blur");
     const gestureZone = document;
 
+    // Coordinates of a gesture
     let touchstartX = 0;
     let touchstartY = 0;
     let touchendX = 0;
@@ -69,10 +76,13 @@ $(document).ready(function () {
       const scrollbarArea = event.target.closest(".js-scrollbar");
       const diff = touchstartY - touchendY;
 
+      // Don't recognize gestures on slider or scrollbar areas
       if (sliderArea || scrollbarArea) return;
 
+      // Don't recognize gestures when popup is shown
       if ($("body").hasClass("fancybox-active")) return;
 
+      // Don't recognize horizontal gestures on vertical gestures
       if (diff < -10 || diff > 10) return;
 
       // Swiped left
@@ -100,7 +110,7 @@ $(document).ready(function () {
     }
   }
 
-  // Basket popup
+  // Open basket popup
   $(".js-popup").fancybox({
     touch: false,
     beforeShow: function () {
@@ -111,6 +121,7 @@ $(document).ready(function () {
     },
   });
 
+  // Disable scroll when popup gallery is shown
   $(".js-category-image").fancybox({
     beforeShow: function () {
       $("html").css({ "overflow-y": "hidden" });
@@ -120,7 +131,7 @@ $(document).ready(function () {
     },
   });
 
-  // Initialise slider
+  // Initialize slider
   const categoriesSlider = $(".categories__list");
   if (categoriesSlider) {
     categoriesSlider.slick({
@@ -170,6 +181,7 @@ $(document).ready(function () {
     });
   }
 
+  // Sidebar's toggle blocks
   $(".js-sidebar-header").on("click", function () {
     const targetNode = $(this).siblings(".js-sidebar-body");
 
@@ -190,16 +202,13 @@ $(document).ready(function () {
 
   // Accordion
   $(".js-accordion-btn").on("click", function (event) {
-    const currentNode = event.target.closest(".js-accordion-btn");
     const accordionHeader = $(this).parents(".js-accordion-header");
     const group = $(this).parents(".js-accordion-group");
 
-    if (!currentNode) return;
-
-    const targetNode = $(accordionHeader).siblings(".js-accordion-body");
+    const targetNode = accordionHeader.siblings(".js-accordion-body");
 
     if (targetNode.is(":visible")) {
-      $(accordionHeader).removeClass("active");
+      accordionHeader.removeClass("active");
       targetNode.slideUp();
     } else {
       group.find(".js-accordion-header.active").removeClass("active");
@@ -287,11 +296,12 @@ $(document).ready(function () {
     });
   });
 
+  // Hide coockie message
   $(".js-coockie-btn").on("click", function () {
     $(this).parents(".js-coockie").removeClass("active");
   });
 
-  // Button appears from bottom
+  // Show coockie message
   setTimeout(function () {
     $(".js-coockie").addClass("active");
   }, 2000);
@@ -341,6 +351,7 @@ $(document).ready(function () {
     }
   });
 
+  // Change amount of the product
   $(".js-basket-popup-button").on("click", function () {
     const action = $(this).attr("data-basket-action");
     const elem = $(this).siblings(".js-basket-popup-text").find("span");
@@ -357,6 +368,7 @@ $(document).ready(function () {
     }
   });
 
+  // Show catalog menu
   $(".js-catalog-action").on("click", function () {
     const menu = $(this).siblings(".js-main-list");
     const hamburger = $(this).find(".js-hamburger");
@@ -370,6 +382,7 @@ $(document).ready(function () {
     }
   });
 
+  // Show catalog submenu
   $(".js-main-list-item").on("mouseenter", function () {
     const id = $(this).attr("data-category-id");
     const target = $(`.js-main-sublist-item[data-category-id='${id}']`);
@@ -380,6 +393,7 @@ $(document).ready(function () {
     }
   });
 
+  // Show mobile submenu
   $(".js-main-mobile-list-item").on("click", function (event) {
     const menu = $(this).attr("data-menu");
     const target = $(`.js-mobile-sublist[data-menu="${menu}"]`);
@@ -390,6 +404,7 @@ $(document).ready(function () {
     target.addClass("mobile-sublist_opened");
   });
 
+  // Hide mobile submenu
   $(".js-mobile-sublist-back").on("click", function () {
     $(this).parents(".js-mobile-sublist").removeClass("mobile-sublist_opened");
   });
@@ -406,7 +421,7 @@ $(document).ready(function () {
     }
   });
 
-  // Change a value of the custom select
+  // Change a value of custom select
   $(".js-select-item").on("click", function () {
     const text = $(this).children("span").text();
     const parent = $(this).parents(".js-select").children(".js-select__header");
@@ -414,6 +429,7 @@ $(document).ready(function () {
     parent.children("span").text(text);
   });
 
+  // Create price's range slider
   const range = $(".js-range-slider");
   const inputFrom = $(".js-range-from");
   const inputTo = $(".js-range-to");
@@ -439,6 +455,7 @@ $(document).ready(function () {
   });
   instance = range.data("ionRangeSlider");
 
+  // Update input fields when price's range slider is changed
   function updateInputs(data) {
     from = data.from;
     to = data.to;
@@ -447,6 +464,7 @@ $(document).ready(function () {
     inputTo.prop("value", to);
   }
 
+  // Update price's range slider when input fields are changed
   inputFrom.on("change", function () {
     let val = $(this).prop("value");
 
@@ -463,6 +481,7 @@ $(document).ready(function () {
     $(this).prop("value", val);
   });
 
+  // Update price's range slider when input fields are changed
   inputTo.on("change", function () {
     let val = $(this).prop("value");
 
@@ -494,6 +513,7 @@ const timeout = 200;
 const root = document.querySelector("html");
 const lockPadding = document.querySelectorAll(".lock-padding");
 
+// Compensate scroll width
 function bodyLock() {
   const lockPaddingValue =
     window.innerWidth - document.querySelector("body").offsetWidth + "px";

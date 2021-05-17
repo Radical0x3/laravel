@@ -12,12 +12,12 @@
   }
 
   &__title {
+    margin-bottom: 19px;
+
     font-size: 30px;
     line-height: 1.2;
     font-weight: 500;
     color: $dark-blue;
-
-    margin-bottom: 19px;
   }
 
   &__body {
@@ -27,10 +27,10 @@
   &__item {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
     padding: 11px 0;
     border-top: 1px solid #ededed;
     position: relative;
-    flex-wrap: wrap;
 
     &-aside {
       display: flex;
@@ -40,8 +40,8 @@
 
       @media (max-width: 476px) {
         flex-basis: 100%;
-        margin-bottom: 10px;
         justify-content: center;
+        margin-bottom: 10px;
         position: relative;
       }
     }
@@ -82,11 +82,13 @@
 
     &-link {
       display: inline-block;
+      margin-bottom: 8px;
+
       font-size: 18px;
       line-height: 1.2;
       color: $dark-blue;
       text-decoration: none;
-      margin-bottom: 8px;
+
       transition: 0.3s;
 
       &:hover {
@@ -100,6 +102,7 @@
 
     &-price {
       margin: 0 0 8px 0;
+
       font-size: 16px;
       line-height: 1.2;
       color: $smoke-blue;
@@ -183,6 +186,7 @@
 
   &__total {
     margin-bottom: 25px;
+
     @include adaptive-value(font-size, 36, 24);
     line-height: 1.2;
     color: $dark-blue;

@@ -1,11 +1,13 @@
 .underlined-link {
   display: inline-block;
   padding-bottom: 4px;
+
   font-size: 18px;
   line-height: 1.2;
   font-weight: 500;
   color: $dark-blue;
   text-decoration: none;
+
   position: relative;
   transition: 0.3s;
 

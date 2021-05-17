@@ -8,11 +8,12 @@
   }
 
   &__text {
+    margin-right: 20px;
+
     font-size: 14px;
     line-height: 25px;
     font-weight: 500;
     color: $smoke-blue;
-    margin-right: 20px;
     white-space: nowrap;
   }
 

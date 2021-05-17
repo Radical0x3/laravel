@@ -30,12 +30,13 @@
   }
 
   &__link {
+    margin-right: 10px;
+
     font-size: 14px;
     line-height: 1.7;
     font-weight: 700;
     color: $smoke-blue;
     text-decoration: none;
-    margin-right: 10px;
 
     transition: 0.3s;
 

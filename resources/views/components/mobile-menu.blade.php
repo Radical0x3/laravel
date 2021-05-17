@@ -65,7 +65,7 @@
 
       <div class="col-12 pb-2 px-0">
         <div class="row _h100 justify-content-center align-items-end mx-0">
-          <div class="col-auto user-button user-mobile-button px-0">
+          <div class="col-3 user-button user-mobile-button px-0">
             <div class="user-button__body">
               <svg class="user-button__icon">
                 <use href="{{ asset('images/icons/spritemap.svg#sprite-top-compare') }}"></use>
@@ -73,7 +73,7 @@
             </div>
           </div>
 
-          <div class="col-auto user-button user-mobile-button px-0">
+          <div class="col-3 user-button user-mobile-button px-0">
             <div class="user-button__body">
               <svg class="user-button__icon">
                 <use href="{{ asset('images/icons/spritemap.svg#sprite-top-wish') }}"></use>

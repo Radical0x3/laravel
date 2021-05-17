@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-
   @include adaptive-value(padding-top, 33, 20);
   @include adaptive-value(padding-bottom, 28, 20);
   @include adaptive-value(padding-left, 31, 15);

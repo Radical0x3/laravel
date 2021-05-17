@@ -87,14 +87,15 @@ html {
 }
 
 body {
-  @include family("Roboto");
-  margin: 0;
   min-width: 320px;
-  position: relative;
-
-  display: flex;
   min-height: 100vh;
+  display: flex;
   flex-direction: column;
+  margin: 0;
+
+  @include family("Roboto");
+
+  position: relative;
   overflow-x: hidden;
 }
 
@@ -120,15 +121,6 @@ body {
 
 ._h100 {
   height: 100%;
-}
-
-._w100 {
-  width: 100%;
-}
-
-.overflow-x-auto {
-  overflow-x: auto;
-  overflow-y: visible;
 }
 
 .mobile-logo {

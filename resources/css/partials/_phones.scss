@@ -1,6 +1,6 @@
 .phones {
-  position: relative;
   padding: 0 5px 0 10px;
+  position: relative;
 
   &__top {
     display: flex;
@@ -25,14 +25,14 @@
     display: none;
     flex-direction: column;
     align-items: flex-start;
+    padding: 10px 5px 10px 10px;
     background: #fff;
     box-shadow: 4px 4px 6px -4px #ccc, -4px 4px 6px -4px #ccc;
-    padding: 10px 5px 10px 10px;
-    z-index: 2;
 
     position: absolute;
     top: 110%;
     left: 0;
+    z-index: 2;
 
     &-text {
       &:not(:last-child) {
@@ -48,11 +48,12 @@
   }
 
   &__text {
+    margin-right: 16px;
+
     font-size: 14px;
     line-height: 1.2;
     color: $dark-blue;
     font-weight: 700;
-    margin-right: 16px;
     text-decoration: none;
 
     transition: color 0.3s;

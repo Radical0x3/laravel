@@ -2,7 +2,7 @@
   width: 320px;
   height: calc(100% - 54px);
   background: #fff;
-  padding: 0 0 10px;
+  padding-bottom: 10px;
   @include adaptive-value(padding-top, 65, 15);
 
   overflow-x: hidden;

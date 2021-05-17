@@ -3,6 +3,7 @@
   @include adaptive-value(padding-top, 16, 5);
   @include adaptive-value(padding-bottom, 16, 5);
   margin-bottom: 7px;
+
   position: relative;
   z-index: 99;
 
@@ -123,22 +124,34 @@
           }
 
           .user-button {
+            @media (max-width: 900px) {
+              max-width: 80px;
+            }
+
+            @media (max-width: 450px) {
+              max-width: 70px;
+            }
+
+            &:nth-child(1) {
+              .user-button__body {
+                z-index: 3;
+              }
+            }
+
             &:nth-child(2) {
               .user-button__body {
-                padding: 16px 30px 6px !important;
+                z-index: 2;
               }
             }
 
             &:nth-child(3) {
               .user-button__body {
-                padding: 16px 34px 6px 26px !important;
-
-                @media (max-width: 1199.5px) {
-                  padding: 14px 30px 8px 22px !important;
+                @media (max-width: 900px) {
+                  max-width: 80px;
                 }
 
-                @media (max-width: 575.5px) {
-                  padding: 8px 17px !important;
+                @media (max-width: 450px) {
+                  max-width: 70px;
                 }
               }
             }

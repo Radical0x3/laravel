@@ -32,10 +32,10 @@
 
   &__item {
     padding: 8px 9px 8px 5px;
+
+    position: static;
     transition: 0.3s;
     cursor: pointer;
-    position: static;
-    transition: background 0.3s;
 
     &:hover {
       background: $light-grey;
@@ -61,12 +61,14 @@
   &__link {
     display: inline-flex;
     align-items: center;
+
     font-size: 18px;
     line-height: 1.2;
     color: $smoke-blue;
     font-weight: 500;
     text-decoration: none;
     word-break: break-all;
+
     transition: color 0.3s;
 
     .arrow {

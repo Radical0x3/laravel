@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 87px;
+  max-width: 90px;
 
   position: relative;
 
@@ -23,8 +23,12 @@
   }
 
   &__body {
+    width: 100%;
     max-width: 90px;
-    padding: 14px 30px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px 12px;
     border: solid #ffcb6d;
     border-width: 2px 0 2px 2px;
 

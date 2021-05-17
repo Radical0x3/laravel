@@ -3,14 +3,16 @@
   margin-top: -2px;
 
   &__item {
+    width: 53px;
+    height: 31px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 53px;
-    height: 31px;
+
     background: $light-grey;
     border-radius: 3px;
     opacity: 0.5;
+
     transition: opacity 0.3s;
 
     &:not(:last-child) {

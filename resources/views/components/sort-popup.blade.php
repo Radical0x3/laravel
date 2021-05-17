@@ -1,5 +1,6 @@
 <div style="display: none;" id="sort-popup" class="sort-popup">
   <div class="sort-popup__title">Сортировка</div>
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-12 px-0">
@@ -28,6 +29,7 @@
 
       <div class="col-12 px-0">
         <div class="sort-popup__subtitle">Товаров на странице</div>
+
         <div class="sort-popup__list">
           <label class="sort-popup__item">
             <input type="radio" name="products-to-show" class="sort-popup__input" />

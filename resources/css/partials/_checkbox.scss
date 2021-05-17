@@ -1,10 +1,10 @@
 .checkbox {
   display: inline-block;
-  padding-left: 30px;
-  position: relative;
-  cursor: pointer;
   padding: 5px 0 5px 30px;
   border-radius: 5px;
+
+  position: relative;
+  cursor: pointer;
   transition: 0.3s;
 
   &:hover {
@@ -22,9 +22,9 @@
   &__input {
     width: 1px;
     height: 1px;
+    clip: rect(0 0 0 0);
     overflow: hidden;
     position: absolute;
-    clip: rect(0 0 0 0);
 
     &:checked + .checkbox__style {
       border-color: $green;

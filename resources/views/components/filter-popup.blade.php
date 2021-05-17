@@ -1,5 +1,6 @@
 <div style="display: none;" id="filter-popup" class="filter-popup">
   <div class="filter-popup__title">Фильтры</div>
+  
   <div class="container-fluid">
     <div class="row">
       <div class="col-12 px-0">
@@ -45,16 +46,20 @@
                   <span class="select__current">Leon</span>
                   <div class="arrow arrow_small arrow_down arrow_dark"></div>
                 </div>
+
                 <div class="select__body js-select__body">
                   <div class="select__item js-select-item">
                     <span>Leon</span>
                   </div>
+
                   <div class="select__item js-select-item">
                     <span>Leon 2</span>
                   </div>
+
                   <div class="select__item js-select-item">
                     <span>Leon 3</span>
                   </div>
+
                   <div class="select__item js-select-item">
                     <span>Leon 4</span>
                   </div>
@@ -74,16 +79,20 @@
                   <span class="select__current">Все</span>
                   <div class="arrow arrow_small arrow_down arrow_dark"></div>
                 </div>
+
                 <div class="select__body js-select__body">
                   <div class="select__item js-select-item">
                     <span>Все</span>
                   </div>
+
                   <div class="select__item js-select-item">
                     <span>2021</span>
                   </div>
+
                   <div class="select__item js-select-item">
                     <span>2020</span>
                   </div>
+
                   <div class="select__item js-select-item">
                     <span>2019</span>
                   </div>

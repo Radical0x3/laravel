@@ -26,10 +26,11 @@
 
   &__current {
     width: 100%;
+    padding-right: 10px;
+    
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    padding-right: 10px;
   }
 
   &__body {

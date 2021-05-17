@@ -27,6 +27,7 @@
               <a href="#" class="routes__item">Запчасти</a>
             </div>
           </div>
+
           <div class="col-12 px-0">
             <div class="section-title section-title_sm">Запчасти</div>
           </div>
@@ -51,16 +52,19 @@
                     <span class="checkbox__style"></span>
                     <span class="checkbox__text">Jrone</span>
                   </label>
+
                   <label class="checkbox">
                     <input type="checkbox" class="checkbox__input" />
                     <span class="checkbox__style"></span>
                     <span class="checkbox__text">Turbo</span>
                   </label>
+
                   <label class="checkbox">
                     <input type="checkbox" class="checkbox__input" />
                     <span class="checkbox__style"></span>
                     <span class="checkbox__text">E & E</span>
                   </label>
+
                   <label class="checkbox">
                     <input type="checkbox" class="checkbox__input" />
                     <span class="checkbox__style"></span>
@@ -80,16 +84,20 @@
                       <span class="select__current">Leon</span>
                       <div class="arrow arrow_small arrow_down arrow_dark"></div>
                     </div>
+
                     <div class="select__body js-select__body">
                       <div class="select__item js-select-item">
                         <span>Leon</span>
                       </div>
+
                       <div class="select__item js-select-item">
                         <span>Leon 2</span>
                       </div>
+
                       <div class="select__item js-select-item">
                         <span>Leon 3</span>
                       </div>
+
                       <div class="select__item js-select-item">
                         <span>Leon 4</span>
                       </div>
@@ -109,16 +117,20 @@
                       <span class="select__current">Все</span>
                       <div class="arrow arrow_small arrow_down arrow_dark"></div>
                     </div>
+
                     <div class="select__body js-select__body">
                       <div class="select__item js-select-item">
                         <span>Все</span>
                       </div>
+
                       <div class="select__item js-select-item">
                         <span>2021</span>
                       </div>
+
                       <div class="select__item js-select-item">
                         <span>2020</span>
                       </div>
+
                       <div class="select__item js-select-item">
                         <span>2019</span>
                       </div>
@@ -136,19 +148,17 @@
                   <div class="catalog-sidebar__column col-5 px-0">
                     <input class="catalog-sidebar__input js-range-from" type="number" placeholder="от 1847">
                   </div>
+
                   <div class="catalog-sidebar__column col-5 pr-0">
                     <input class="catalog-sidebar__input js-range-to" type="number" placeholder="до 19717">
                   </div>
+
                   <div class="col pr-0">
                     <div class="btn btn_submit">OK</div>
                   </div>
                 </div>
 
-
                 <input type="text" class="js-range-slider" name="my_range" value="" />
-
-
-
               </div>
             </aside>
           </div>
@@ -158,21 +168,26 @@
               <div class="col-6 d-lg-block d-none">
                 <div class="catalog-option">
                   <span class="catalog-option__text">Сортировать</span>
+
                   <div class="select catalog-option__select js-select">
                     <div class="select__header js-select__header">
                       <span class="select__current">По названию от А до Я</span>
                       <div class="arrow arrow_small arrow_down arrow_dark"></div>
                     </div>
+
                     <div class="select__body js-select__body">
                       <div class="select__item js-select-item">
                         <span>По названию от А до Я</span>
                       </div>
+
                       <div class="select__item js-select-item">
                         <span>По названию от Я до А</span>
                       </div>
+
                       <div class="select__item js-select-item">
                         <span>От дешевых к дорогим</span>
                       </div>
+
                       <div class="select__item js-select-item">
                         <span>От дорогих к дешевым</span>
                       </div>
@@ -180,24 +195,30 @@
                   </div>
                 </div>
               </div>
+
               <div class="col-6 d-lg-flex d-none justify-content-end">
                 <div class="catalog-option catalog-option_small">
                   <span class="catalog-option__text">Товаров на странице</span>
+
                   <div class="select catalog-option__select js-select">
                     <div class="select__header js-select__header">
                       <span class="select__current">9</span>
                       <div class="arrow arrow_small arrow_down arrow_dark"></div>
                     </div>
+
                     <div class="select__body js-select__body">
                       <div class="select__item js-select-item">
                         <span>6</span>
                       </div>
+
                       <div class="select__item js-select-item">
                         <span>9</span>
                       </div>
+
                       <div class="select__item js-select-item">
                         <span>12</span>
                       </div>
+
                       <div class="select__item js-select-item">
                         <span>15</span>
                       </div>
@@ -214,6 +235,7 @@
                   </svg>
                 </button>
               </div>
+
               <div class="col-m-6 col-12 d-lg-none d-block mb-6">
                 <button data-fancybox data-src="#sort-popup" class="mobile-button js-popup">
                   <span class="mobile-button__text">Сортировка</span>
@@ -331,6 +353,7 @@
                           <use href="{{ asset('images/icons/spritemap.svg#sprite-arrow-left') }}"></use>
                         </svg>
                       </div>
+
                       <div class="pagination__list">
                         <div class="pagination__item">1</div>
                         <div class="pagination__item active">2</div>
@@ -338,6 +361,7 @@
                         <div class="pagination__item">4</div>
                         <div class="pagination__item">5</div>
                       </div>
+
                       <div class="pagination__arrow">
                         <svg class="pagination__icon">
                           <use href="{{ asset('images/icons/spritemap.svg#sprite-arrow-right') }}"></use>
